@@ -1,0 +1,6 @@
+{
+  "values": [
+    "dynamiclights:install",
+    "dynamiclights:start_loop"
+  ]
+}
