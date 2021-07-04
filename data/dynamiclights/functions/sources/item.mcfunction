@@ -21,3 +21,4 @@ execute as @s[nbt={Item:{id:"minecraft:glow_lichen"}}] run function dynamiclight
 
 # Flimmer
 execute as @s[nbt={Item:{id:"minecraft:redstone_torch"}}] run function dynamiclights:summon_redstone_light
+execute as @s[nbt={Item:{tag:{Enchantments:[{}]}}}] run function dynamiclights:summon_redstone_light

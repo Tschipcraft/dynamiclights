@@ -20,6 +20,8 @@ execute as @s[nbt={SelectedItem:{id:"minecraft:glow_lichen"}}] run function dyna
 
 execute as @s[nbt={SelectedItem:{id:"minecraft:redstone_torch"}}] run function dynamiclights:summon_redstone_light
 
+execute as @s[nbt={SelectedItem:{tag:{Enchantments:[{}]}}}] run function dynamiclights:summon_redstone_light
+
 # Offhand
 execute as @s[nbt={Inventory:[{id:"minecraft:torch",Slot:-106b}]}] run function dynamiclights:summon_light
 execute as @s[nbt={Inventory:[{id:"minecraft:lantern",Slot:-106b}]}] run function dynamiclights:summon_light
@@ -38,3 +40,5 @@ execute as @s[nbt={Inventory:[{id:"minecraft:glow_berries",Slot:-106b}]}] run fu
 execute as @s[nbt={Inventory:[{id:"minecraft:glow_item_frame",Slot:-106b}]}] run function dynamiclights:summon_soul_light
 
 execute as @s[nbt={Inventory:[{id:"minecraft:redstone_torch",Slot:-106b}]}] run function dynamiclights:summon_redstone_light
+
+execute as @s[nbt={Inventory:[{tag:{Enchantments:[{}]},Slot:-106b}]}] run function dynamiclights:summon_redstone_light
