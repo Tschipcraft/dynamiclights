@@ -1,0 +1,76 @@
+name: Continuous Deployment
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'version of the data pack'
+        required: true
+        default: 'v1.0'
+
+jobs:
+  create_data_pack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Extract tag
+        id: tag_version
+        run: echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/}
+      - name: Extract MC verson
+        id: mc_version
+        run: sh .github/workflows/get-mc-version.sh
+
+      # Check for existence of datapack and/or resourcepack folders.
+      - name: Check for data folder
+        id: check_datapack_folder
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "data"
+      - name: Check for assets folder
+        id: check_assets_folder
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "assets"
+
+      - name: Create data pack zip file
+        uses: montudor/action-zip@v0.1.0
+        if: steps.check_datapack_folder.outputs.files_exists == 'true'
+        with:
+          args: zip -qq datapack.zip -r data pack.mcmeta LICENSE README.md
+      - name: Create asset pack zip file
+        uses: montudor/action-zip@v0.1.0
+        if: steps.check_assets_folder.outputs.files_exists == 'true'
+        with:
+          args: zip -qq assetpack.zip -r assets pack.mcmeta LICENSE README.md
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.tag }}
+          release_name: Release ${{ github.event.inputs.tag }}
+          draft: false
+          prerelease: false
+
+      - name: Upload assetpack release asset
+        uses: actions/upload-release-asset@v1
+        if: steps.check_assets_folder.outputs.files_exists == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./assetpack.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ steps.mc_version.outputs.MC_VERSION }}-resourcepack.zip
+          asset_content_type: application/zip
+      - name: Upload datapack release asset
+        uses: actions/upload-release-asset@v1
+        if: steps.check_datapack_folder.outputs.files_exists == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./datapack.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ steps.mc_version.outputs.MC_VERSION }}-datapack.zip
+          asset_content_type: application/zip
