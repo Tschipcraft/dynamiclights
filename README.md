@@ -15,7 +15,7 @@ No Optifine needed!
 
 ## Installation
 
-Download the latest release from [here][latest] and put the datapack zip file into the `datapacks` folder of your Minecraft world.
+Download the latest release from [here](https://github.com/Tschipcraft/dynamiclights/releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
 
 
 ## Updates
