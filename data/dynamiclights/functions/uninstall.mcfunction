@@ -7,7 +7,8 @@ scoreboard objectives remove dl_how_to_use
 scoreboard objectives remove dl_unlimited
 scoreboard objectives remove menu
 
-say Dynamic Lights has been uninstalled by @s! It is save to disable and remove the data pack.
+say Dynamic Lights has been uninstalled by @s! It is safe to disable and remove the data pack.
 
 datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
+datapack disable "file/dynamiclights-v1.3-mc1.18-datapack.zip"
