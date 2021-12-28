@@ -1,5 +1,6 @@
-# ![icon](pack.png) Dynamic Lights
+# Dynamic Lights
 
+![icon](pack.png)
 > A data pack for 1.17x&1.18x
 
 ## Features
