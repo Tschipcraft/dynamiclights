@@ -9,7 +9,7 @@ Burning entities/items such as torches or lanterns emit light due to the new lig
 
 **Supported Items:** Torches, Lanterns, Glowstone, Glowstone Dust, Lava Buckets, Sea Lanterns, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, Redstone Torches, Soul Torches, Soul Lanterns, End Rods
 
-Always glowing entities:Glow Squids, Blazes, Glow Item Frames, Ignited Creepers, TnT
+**Always glowing entities:** Glow Squids, Blazes, Glow Item Frames, Ignited Creepers, TnT
 
 No Optifine needed!
 

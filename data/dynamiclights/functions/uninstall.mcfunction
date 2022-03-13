@@ -11,4 +11,4 @@ say Dynamic Lights has been uninstalled by @s! It is safe to disable and remove 
 
 datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
-datapack disable "file/dynamiclights-v1.3-mc1.18-datapack.zip"
+datapack disable "file/dynamiclights-v1.3.1-mc1.18-datapack.zip"
