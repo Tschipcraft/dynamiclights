@@ -3,7 +3,6 @@
 	"values": [
 		"minecraft:air",
 		"minecraft:cave_air",
-		"minecraft:water",
     "minecraft:light"
 	]
 }

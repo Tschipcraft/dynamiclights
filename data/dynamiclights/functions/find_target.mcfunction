@@ -8,7 +8,7 @@ execute at @s unless block ~ ~ ~ #dynamiclights:air unless block ~ ~ ~ water[lev
 
 execute at @s unless block ~ ~ ~ #dynamiclights:air unless block ~ ~ ~ water[level=0] run tp @s ~ ~2 ~
 
-execute at @s unless block ~ ~ ~ #dynamiclights:air run kill @s
+execute at @s unless block ~ ~ ~ #dynamiclights:air unless block ~ ~ ~ water[level=0] run kill @s
 
 execute as @s[tag=!redstone_light] at @s as @e[type=marker,tag=redstone_light,tag=!new_light,distance=..0.5] at @s run function dynamiclights:delete
 execute as @s[tag=!soul_light,tag=!redstone_light] at @s as @e[type=marker,tag=soul_light,tag=!new_light,distance=..0.5] at @s run function dynamiclights:delete

@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:glow_squid",
-    "minecraft:glow_item_frame"
+    "minecraft:glow_item_frame",
+    "minecraft:spectral_arrow"
   ]
 }

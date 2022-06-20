@@ -1,0 +1,11 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:soul_torch",
+		"minecraft:soul_lantern",
+    "minecraft:glow_ink_sac",
+		"minecraft:glow_item_frame",
+		"minecraft:glow_berries",
+		"minecraft:glow_lichen"
+	]
+}

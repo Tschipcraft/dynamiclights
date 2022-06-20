@@ -7,6 +7,8 @@ execute as @a[gamemode=!spectator] at @s positioned ~ ~1 ~ run function dynamicl
 
 execute as @e[type=minecraft:item] at @s run function dynamiclights:sources/item
 
+# Debug
+#execute as @e[type=minecraft:marker] at @s run particle minecraft:dust 0 90 90 1
 
 # Entities
 execute as @e[type=#dynamiclights:always_glow] at @s run function dynamiclights:summon_soul_light
