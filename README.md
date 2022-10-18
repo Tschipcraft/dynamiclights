@@ -3,8 +3,8 @@
   Dynamic Lights
 </h1>
 <p align="center">
-  <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-  <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+  <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
+  <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
 > A data pack for 1.17x-1.19x
