@@ -1,6 +1,12 @@
-# Dynamic Lights
+<h1 align="center">
+  <img src="/pack.png" width="64" height="64"><br/>
+  Dynamic Lights
+</h1>
+<p align="center">
+  <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+  <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+</p>
 
-![icon](pack.png)
 > A data pack for 1.17x-1.19x
 
 ## Features
