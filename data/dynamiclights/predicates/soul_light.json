@@ -33,6 +33,48 @@
           }
         }
       }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "count": {
+              "min": 1
+            },
+            "enchantments": [
+              {
+                "enchantment": "minecraft:fire_aspect",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "offhand": {
+            "count": {
+              "min": 1
+            },
+            "enchantments": [
+              {
+                "enchantment": "minecraft:fire_aspect",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      }
     }
   ]
 }
