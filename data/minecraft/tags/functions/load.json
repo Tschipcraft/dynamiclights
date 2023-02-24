@@ -1,6 +1,5 @@
 {
   "values": [
-    "dynamiclights:install_trigger",
-    "dynamiclights:version_checker"
+    "dynamiclights:install_trigger"
   ]
 }

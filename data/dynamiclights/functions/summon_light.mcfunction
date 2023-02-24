@@ -1,5 +1,8 @@
 ##by Tschipcraft
 
-execute align xyz positioned ~0.5 ~ ~0.5 run summon minecraft:marker ~ ~ ~ {Tags:["light","new_light"]}
+execute align xyz positioned ~0.5 ~ ~0.5 run summon minecraft:marker ~ ~ ~ {Tags:["ts.dynamiclights.light","ts.dynamiclights.new_light","global.ignore","smithed.entity","smithed.strict"],Invulnerable:1b}
 
-execute as @e[type=minecraft:marker,tag=new_light] at @s run function dynamiclights:find_target
+# Resolve potential problems and place the light
+execute as @e[type=minecraft:marker,tag=ts.dynamiclights.new_light] at @s run function dynamiclights:light/core
+
+#say A light triggered!

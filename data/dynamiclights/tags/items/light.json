@@ -11,6 +11,9 @@
 		"minecraft:jack_o_lantern",
 		"minecraft:shroomlight",
 		"minecraft:end_rod",
-		"minecraft:beacon"
+		"minecraft:beacon",
+		{"id": "minecraft:ochre_froglight", "required": false},
+		{"id": "minecraft:pearlescent_froglight", "required": false},
+		{"id": "minecraft:verdant_froglight", "required": false}
 	]
 }

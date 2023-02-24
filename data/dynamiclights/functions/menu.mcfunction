@@ -1,13 +1,10 @@
 ##by Tschipcraft
 
-## menu message
-scoreboard players enable @a menu
-scoreboard players add @a dl_welcome 0
-execute as @a[scores={menu=1..60,dl_welcome=1}] run scoreboard players set @s dl_welcome 0
-execute as @a[scores={dl_welcome=0}] run function dynamiclights:messages/welcome
-execute as @a[scores={dl_how_to_use=1}] run function dynamiclights:messages/how_to_use
+## Menu message
+scoreboard players enable @a tschipcraft.menu
+#scoreboard players add @a ts.dl.mess.welcome 0 - don't show menu on first boot
+execute as @a[scores={tschipcraft.menu=1..}] run scoreboard players set @s ts.dl.mess.welc 0
+execute as @a[scores={ts.dl.mess.welc=0}] run function dynamiclights:messages/welcome
+execute as @a[scores={ts.dl.mess.how=1}] run function dynamiclights:messages/how_to_use
 
-execute as @a[scores={menu=1..60,dl_welcome=1}] run scoreboard players set @s dl_welcome 2
-execute as @a[scores={menu=61..}] run scoreboard players set @s dl_welcome 1
-scoreboard players reset @a[scores={menu=122..}] menu
-scoreboard players add @a[scores={menu=1..}] menu 1
+execute as @a[scores={tschipcraft.menu=1..}] run schedule function dynamiclights:menu_reset 1t

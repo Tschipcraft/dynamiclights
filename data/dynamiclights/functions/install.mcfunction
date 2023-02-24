@@ -1,9 +1,9 @@
 ##by Tschipcraft
 
-scoreboard objectives add dl_welcome dummy
-scoreboard objectives add dl_how_to_use trigger
-scoreboard objectives add dl_unlimited dummy
-scoreboard objectives add menu trigger
+scoreboard objectives add ts.dl.mess.welc dummy
+scoreboard objectives add ts.dl.mess.how trigger
+scoreboard objectives add ts.dl.unlimited dummy
+scoreboard objectives add tschipcraft.menu trigger
 
 scoreboard objectives add tvc_ignore dummy
 

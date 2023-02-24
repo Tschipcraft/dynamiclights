@@ -1,0 +1,19 @@
+{
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "items": [
+              "minecraft:campfire",
+              "minecraft:soul_campfire"
+            ],
+            "nbt": "{BlockStateTag:{lit:\"false\"}}"
+          }
+        }
+      }
+    }
+}
+  

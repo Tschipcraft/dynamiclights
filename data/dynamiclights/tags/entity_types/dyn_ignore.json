@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#dynamiclights:always_burn",
+    "#dynamiclights:always_glow",
+    "minecraft:item",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    "minecraft:area_effect_cloud",
+    "minecraft:leash_knot",
+    "minecraft:llama_spit",
+    "minecraft:marker"
+  ]
+}
