@@ -4,7 +4,7 @@
 </h1>
 <p align="center">
   <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
-  <a href="https://www.curseforge.com/minecraft/texture-packs/dynamic-lights"><img src="https://cf.way2muchnoise.eu/full_<REPLACE>_downloads.svg?badge_style=for_the_badge"></a>
+  <a href="https://www.curseforge.com/minecraft/texture-packs/dynamic-lights"><img src="https://cf.way2muchnoise.eu/full_831385_downloads.svg?badge_style=for_the_badge"></a>
   <a href="https://modrinth.com/datapack/dynamic-lights"><img src="https://img.shields.io/modrinth/dt/dynamic-lights?label=Modrinth&colorA=0c0906&colorB=fbc703&style=for-the-badge&logo=modrinth"></a>
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
@@ -22,11 +22,11 @@
 
 Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a.
 
-**Supported Items:** Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Ametyhst Shards, Nether Stars, Ender Chests and Beacons
+**Supported Items:** Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Amethyst Shards, Nether Stars, Ender Chests and Beacons
 
 Additionally, all enchanted items will emit light level 6 while Fire Aspect enchanted items will emit light level 9.
 
-**Always glowing entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fire Balls, Spectral Arrows, Firework Rockets and Flying Wither Skulls
+**Always glowing entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Firework Rockets and Flying Wither Skulls
 
 No Optifine needed!
 
