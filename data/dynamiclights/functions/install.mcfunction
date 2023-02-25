@@ -8,3 +8,6 @@ scoreboard objectives add tschipcraft.menu trigger
 scoreboard objectives add tvc_ignore dummy
 
 schedule function dynamiclights:main 5t
+
+# Break for any version below Minecraft 1.17
+execute if entity @e[type=minecraft:marker]
