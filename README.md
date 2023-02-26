@@ -4,7 +4,7 @@
 </h1>
 <p align="center">
   <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
-  <a href="https://www.curseforge.com/minecraft/texture-packs/dynamic-lights"><img src="https://cf.way2muchnoise.eu/full_831385_downloads.svg?badge_style=for_the_badge"></a>
+  <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights"><img src="https://cf.way2muchnoise.eu/full_831385_downloads.svg?badge_style=for_the_badge"></a>
   <a href="https://modrinth.com/datapack/dynamic-lights"><img src="https://img.shields.io/modrinth/dt/dynamic-lights?label=Modrinth&colorA=0c0906&colorB=fbc703&style=for-the-badge&logo=modrinth"></a>
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
@@ -46,7 +46,7 @@ Also available on Modrinth and CurseForge!
   <img alt="Download on Modrinth" src="https://github.com/modrinth/art/blob/main/Branding/Badge/badge-dark.svg">
 </picture>
 </a>
-<a href="https://www.curseforge.com/minecraft/texture-packs/dynamic-lights">
+<a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights">
 <img alt="Download on CurseForge" src="https://i.imgur.com/zcIcoGb.png">
 </a>
 
