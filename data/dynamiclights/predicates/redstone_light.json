@@ -2,6 +2,7 @@
   "condition": "minecraft:alternative",
   "terms": [
     {
+      "//comment": "Detect items specified in data/dynamiclights/tags/items/redstone_light.json",
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
@@ -35,6 +36,93 @@
       }
     },
     {
+      "//comment": "Detect armor trimmed with amethyst",
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "nbt": "{Trim:{material:\"minecraft:amethyst\"}}",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "offhand": {
+            "nbt": "{Trim:{material:\"minecraft:amethyst\"}}",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "//comment": "Detect worn armor trimmed with amethyst",
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "nbt": "{Trim:{material:\"minecraft:amethyst\"}}",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "chest": {
+            "nbt": "{Trim:{material:\"minecraft:amethyst\"}}",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "legs": {
+            "nbt": "{Trim:{material:\"minecraft:amethyst\"}}",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "feet": {
+            "nbt": "{Trim:{material:\"minecraft:amethyst\"}}",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "//comment": "Enchantment glow",
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {

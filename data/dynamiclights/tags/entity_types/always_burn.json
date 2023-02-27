@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:blaze",
     "minecraft:tnt",
     "minecraft:end_crystal",
     "minecraft:dragon_fireball",
