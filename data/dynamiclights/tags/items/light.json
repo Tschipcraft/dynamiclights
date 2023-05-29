@@ -1,4 +1,5 @@
 {
+	"//comment": "Items listed here will emit light level 15",
 	"replace": false,
 	"values": [
 		"minecraft:torch",

@@ -1,4 +1,5 @@
 {
+	"//comment": "Items listed here will emit light level 6",
 	"replace": false,
 	"values": [
 		"minecraft:redstone_torch",
