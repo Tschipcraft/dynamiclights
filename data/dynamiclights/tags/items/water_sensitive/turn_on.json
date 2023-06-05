@@ -1,0 +1,8 @@
+{
+  "//comment": "Items listed here will only emit light inside water",
+  "replace": false,
+  "values": [
+    "minecraft:sea_pickle",
+    "minecraft:prismarine_crystals"
+  ]
+}

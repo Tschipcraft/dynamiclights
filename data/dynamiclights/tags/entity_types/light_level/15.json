@@ -1,7 +1,7 @@
 {
+  "//comment": "Entities specified here will always emit light level 15",
   "replace": false,
   "values": [
-    "minecraft:tnt",
     "minecraft:end_crystal",
     "minecraft:dragon_fireball",
     "minecraft:fireball",

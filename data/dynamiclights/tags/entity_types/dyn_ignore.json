@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#dynamiclights:always_burn",
     "minecraft:item",
     "minecraft:item_frame",
     "minecraft:glow_item_frame",

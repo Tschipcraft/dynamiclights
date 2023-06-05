@@ -1,0 +1,24 @@
+[
+  {
+    "//comment": "This predicate returns false if the tested entity is holding a item that should illuminate inside water (Specified in tags/items/water_sensitive/turn_on)",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/mainhand/water_immersion_illuminate"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/offhand/water_immersion_illuminate"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/head/water_immersion_illuminate"
+    }
+  }
+]

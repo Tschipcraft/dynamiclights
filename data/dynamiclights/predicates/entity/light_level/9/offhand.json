@@ -1,0 +1,31 @@
+[
+  {
+    "//comment": "This predicate returns true, if the item in the offhand should light up",
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "offhand": {
+          "tag": "dynamiclights:light_level/9",
+          "count": {
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/offhand/water_immersion_extinguish"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/offhand/water_immersion_illuminate"
+    }
+  }
+]

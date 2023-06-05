@@ -1,40 +1,8 @@
-{
-  "condition": "minecraft:alternative",
-  "terms": [
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "equipment": {
-          "mainhand": {
-            "tag": "dynamiclights:soul_light"
-          }
-        }
-      }
-    },
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "equipment": {
-          "offhand": {
-            "tag": "dynamiclights:soul_light"
-          }
-        }
-      }
-    },
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "equipment": {
-          "head": {
-            "tag": "dynamiclights:soul_light"
-          }
-        }
-      }
-    },
-    {
+[
+  {
+    "//comment": "This predicate returns false, if the tested entity is holding any fire aspect enchanted items",
+    "condition": "minecraft:inverted",
+    "term": {
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
@@ -54,8 +22,11 @@
           }
         }
       }
-    },
-    {
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
@@ -76,5 +47,5 @@
         }
       }
     }
-  ]
-}
+  }
+]

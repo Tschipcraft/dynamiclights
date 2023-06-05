@@ -1,26 +1,9 @@
-  {
-    "condition": "minecraft:alternative",
-    "terms": [
-      {
-        "condition": "minecraft:location_check",
-        "offsetY": 1,
-        "predicate": {
-          "fluid": {
-            "tag": "minecraft:water"
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "type": "minecraft:item",
-          "location": {
-            "fluid": {
-              "tag": "minecraft:water"
-            }
-          }
-        }
-      }
-    ]
+{
+  "//comment": "Checks wether the tested entity is inside water. TODO: Add support for rain detection",
+  "condition": "minecraft:location_check",
+  "predicate": {
+    "fluid": {
+      "tag": "minecraft:water"
+    }
   }
+}

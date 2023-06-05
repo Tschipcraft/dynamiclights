@@ -1,4 +1,5 @@
 {
+  "//comment": "Entities specified here will always emit light level 9",
   "replace": false,
   "values": [
     "minecraft:blaze",
