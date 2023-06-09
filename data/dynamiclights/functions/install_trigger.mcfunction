@@ -1,4 +1,4 @@
 ##by Tschipcraft
 
-function dynamiclights:version_checker
+function dynamiclights:internal/version_checker/start
 function dynamiclights:install

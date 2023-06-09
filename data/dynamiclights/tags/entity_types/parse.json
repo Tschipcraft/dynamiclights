@@ -1,0 +1,10 @@
+{
+  "//comment": "These entities use a different NBT tag for storing the item and need special parsing for detection",
+  "replace": false,
+  "values": [
+    "minecraft:item",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    {"id": "minecraft:item_display", "required": false}
+  ]
+}

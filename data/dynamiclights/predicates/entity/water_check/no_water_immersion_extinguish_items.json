@@ -3,22 +3,65 @@
     "//comment": "This predicate returns false if the tested entity is holding a item that should extinguish inside water (Specified in tags/items/water_sensitive/turn_off)",
     "condition": "minecraft:inverted",
     "term": {
-      "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/water_check/mainhand/water_immersion_extinguish"
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "tag": "dynamiclights:water_sensitive/turn_off",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
-      "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/water_check/offhand/water_immersion_extinguish"
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "offhand": {
+            "tag": "dynamiclights:water_sensitive/turn_off",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
-      "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/water_check/head/water_immersion_extinguish"
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "tag": "dynamiclights:water_sensitive/turn_off",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.type": {
+          "min": 6,
+          "max": 10
+        }
+      }
     }
   }
 ]

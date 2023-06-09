@@ -8,13 +8,10 @@
     }
   },
   {
-    "condition": "minecraft:location_check",
-    "predicate": {
-      "light": {
-        "light": {
-          "max": 6
-        }
-      }
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/should_emit_light_level/9"
     }
   }
 ]

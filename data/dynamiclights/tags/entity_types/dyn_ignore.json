@@ -1,12 +1,11 @@
 {
   "replace": false,
   "values": [
-    "minecraft:item",
-    "minecraft:item_frame",
-    "minecraft:glow_item_frame",
     "minecraft:area_effect_cloud",
+    "minecraft:fishing_bobber",
     "minecraft:leash_knot",
     "minecraft:llama_spit",
-    "minecraft:marker"
+    "minecraft:marker",
+    {"id": "minecraft:text_display", "required": false}
   ]
 }

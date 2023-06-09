@@ -38,11 +38,49 @@
   {
     "condition": "minecraft:inverted",
     "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/has_riptide_trident"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/has_channeling_trident"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
         "type": "#dynamiclights:light_level/9"
       }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.type": 3
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/9_turn_off"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/9_turn_on"
     }
   }
 ]

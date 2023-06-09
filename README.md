@@ -18,6 +18,8 @@
 </a>
 </details>
 
+### Update to Minecraft 1.20 is in progress! 
+
 ## Features
 
 Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a.

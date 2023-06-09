@@ -1,0 +1,9 @@
+{
+  "//comment": "These entities are dynamic item holders and may change their item over time. They will get reparsed every 8 ticks",
+  "replace": false,
+  "values": [
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    {"id": "minecraft:item_display", "required": false}
+  ]
+}

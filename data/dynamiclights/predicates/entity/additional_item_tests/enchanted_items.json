@@ -137,5 +137,15 @@
         }
       }
     }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.is_ench": 1
+      }
+    }
   }
 ]
