@@ -2,8 +2,9 @@
 
 ## In water?
 scoreboard players add @s ts.dl.in_water 0
-execute as @s[scores={ts.dl.in_water=0}] anchored eyes positioned ^ ^ ^ if predicate dynamiclights:in_water run function dynamiclights:internal/water/enter
-execute as @s[scores={ts.dl.in_water=1}] anchored eyes positioned ^ ^ ^ unless predicate dynamiclights:in_water run function dynamiclights:internal/water/exit
+execute if score $water_sensitive ts.dl.settings matches 1 as @s[scores={ts.dl.in_water=0}] anchored eyes positioned ^ ^ ^ if predicate dynamiclights:in_water run function dynamiclights:internal/water/enter
+execute as @s[scores={ts.dl.in_water=1},type=!minecraft:item] anchored eyes positioned ^ ^ ^ unless predicate dynamiclights:in_water run function dynamiclights:internal/water/exit
+execute as @s[scores={ts.dl.in_water=1},type=minecraft:item] anchored eyes positioned ^ ^ ^ positioned ~ ~-0.1 ~ unless predicate dynamiclights:in_water run function dynamiclights:internal/water/exit
 
 ## Sound cues for trident enchants
 scoreboard players add @s ts.dl.sound 0
@@ -16,7 +17,6 @@ execute as @s[scores={ts.dl.sound=2},predicate=!dynamiclights:entity/has_channel
 ## Dispatch light
 function dynamiclights:internal/sources/core
 
-
 # Light block sadly blocks explosion damage
 #execute as @s[type=minecraft:creeper,nbt={ignited:1b},tag=!global.ignore,tag=!smithed.strict] at @s run function dynamiclights:summon_light
 
@@ -24,5 +24,5 @@ function dynamiclights:internal/sources/core
 execute as @s[type=minecraft:ghast] at @s run function dynamiclights:internal/ghast
 
 ## Extension for More Mobs
-execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_1] at @s run function dynamiclights:summon_redstone_light
-execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_2] at @s run function dynamiclights:summon_soul_light
+execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_1] at @s run function dynamiclights:internal/place_light/6/summon
+execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_2] at @s run function dynamiclights:internal/place_light/9/summon

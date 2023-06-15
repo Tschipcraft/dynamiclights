@@ -16,14 +16,14 @@ scoreboard objectives remove ts.dl.i.is_chann
 scoreboard objectives remove ts.dl.l.level
 
 scoreboard objectives remove ts.dl.mess.welc
-scoreboard objectives remove ts.dl.mess.how
 scoreboard objectives remove ts.dl.settings
 scoreboard objectives remove tschipcraft.menu
 
+scoreboard objectives remove ts.dl.version
 scoreboard objectives remove tvc_ignore
-
-say Dynamic Lights by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.
 
 datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
-datapack disable "file/dynamiclights-v1.6-mc1.20-datapack.zip"
+datapack disable "file/${file_name}"
+
+say Dynamic Lights ${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.

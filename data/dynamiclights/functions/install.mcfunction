@@ -31,28 +31,21 @@ scoreboard objectives add ts.dl.i.is_chann dummy
 
 scoreboard objectives add ts.dl.l.level dummy
 
-
-# TODO:
-# Add setting for cues for riptide + channeling
-# Add Light Level 3 (Magma Blocks + standard enchants)
-# Finish #3
-# Add rain check to water sensitivity?
-
-
 scoreboard objectives add ts.dl.mess.welc dummy
-scoreboard objectives add ts.dl.mess.how trigger
 scoreboard objectives add ts.dl.settings dummy
-
 
 # defaults
 execute unless score $enable_on_fire ts.dl.settings matches 0..1 run scoreboard players set $enable_on_fire ts.dl.settings 1
 execute unless score $enable_glowing ts.dl.settings matches 0..1 run scoreboard players set $enable_glowing ts.dl.settings 0
-execute unless score $enable_ghast ts.dl.settings matches 0..1 run scoreboard players set $enable_ghast ts.dl.settings 1
 execute unless score $fire_aspect ts.dl.settings matches 0..1 run scoreboard players set $fire_aspect ts.dl.settings 1
 execute unless score $riptide ts.dl.settings matches 0..1 run scoreboard players set $riptide ts.dl.settings 1
 execute unless score $channeling ts.dl.settings matches 0..1 run scoreboard players set $channeling ts.dl.settings 1
 execute unless score $enchanted_items ts.dl.settings matches 0..1 run scoreboard players set $enchanted_items ts.dl.settings 1
 execute unless score $amethyst_trimmed ts.dl.settings matches 0..1 run scoreboard players set $amethyst_trimmed ts.dl.settings 1
+execute unless score $enable_ghast ts.dl.settings matches 0..1 run scoreboard players set $enable_ghast ts.dl.settings 1
+
+execute unless score $water_sensitive ts.dl.settings matches 0..1 run scoreboard players set $water_sensitive ts.dl.settings 1
+execute unless score $enable_sound ts.dl.settings matches 0..1 run scoreboard players set $enable_sound ts.dl.settings 1
 
 
 scoreboard objectives add tschipcraft.menu trigger

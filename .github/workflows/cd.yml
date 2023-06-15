@@ -3,32 +3,46 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'version of the data pack'
+        description: 'Version of the data pack'
         required: true
         default: 'v1.0'
+      mc_version:
+        description: 'Minecraft version(s) the data pack runs in'
+        required: true
+        default: '1.20'
 
 jobs:
   create_data_pack:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.5.3
       - name: Extract tag
         id: tag_version
-        run: echo ::set-output name=TAG_VERSION::${GITHUB_REF#refs/tags/}
-      - name: Extract MC verson
-        id: mc_version
-        run: sh .github/workflows/get-mc-version.sh
+        run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      - name: Find and replace uninstall file name
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${file_name}"
+          replace: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
+          regex: false
+          include: "**uninstall.mcfunction"
+      - name: Find and replace data pack version
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${version}"
+          replace: ${{ github.event.inputs.tag }}
+          regex: false
 
       # Check for existence of datapack and/or resourcepack folders.
       - name: Check for data folder
         id: check_datapack_folder
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "data"
       - name: Check for assets folder
         id: check_assets_folder
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "assets"
 
@@ -62,7 +76,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./assetpack.zip
-          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ steps.mc_version.outputs.MC_VERSION }}-resourcepack.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
           asset_content_type: application/zip
       - name: Upload datapack release asset
         uses: actions/upload-release-asset@v1
@@ -72,5 +86,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./datapack.zip
-          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ steps.mc_version.outputs.MC_VERSION }}-datapack.zip
+          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
           asset_content_type: application/zip

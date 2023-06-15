@@ -2,5 +2,5 @@
 
 execute as @s[predicate=dynamiclights:ghast_targeting] run scoreboard players add @s ts.dl.ghast_cool 1
 execute as @s[predicate=!dynamiclights:ghast_targeting] run scoreboard players reset @s ts.dl.ghast_cool
-execute as @s[scores={ts.dl.ghast_cool=10..20}] at @s run function dynamiclights:summon_light
+execute as @s[scores={ts.dl.ghast_cool=10..20}] at @s run function dynamiclights:internal/place_light/15/summon
 execute as @s[scores={ts.dl.ghast_cool=60..}] run scoreboard players reset @s ts.dl.ghast_cool
