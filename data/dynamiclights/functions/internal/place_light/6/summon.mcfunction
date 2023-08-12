@@ -1,6 +1,9 @@
 ##by Tschipcraft
+# Places a dynamic light block with light level 6 in the world
 
-kill @s[type=minecraft:marker,tag=ts.dl.light]
+# Kill marker if the dynamic light needed position adjustments
+execute as @s[type=minecraft:marker,tag=ts.dl.light] run function dynamiclights:internal/kill_marker
+# Check if a dynamic light already exists here
 scoreboard players set #light_exists ts.dl.settings 0
 execute align xyz as @e[type=minecraft:marker,tag=ts.dl.light,distance=..0.1,limit=1,sort=nearest] at @s run function dynamiclights:internal/place_light/6/prev_it/check
 

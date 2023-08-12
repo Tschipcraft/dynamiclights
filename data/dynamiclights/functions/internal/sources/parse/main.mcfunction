@@ -18,5 +18,3 @@ scoreboard players operation @s ts.dl.i.is_ameth = .global ts.dl.i.is_ameth
 scoreboard players operation @s ts.dl.i.is_firea = .global ts.dl.i.is_firea
 scoreboard players operation @s ts.dl.i.is_ript = .global ts.dl.i.is_ript
 scoreboard players operation @s ts.dl.i.is_chann = .global ts.dl.i.is_chann
-
-kill c295ddee-4c15-4e5b-83ba-2fbce873a1d5

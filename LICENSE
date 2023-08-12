@@ -1,21 +1,52 @@
-MIT License
+Tschipcraft's Custom License for Minecraft Mods, Data Packs and Resource Packs
+Version 1.0 - 2023
 
-Copyright (c) 2023 Tschipcraft
+TL;DR - Not exhaustive, please read the whole license for detailed information:
+- Don't steal, don't re-upload, don't spread misinformation.
+- Monetized videos, livestreams with this or about this pack and inclusion in modpacks are allowed, as long as credit is given by linking back to official download locations.
+- Only use parts or the entire pack in your project, if you ask me and I say yes.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Copyright © 2023 Tschipcraft
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This license shall be included in all copies or substantial portions of this project.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+
+Permitted Uses:
+
+1. You are PERMITTED to freely use this project on singleplayer worlds and multiplayer worlds/servers in your Minecraft game.
+
+2. You are PERMITTED to modify this project's code for personal use or on your own private servers.
+
+3. You are PERMITTED to view this project's code, take reference, and learn from it.
+
+4. You are PERMITTED to create content (e.g., videos, livestreams) covering and showcasing this project on websites such as YouTube, Twitch, Instagram, TikTok, etc., or on your own website, IF you provide a prominent link back to at least one of the official download locations ([GitHub](https://github.com/Tschipcraft/dynamiclights), [CurseForge](https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights), [Modrinth](https://modrinth.com/datapack/dynamic-lights)) in the description or an easily accessible place. You may also monetize this content.
+
+5. You are PERMITTED to include this project in your modpack, IF you link back to at least one of the official download locations ([GitHub](https://github.com/Tschipcraft/dynamiclights), [CurseForge](https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights), [Modrinth](https://modrinth.com/datapack/dynamic-lights)), or by simply adding this project in the embedded or included mods sections directly on Modrinth and/or CurseForge.
+
+6. You are PERMITTED to use parts or the whole project in your own project (Mod, Data Pack, Resource Pack, Map, Server, etc.), IF you obtain explicit permission from the creator (Tschipcraft) first. To request permission, please contact me via email at tschipcraft@gmail.com or message me directly on Planet Minecraft (https://www.planetminecraft.com/account/pms/new/tschipo), or Discord (@tschipo) and include detailed information about your intentions.
+
+
+Prohibited Uses:
+
+1. You may NOT redistribute or re-upload this project, modified or unmodified.
+
+2. You may NOT redistribute single parts, files, or standalones of this project.
+
+3. You may NOT claim that this project was made by you.
+
+4. You may NOT spread misinformation about this project, including but not limited to promising not implemented features or support for an unsupported Minecraft version.
+
+
+Liability and Warranty:
+
+This project is provided "as is," without warranty of any kind, expressed or implied. In no event shall the creator (Tschipcraft) be held liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the project or the use or other dealings in the project.
+
+All works of Tschipcraft are of and owned by Tschipcraft.
+
+By using this project, you agree to abide by the terms of this license. Any violation of the terms will result in the termination of the rights granted hereunder.
+
+Exceptions to this license may be granted, if you have a special case, contact me via email at tschipcraft@gmail.com or message me directly on Planet Minecraft (https://www.planetminecraft.com/account/pms/new/tschipo), or Discord (@tschipo) and include detailed information about your intentions.
+
+This license shall be governed by and construed in accordance with the laws of Germany. Any legal action or proceeding arising under or in connection with this license shall be brought exclusively in the courts of Germany.
+
+This license is subject to change. The latest version of this license will be available at https://github.com/Tschipcraft/dynamiclights/blob/master/LICENSE, and your continued use of the project after changes happen, will constitute your acceptance of the changes.

@@ -23,3 +23,6 @@ execute unless predicate dynamiclights:entity/additional_item_tests/amethyst_tri
 execute unless predicate dynamiclights:entity/additional_item_tests/fire_aspect_items run scoreboard players set .global ts.dl.i.is_firea 1
 execute unless predicate dynamiclights:entity/additional_item_tests/riptide_trident run scoreboard players set .global ts.dl.i.is_ript 1
 execute unless predicate dynamiclights:entity/additional_item_tests/channeling_trident run scoreboard players set .global ts.dl.i.is_chann 1
+
+# Kill armor stand (@s)
+function dynamiclights:internal/kill_marker

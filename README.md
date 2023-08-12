@@ -20,15 +20,15 @@
 
 ## Features
 
-Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a.
+Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a. Because of this, the dynamic lights are limited to the block grid.
 
 **Supported Items:** Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Amethyst Shards, Nether Stars, Ender Chests and Beacons
 
 Additionally, all enchanted items will emit light level 6 while Fire Aspect, Riptide or Channeling enchanted items emit light level 9.
 
-**Always glowing entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Firework Rockets and Flying Wither Skulls
+**Supported Entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Firework Rockets and Flying Wither Skulls
 
-No Optifine needed!
+This data pack is completely server-side! No Optifine required!
 
 [-> For available settings and planned features, take a look at the wiki <-](https://github.com/Tschipcraft/dynamiclights/wiki)
 
@@ -41,13 +41,17 @@ Also available on Modrinth and CurseForge!
 
 <a href="https://modrinth.com/datapack/dynamic-lights">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-light.svg">
-  <img alt="Download on Modrinth" src="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
+  <source height="72px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-dark.svg">
+  <source height="72px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-light.svg">
+  <img height="72px" alt="Download on Modrinth" src="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
 </picture>
 </a>
 <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights">
-<img alt="Download on CurseForge" src="https://i.imgur.com/zcIcoGb.png">
+<picture>
+  <source height="72px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/curseforge-badge-dark.svg">
+  <source height="72px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/curseforge-badge-light.svg">
+  <img height="72px" alt="Download on CurseForge" src="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/curseforge-badge-dark.svg">
+</picture>
 </a>
 
 
