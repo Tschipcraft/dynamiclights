@@ -1,5 +1,5 @@
 {
-  "//comment": "Checks wether the tested entity is inside water. TODO: Add support for rain detection",
+  "//comment": "Checks if the tested position is inside water",
   "condition": "minecraft:location_check",
   "predicate": {
     "fluid": {

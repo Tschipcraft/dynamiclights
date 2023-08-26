@@ -1,20 +1,20 @@
 <h1 align="center">
-  <img src="/pack.png" width="64" height="64"><br/>
+  <img src="pack.png" width="96" height="96" style="image-rendering: pixelated"><br/>
   Dynamic Lights
 </h1>
 <p align="center">
   <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
-  <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights"><img src="https://cf.way2muchnoise.eu/full_831385_downloads.svg?badge_style=for_the_badge"></a>
+  <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights"><img src="https://img.shields.io/curseforge/dt/831385?logo=curseforge&label=CurseForge&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
   <a href="https://modrinth.com/datapack/dynamic-lights"><img src="https://img.shields.io/modrinth/dt/dynamic-lights?label=Modrinth&colorA=0c0906&colorB=fbc703&style=for-the-badge&logo=modrinth"></a>
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
-> A data pack for 1.17x-1.20x
+> A data pack for Minecraft 1.17x-1.20x
 
 <details>
 <summary>YouTube showcase</summary>
 <a href="http://www.youtube.com/watch?v=bzmqpgfQ7jo">
-<img alt="Dynamic Lights thumbnail" width=50% src="https://tschipcraft.ddns.net/mod_resources/youtube_preview.php?id=bzmqpgfQ7jo" title="Watch on YouTube">
+  <img alt="Dynamic Lights thumbnail" width=50% src="https://tschipcraft.ddns.net/mod_resources/youtube_preview.php?id=bzmqpgfQ7jo" title="Watch on YouTube">
 </a>
 </details>
 
@@ -30,7 +30,7 @@ Additionally, all enchanted items will emit light level 6 while Fire Aspect, Rip
 
 This data pack is completely server-side! No Optifine required!
 
-[-> For available settings and planned features, take a look at the wiki <-](https://github.com/Tschipcraft/dynamiclights/wiki)
+[➜ For available settings and planned features, take a look at the wiki](https://github.com/Tschipcraft/dynamiclights/wiki)
 
 
 ## Installation

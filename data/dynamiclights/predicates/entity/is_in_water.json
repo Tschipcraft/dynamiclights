@@ -1,0 +1,8 @@
+{
+  "//comment": "This predicate returns true if the tested entity is inside water",
+  "condition": "minecraft:inverted",
+  "term": {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:entity/water_check/is_outside_water"
+  }
+}

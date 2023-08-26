@@ -1,6 +1,6 @@
 {
-	"replace": false,
-	"values": [
-		"minecraft:light"
-	]
+  "replace": false,
+  "values": [
+    "minecraft:light"
+  ]
 }

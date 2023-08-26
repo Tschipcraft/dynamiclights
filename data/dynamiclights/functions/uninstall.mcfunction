@@ -5,6 +5,7 @@ kill @e[type=minecraft:armor_stand,tag=ts.dl.i.parser]
 
 scoreboard objectives remove ts.dl.ghast_cool
 scoreboard objectives remove ts.dl.in_water
+scoreboard objectives remove ts.dl.in_rain
 scoreboard objectives remove ts.dl.sound
 
 scoreboard objectives remove ts.dl.i.type
@@ -26,4 +27,4 @@ datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
 datapack disable "file/${file_name}"
 
-say Dynamic Lights ${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.
+say ⏻ Dynamic Lights ${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.

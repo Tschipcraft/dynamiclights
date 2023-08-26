@@ -5,7 +5,7 @@ on:
       tag:
         description: 'Version of the data pack'
         required: true
-        default: 'v1.0'
+        default: '1.0'
       mc_version:
         description: 'Minecraft version(s) the data pack runs in'
         required: true
@@ -47,12 +47,12 @@ jobs:
           files: "assets"
 
       - name: Create data pack zip file
-        uses: montudor/action-zip@v0.1.0
+        uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
           args: zip -qq datapack.zip -r data pack.mcmeta pack.png LICENSE README.md
       - name: Create asset pack zip file
-        uses: montudor/action-zip@v0.1.0
+        uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
         with:
           args: zip -qq assetpack.zip -r assets pack.mcmeta pack.png LICENSE README.md
@@ -63,8 +63,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.event.inputs.tag }}
-          release_name: Release ${{ github.event.inputs.tag }}
+          tag_name: v${{ github.event.inputs.tag }}
+          release_name: Release v${{ github.event.inputs.tag }}
           draft: false
           prerelease: false
 
@@ -76,7 +76,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./assetpack.zip
-          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
+          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
           asset_content_type: application/zip
       - name: Upload datapack release asset
         uses: actions/upload-release-asset@v1
@@ -86,5 +86,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./datapack.zip
-          asset_name: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
+          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
           asset_content_type: application/zip

@@ -1,10 +1,14 @@
 ##by Tschipcraft
 
+## In Rain? (exclusive 1.19.4+ feature)
+scoreboard players reset @s ts.dl.in_rain
+execute if score $global ts.dl.version matches 3337.. if score $rain_sensitive ts.dl.settings matches 1..2 if predicate dynamiclights:world/is_raining run function dynamiclights:internal/water/rain_check
+
 ## In water?
 scoreboard players add @s ts.dl.in_water 0
-execute if score $water_sensitive ts.dl.settings matches 1..2 as @s[scores={ts.dl.in_water=0}] anchored eyes positioned ^ ^ ^ if predicate dynamiclights:in_water run function dynamiclights:internal/water/enter
-execute as @s[scores={ts.dl.in_water=1},type=!minecraft:item] anchored eyes positioned ^ ^ ^ unless predicate dynamiclights:in_water run function dynamiclights:internal/water/exit
-execute as @s[scores={ts.dl.in_water=1},type=minecraft:item] anchored eyes positioned ^ ^ ^ positioned ~ ~-0.1 ~ unless predicate dynamiclights:in_water run function dynamiclights:internal/water/exit
+execute if score $water_sensitive ts.dl.settings matches 1..2 as @s[scores={ts.dl.in_water=0}] anchored eyes positioned ^ ^ ^ if predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/enter
+execute as @s[scores={ts.dl.in_water=1},type=!minecraft:item] anchored eyes positioned ^ ^ ^ unless predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/exit
+execute as @s[scores={ts.dl.in_water=1},type=minecraft:item] anchored eyes positioned ^ ^ ^ positioned ~ ~-0.1 ~ unless predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/exit
 
 ## Sound cues for trident enchants
 scoreboard players add @s ts.dl.sound 0
