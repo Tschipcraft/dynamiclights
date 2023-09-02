@@ -10,7 +10,10 @@
       },
       "score": "ts.dl.settings"
     },
-    "range": 1
+    "range": {
+      "min": 1,
+      "max": 2
+    }
   },
   {
     "condition": "minecraft:inverted",

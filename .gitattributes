@@ -1,0 +1,2 @@
+# Keep LF line endings for forge .toml file
+*.toml text eol=lf

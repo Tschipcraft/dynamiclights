@@ -24,7 +24,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "${file_name}"
-          replace: ${{ github.event.repository.name }}-${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
+          replace: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
           regex: false
           include: "**uninstall.mcfunction"
       - name: Find and replace data pack version
@@ -34,23 +34,33 @@ jobs:
           replace: ${{ github.event.inputs.tag }}
           regex: false
 
-      # Check for existence of datapack and/or resourcepack folders.
+      # Check for existence of datapack, mod and/or resourcepack folders.
       - name: Check for data folder
         id: check_datapack_folder
         uses: andstor/file-existence-action@v2
         with:
           files: "data"
-      - name: Check for assets folder
+      - name: Check for mod folders
+        id: check_mod_folder
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "META-INF, net, fabric.mod.json, assets"
+      - name: Check for resource pack folder
         id: check_assets_folder
         uses: andstor/file-existence-action@v2
         with:
-          files: "assets"
+          files: "assets/minecraft"
 
       - name: Create data pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
           args: zip -qq datapack.zip -r data pack.mcmeta pack.png LICENSE README.md
+      - name: Create mod jar file
+        uses: montudor/action-zip@v1
+        if: steps.check_mod_folder.outputs.files_exists == 'true'
+        with:
+          args: zip -qq mod.zip -r data assets META-INF net fabric.mod.json pack.mcmeta pack.png LICENSE README.md
       - name: Create asset pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
@@ -68,16 +78,6 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload assetpack release asset
-        uses: actions/upload-release-asset@v1
-        if: steps.check_assets_folder.outputs.files_exists == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./assetpack.zip
-          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
-          asset_content_type: application/zip
       - name: Upload datapack release asset
         uses: actions/upload-release-asset@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
@@ -87,4 +87,24 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./datapack.zip
           asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
+          asset_content_type: application/zip
+      - name: Upload mod release asset
+        uses: actions/upload-release-asset@v1
+        if: steps.check_mod_folder.outputs.files_exists == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./mod.zip
+          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar
+          asset_content_type: application/jar
+      - name: Upload assetpack release asset
+        uses: actions/upload-release-asset@v1
+        if: steps.check_assets_folder.outputs.files_exists == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./assetpack.zip
+          asset_name: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip
           asset_content_type: application/zip

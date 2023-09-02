@@ -1,0 +1,46 @@
+{
+  "dynamiclights.midnightconfig.title": "Dynamic Lights Configuration",
+  "dynamiclights.midnightconfig.configure_ingame": "§dℹ Info:§r§f To configure this data pack on a world-to-world basis,",
+  "dynamiclights.midnightconfig.configure_ingame2": "join a world and execute the command §o/function dynamiclights:settings§r.",
+  "dynamiclights.midnightconfig.empty": "",
+  "dynamiclights.midnightconfig.global_settings": "§n§l-=- Global Settings -=-",
+  "dynamiclights.midnightconfig.info": "§dℹ Info:§r§f These settings will be applied to all worlds globally.",
+  "dynamiclights.midnightconfig.info2": "Please make sure to rejoin any world for the global settings to take effect.",
+  "dynamiclights.midnightconfig.light": "§lEnable light emitting from...",
+  "dynamiclights.midnightconfig.empty2": "",
+  "dynamiclights.midnightconfig.additional_light": "§lEnable additional light emitting from...",
+  "dynamiclights.midnightconfig.empty3": "",
+  "dynamiclights.midnightconfig.other": "§lOther",
+
+  "dynamiclights.midnightconfig.enable_on_fire": "Burning entities",
+  "dynamiclights.midnightconfig.enable_on_fire.tooltip": "Default: §aYes§f",
+  "dynamiclights.midnightconfig.enable_glowing": "Entities with the glowing potion effect",
+  "dynamiclights.midnightconfig.enable_glowing.tooltip": "Default: §cNo§f",
+  "dynamiclights.midnightconfig.enable_ghast": "Ghasts about to shoot a fireball",
+  "dynamiclights.midnightconfig.enable_ghast.tooltip": "Default: §aYes§f",
+  "dynamiclights.midnightconfig.enable_enchanted_items": "Enchanted items",
+  "dynamiclights.midnightconfig.enable_enchanted_items.tooltip": "Default: §aYes§f\n§6⚠ Note: This may lead to decreased performance of some mob farms.",
+  "dynamiclights.midnightconfig.enable_amethyst_trimmed": "Armor trimmed with amethyst",
+  "dynamiclights.midnightconfig.enable_amethyst_trimmed.tooltip": "Default: §aYes§f\nOnly for Minecraft 1.20+",
+
+  "dynamiclights.midnightconfig.enable_fire_aspect": "Items enchanted with Fire Aspect",
+  "dynamiclights.midnightconfig.enable_fire_aspect.tooltip": "Default: §aYes§f\n§6⚠ Note: This may lead to decreased performance of some mob farms.",
+  "dynamiclights.midnightconfig.enable_riptide": "Tridents enchanted with Riptide inside water",
+  "dynamiclights.midnightconfig.enable_riptide.tooltip": "Default: §aYes§f\nOnly works when Water Sensitivity Check is enabled.",
+  "dynamiclights.midnightconfig.enable_channeling": "Tridents enchanted with Channeling during a thunderstorm",
+  "dynamiclights.midnightconfig.enable_channeling.tooltip": "Default: §aYes§f",
+
+  "dynamiclights.midnightconfig.enable_water_sensitive": "Water Sensitivity Check",
+  "dynamiclights.midnightconfig.enable_water_sensitive.tooltip": "Default: §aYes§f\nIf enabled, water sensitive items such as torches will turn off inside water.",
+  "dynamiclights.midnightconfig.enable_sound": " └ Sound cues",
+  "dynamiclights.midnightconfig.enable_sound.tooltip": "Default: §aYes§f\nIf enabled, sound cues play when a water sensitive item turns off or on.",
+  "dynamiclights.midnightconfig.enable_rain_sensitive": " └ Rain Check",
+  "dynamiclights.midnightconfig.enable_rain_sensitive.tooltip": "Default: §aYes§f\nIf enabled, touching rain counts as being inside water.\nOnly has an effect when Water Sensitivity Check is enabled.\nOnly for Minecraft 1.19.4+",
+
+  "dynamiclights.midnightconfig.enum.bool.WORLD": "§bWorld-Specific",
+  "dynamiclights.midnightconfig.enum.bool.YES": "§a[✔] Yes",
+  "dynamiclights.midnightconfig.enum.bool.NO": "§c[❌] No",
+
+  "modmenu.summaryTranslation.dynamiclights": "Supported entities and items such as torches or lanterns emit light! Server-side only!",
+  "modmenu.donate": "Donate"
+} 

@@ -1,0 +1,44 @@
+modLoader = "javafml"
+loaderVersion="[35,)"
+license="Custom"
+logoFile="pack.png"
+logoBlur=false
+
+[[mods]]
+modId="dynamiclights"
+version="${version}+mod"
+displayName="Dynamic Lights"
+description='''Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a. Because of this, the dynamic lights are limited to the block grid.
+
+§lSupported Items:§r Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Amethyst Shards, Nether Stars, Ender Chests and Beacons
+
+Additionally, all enchanted items will emit light level 6 while Fire Aspect, Riptide or Channeling enchanted items emit light level 9.
+
+§lSupported Entities:§r Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Firework Rockets and Flying Wither Skulls
+
+This mod is completely server-side!
+
+Execute the command §o/function §odynamiclights:settings§r for a world-specific settings menu and/or install MidnightLib for global settings accross all worlds.
+'''
+authors="Tschipcraft"
+displayURL="https://tschipcraft.ddns.net/dynamiclights.html"
+issueTrackerURL="https://github.com/Tschipcraft/dynamiclights/issues"
+updateJSONURL="https://api.modrinth.com/updates/7YjclEGc/forge_updates.json"
+displayTest="IGNORE_SERVER_VERSION"
+
+[[dependencies.dynamiclights]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.dynamiclights]]
+    modId="midnightlib"
+    mandatory=false
+    versionRange="[1.0.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[modproperties.dynamiclights]
+    catalogueItemIcon="minecraft:torch"
