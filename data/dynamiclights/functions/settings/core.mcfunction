@@ -1,6 +1,7 @@
 ##by Tschipcraft
 
 tellraw @s {"text":"\n=-=Dynamic Lights Admin Settings=-=","bold":true,"color":"dark_green"}
+
 tellraw @s {"text":"\nEnable light emitting from...","bold":true,"color":"white"}
 
 execute if score $enable_on_fire ts.dl.settings matches 1 run tellraw @s [{"text":"[✔] ","bold":true,"color":"green","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle this feature "},{"text":"off","color":"red"},{"text":"."}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_on_fire"}},{"text":"Burning entities","color":"white"}]
@@ -28,7 +29,6 @@ execute if score $global ts.dl.version matches 3400.. if score $amethyst_trimmed
 execute if score $global ts.dl.version matches 3400.. if score $amethyst_trimmed ts.dl.settings matches -1 run tellraw @s [{"text":"[❌] Armor trimmed with amethyst","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
 execute if score $global ts.dl.version matches 3400.. if score $amethyst_trimmed ts.dl.settings matches 2 run tellraw @s [{"text":"[✔] Armor trimmed with amethyst","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
 
-
 tellraw @s {"text":"\nEnable additional light emitting from...","bold":true,"color":"white"}
 
 execute if score $fire_aspect ts.dl.settings matches 1 run tellraw @s [{"text":"[✔] ","bold":true,"color":"green","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle this feature "},{"text":"off","color":"red"},{"text":"."},{"text":"\n⚠ Note: This may lead to decreased performance of some mob farms.","color":"gold"}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_fire_aspect"}},{"text":"Items enchanted with Fire Aspect","color":"white"}]
@@ -47,8 +47,8 @@ execute if score $channeling ts.dl.settings matches 0 run tellraw @s [{"text":"[
 execute if score $channeling ts.dl.settings matches -1 run tellraw @s [{"text":"[❌] Tridents enchanted with Channeling during a thunderstorm","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
 execute if score $channeling ts.dl.settings matches 2 run tellraw @s [{"text":"[✔] Tridents enchanted with Channeling during a thunderstorm","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
 
-
 tellraw @s {"text":"","bold":true,"color":"white"}
+
 execute if score $water_sensitive ts.dl.settings matches 1 run tellraw @s [{"text":"[✔] ","bold":true,"color":"green","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle this feature "},{"text":"off","color":"red"},{"text":". \nIf enabled, water sensitive items such as torches will turn off inside water.","color":"white"}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_water_sensitivity"}},{"text":"Water Sensitivity Check","color":"white"}]
 execute if score $water_sensitive ts.dl.settings matches 0 run tellraw @s [{"text":"[❌] ","bold":true,"color":"red","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle this feature "},{"text":"on","color":"green"},{"text":". \nIf enabled, water sensitive items such as torches will turn off inside water.","color":"white"}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_water_sensitivity"}},{"text":"Water Sensitivity Check","color":"white"}]
 execute if score $water_sensitive ts.dl.settings matches -1 run tellraw @s [{"text":"[❌] Water Sensitivity Check","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]

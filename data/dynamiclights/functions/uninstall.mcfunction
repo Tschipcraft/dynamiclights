@@ -7,6 +7,7 @@ scoreboard objectives remove ts.dl.ghast_cool
 scoreboard objectives remove ts.dl.in_water
 scoreboard objectives remove ts.dl.in_rain
 scoreboard objectives remove ts.dl.sound
+scoreboard objectives remove ts.dl.tnt.fuse
 
 scoreboard objectives remove ts.dl.i.type
 scoreboard objectives remove ts.dl.i.is_ench

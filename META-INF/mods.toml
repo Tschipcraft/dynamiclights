@@ -8,7 +8,7 @@ logoBlur=false
 modId="dynamiclights"
 version="${version}+mod"
 displayName="Dynamic Lights"
-description='''Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a. Because of this, the dynamic lights are limited to the block grid.
+description='''Supported entities and items will emit light by using the light block added in 21w13a.
 
 §lSupported Items:§r Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Amethyst Shards, Nether Stars, Ender Chests and Beacons
 
