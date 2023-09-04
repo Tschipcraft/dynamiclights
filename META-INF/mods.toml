@@ -14,7 +14,7 @@ description='''Supported entities and items will emit light by using the light b
 
 Additionally, all enchanted items will emit light level 6 while Fire Aspect, Riptide or Channeling enchanted items emit light level 9.
 
-§lSupported Entities:§r Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Firework Rockets and Flying Wither Skulls
+§lSupported Entities:§r Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Shulker Bullets, Firework Rockets and Flying Wither Skulls
 
 This mod is completely server-side!
 

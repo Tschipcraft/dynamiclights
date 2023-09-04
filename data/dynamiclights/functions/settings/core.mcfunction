@@ -1,6 +1,6 @@
 ##by Tschipcraft
 
-tellraw @s {"text":"\n=-=Dynamic Lights Admin Settings=-=","bold":true,"color":"dark_green"}
+tellraw @s {"text":"\n=-=Dynamic Lights Settings=-=","bold":true,"color":"dark_green"}
 
 tellraw @s {"text":"\nEnable light emitting from...","bold":true,"color":"white"}
 

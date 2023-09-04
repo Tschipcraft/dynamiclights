@@ -1,8 +1,13 @@
 ##by Tschipcraft
 
+# Remove existing lights
 execute as @e[type=minecraft:marker,tag=ts.dl.light] at @s run function dynamiclights:internal/remove_light
+# Kill parser armor stand
 kill @e[type=minecraft:armor_stand,tag=ts.dl.i.parser]
+# Kill area effect clouds
+kill @e[type=minecraft:area_effect_cloud,tag=ts.dl.explosion]
 
+# Remove scores
 scoreboard objectives remove ts.dl.ghast_cool
 scoreboard objectives remove ts.dl.in_water
 scoreboard objectives remove ts.dl.in_rain
@@ -24,8 +29,13 @@ scoreboard objectives remove tschipcraft.menu
 scoreboard objectives remove ts.dl.version
 scoreboard objectives remove tvc_ignore
 
+# Clear schedules
+schedule clear dynamiclights:internal/main
+schedule clear dynamiclights:internal/loop
+
+# Disable data pack
 datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
 datapack disable "file/${file_name}"
 
-say ⏻ Dynamic Lights ${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack.
+say ⏻ Dynamic Lights v${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack/mod.

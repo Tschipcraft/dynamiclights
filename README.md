@@ -9,7 +9,7 @@
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
-> A data pack for Minecraft 1.17x-1.20x
+> A data pack/mod for Minecraft 1.17x-1.20x
 
 <details>
 <summary>YouTube showcase</summary>
@@ -20,15 +20,15 @@
 
 ## Features
 
-Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a. Because of this, the dynamic lights are limited to the block grid.
+Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a. Because of this, the dynamic lights are limited to the block grid. (see #9 for more information)
 
 **Supported Items:** Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Amethyst Shards, Nether Stars, Ender Chests and Beacons
 
 Additionally, all enchanted items will emit light level 6 while Fire Aspect, Riptide or Channeling enchanted items emit light level 9.
 
-**Supported Entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Firework Rockets and Flying Wither Skulls
+**Supported Entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Shulker Bullets, Firework Rockets and Flying Wither Skulls
 
-This data pack is completely server-side! No Optifine required!
+This data pack/mod is completely server-side! No Optifine required!
 
 [➜ For available settings and planned features, take a look at the wiki](https://github.com/Tschipcraft/dynamiclights/wiki)
 
@@ -36,6 +36,8 @@ This data pack is completely server-side! No Optifine required!
 ## Installation
 
 Download the latest release from [here](https://github.com/Tschipcraft/dynamiclights/releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
+
+This data pack is also available as a mod with an additional global settings menu when installed alongside [MidnightLib](https://modrinth.com/mod/midnightlib). Download the latest release and put the mod .jar file into your `.minecraft/mods` folder.
 
 Also available on Modrinth and CurseForge!
 
@@ -57,4 +59,4 @@ Also available on Modrinth and CurseForge!
 
 ## Manage
 
-To check for updates use `/trigger tschipcraft.menu` and hit the Check for Updates button. There is also a **Reset** and an **Uninstall** button.
+To open the ingame menu, execute `/trigger tschipcraft.menu` or `/function #tschipcraft:menu`. There is a **Reset** and an **Uninstall** button.

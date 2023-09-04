@@ -5,4 +5,7 @@
 # These entities use a different NBT tag for storing the item and need special parsing for detection
 execute as @s[type=#dynamiclights:parse] unless score @s ts.dl.i.type matches 0..15 run function dynamiclights:internal/sources/parse/main
 
-execute as @s[type=!#dynamiclights:dyn_ignore,tag=!global.ignore,tag=!global.ignore.gui,tag=!smithed.strict] positioned ~ ~1 ~ unless entity @s[type=player,gamemode=spectator] run function dynamiclights:internal/sources/entity
+# Offsets for exploding entities
+execute as @s[type=#dynamiclights:may_block_explosion] positioned ~ ~2 ~ run function dynamiclights:internal/sources/entity
+execute as @s[type=minecraft:end_crystal] positioned ~ ~-0.32 ~ run function dynamiclights:internal/sources/entity
+execute as @s[type=!#dynamiclights:may_block_explosion,type=!minecraft:end_crystal] positioned ~ ~1 ~ run function dynamiclights:internal/sources/entity
