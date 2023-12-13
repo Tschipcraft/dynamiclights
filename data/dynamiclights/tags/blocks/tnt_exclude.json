@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "minecraft:observer",
-	"minecraft:slime_block",
-	"minecraft:detector_rail",
-	"minecraft:moving_piston"
+    "minecraft:slime_block",
+    "minecraft:detector_rail",
+    "minecraft:moving_piston"
   ]
 }

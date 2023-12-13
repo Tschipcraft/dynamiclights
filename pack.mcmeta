@@ -1,7 +1,8 @@
 {
+  "id": "dynamiclights",
   "pack": {
     "pack_format": 15,
-    "supported_formats": [7,20],
+    "supported_formats": [7,26],
     "description": "Dynamic Lights by Tschipcraft // Minecraft 1.17x-1.20x"
   }
 }

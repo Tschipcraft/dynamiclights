@@ -6,6 +6,7 @@
     "minecraft:leash_knot",
     "minecraft:llama_spit",
     "minecraft:marker",
-    {"id": "minecraft:text_display", "required": false}
+    {"id": "minecraft:text_display", "required": false},
+    {"id": "minecraft:interaction", "required": false}
   ]
 }

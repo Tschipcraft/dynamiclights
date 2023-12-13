@@ -3,6 +3,6 @@
 # Renews the previous iteration marker
 
 scoreboard players set #light_exists ts.dl.settings 1
-execute if score @s ts.dl.l.level matches ..9 run function dynamiclights:internal/place_light/9/update
-execute as @s[tag=ts.dl.remove] run function dynamiclights:internal/place_light/9/update
+execute if score @s ts.dl.l.level matches ..8 run function dynamiclights:internal/place_light/9/update
+execute if score @s[tag=ts.dl.remove] ts.dl.l.level matches 10.. run function dynamiclights:internal/place_light/9/update
 tag @s remove ts.dl.remove
