@@ -1,6 +1,7 @@
 ##by Tschipcraft
 # Places a dynamic light block with light level 9 in the world
 
+scoreboard players set #check_passed ts.dl.temp 1
 # Kill marker if the dynamic light needed position adjustments
 execute if entity @s[type=minecraft:marker,tag=ts.dl.light] run function dynamiclights:internal/kill_marker
 # Check if a dynamic light already exists here

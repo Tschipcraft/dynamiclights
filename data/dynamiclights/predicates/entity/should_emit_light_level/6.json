@@ -6,12 +6,5 @@
       "condition": "minecraft:reference",
       "name": "dynamiclights:entity/light_level/6"
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/should_emit_light_level/9"
-    }
   }
 ]

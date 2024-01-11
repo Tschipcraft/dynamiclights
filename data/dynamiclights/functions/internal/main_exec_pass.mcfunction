@@ -7,8 +7,8 @@ execute if score $global ts.dl.version matches 3337.. if score $rain_sensitive t
 ## In water?
 scoreboard players add @s ts.dl.in_water 0
 execute if score $water_sensitive ts.dl.settings matches 1..2 as @s[scores={ts.dl.in_water=0}] anchored eyes positioned ^ ^ ^ if predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/enter
-execute as @s[scores={ts.dl.in_water=1},type=!minecraft:item] anchored eyes positioned ^ ^ ^ unless predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/exit
-execute as @s[scores={ts.dl.in_water=1},type=minecraft:item] anchored eyes positioned ^ ^ ^ positioned ~ ~-0.1 ~ unless predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/exit
+execute as @s[type=!minecraft:item,scores={ts.dl.in_water=1}] anchored eyes positioned ^ ^ ^ unless predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/exit
+execute as @s[type=minecraft:item,scores={ts.dl.in_water=1}] anchored eyes positioned ^ ^ ^ positioned ~ ~-0.1 ~ unless predicate dynamiclights:entity/is_in_water run function dynamiclights:internal/water/exit
 
 ## Sound cues for trident enchants
 scoreboard players add @s ts.dl.sound 0
@@ -22,8 +22,8 @@ execute as @s[scores={ts.dl.sound=2},predicate=!dynamiclights:entity/has_channel
 function dynamiclights:internal/sources/core
 
 # Light block sadly blocks explosion damage
-#execute as @s[type=minecraft:creeper,nbt={ignited:1b},tag=!global.ignore,tag=!smithed.strict] at @s run function dynamiclights:summon_light
+#execute as @s[type=minecraft:creeper,nbt={ignited:1b},tag=!global.ignore,tag=!smithed.strict] at @s run function dynamiclights:api/place_light/15
 
 ## Extension for More Mobs
-execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_1] at @s run function dynamiclights:internal/place_light/6/summon
-execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_2] at @s run function dynamiclights:internal/place_light/9/summon
+execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_1] at @s run function dynamiclights:api/place_light/6
+execute as @s[type=minecraft:wither_skeleton,tag=ts.mm.magma_2] at @s run function dynamiclights:api/place_light/9

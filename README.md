@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="pack.png" width="96" height="96" style="image-rendering: pixelated"><br/>
+  <img alt="Icon" src="pack.png" width="96" height="96" style="image-rendering: pixelated"><br/>
   Dynamic Lights
 </h1>
 <p align="center">

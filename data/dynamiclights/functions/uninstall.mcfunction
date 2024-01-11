@@ -22,6 +22,8 @@ scoreboard objectives remove ts.dl.i.is_ript
 scoreboard objectives remove ts.dl.i.is_chann
 scoreboard objectives remove ts.dl.l.level
 
+scoreboard objectives remove ts.dl.temp
+
 scoreboard objectives remove ts.dl.mess.welc
 scoreboard objectives remove ts.dl.settings
 scoreboard objectives remove tschipcraft.menu
@@ -36,6 +38,7 @@ schedule clear dynamiclights:internal/loop
 # Disable data pack
 datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
+datapack disable "mod:dynamiclights"
 datapack disable "file/${file_name}"
 
 say ⏻ Dynamic Lights v${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack/mod.

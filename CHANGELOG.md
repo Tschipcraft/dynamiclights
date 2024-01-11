@@ -1,0 +1,6 @@
+- **Update to Minecraft 1.20.4** 🦇
+- **Improved performance of light placement checks**
+- Moved dynamic light spawn location to eye level
+- Added global function api calls for placing dynamic lights
+- Added a check before removing light markers to make sure the light block itself got removed first
+- Added interaction entities to the ignore tag list

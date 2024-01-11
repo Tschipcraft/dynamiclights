@@ -1,5 +1,6 @@
 ##by Tschipcraft
 
+## Initalise scoreboards
 scoreboard objectives add ts.dl.ghast_cool dummy
 scoreboard objectives add ts.dl.in_water dummy
 scoreboard objectives add ts.dl.in_rain dummy
@@ -31,7 +32,11 @@ scoreboard objectives add ts.dl.i.is_firea dummy
 scoreboard objectives add ts.dl.i.is_ript dummy
 scoreboard objectives add ts.dl.i.is_chann dummy
 
+# Light level associated with marker entities
 scoreboard objectives add ts.dl.l.level dummy
+
+# Scoreboard for any temporary values
+scoreboard objectives add ts.dl.temp dummy
 
 scoreboard objectives add ts.dl.mess.welc dummy
 scoreboard objectives add ts.dl.settings dummy
@@ -57,8 +62,13 @@ scoreboard objectives add tschipcraft.menu trigger
 
 scoreboard objectives add tvc_ignore dummy
 
+## Set load status
+# 17 for v1.7
+scoreboard players set dynamiclights load.status 17
+
+## Schedule functions
 schedule function dynamiclights:internal/main 5t
 schedule function dynamiclights:internal/loop 4t
 
 # Break for any version below Minecraft 1.17
-execute if entity @e[type=minecraft:marker]
+execute if entity @e[type=minecraft:marker,limit=1]
