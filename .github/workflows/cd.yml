@@ -13,10 +13,10 @@ on:
       mc_version_range:
         description: 'Minecraft version(s) the data pack runs in (encoded in version range spec)'
         required: true
-        default: '[1.17,1.20.4]'
+        default: '>=1.17 <=1.20.4'
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -75,20 +75,6 @@ jobs:
           args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r assets pack.mcmeta pack.png LICENSE README.md
 
       # Upload
-      - name: Upload outputs to GitHub releases
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          github-tag: v${{ github.event.inputs.tag }}
-          game-versions: ${{ github.event.inputs.mc_version_range }}
-
-          name: Release v${{ github.event.inputs.tag }}
-          version: v${{ github.event.inputs.tag }}
-          changelog-file: CHANGELOG.*
-
-          files: |
-           ./${{ github.event.repository.name }}-*.@(zip|jar)
-
       - name: Upload data pack version to Modrinth
         uses: Kir-Antipov/mc-publish@v3.3
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
@@ -174,3 +160,19 @@ jobs:
             quilt
           files: |
             ./${{ github.event.repository.name }}-*-mod.jar
+
+      - name: Add changelog header for GitHub release
+        run: sed -i '1i_Changelog:_' CHANGELOG.md
+      - name: Upload outputs to GitHub releases
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-tag: v${{ github.event.inputs.tag }}
+          game-versions: ${{ github.event.inputs.mc_version_range }}
+
+          name: Release v${{ github.event.inputs.tag }}
+          version: v${{ github.event.inputs.tag }}
+          changelog-file: CHANGELOG.md
+
+          files: |
+           ./${{ github.event.repository.name }}-*.@(zip|jar)

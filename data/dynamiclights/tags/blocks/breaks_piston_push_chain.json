@@ -1,0 +1,25 @@
+{
+  "//comment": "Some more immovable blocks could be added here but would worsen the performance of the valid position checks",
+  "replace": false,
+  "values": [
+    "#dynamiclights:air",
+    "#minecraft:portals",
+    "#minecraft:anvil",
+    "minecraft:beacon",
+    "minecraft:bedrock",
+    "minecraft:crying_obsidian",
+    "minecraft:enchanting_table",
+    "minecraft:end_portal_frame",
+    "minecraft:grindstone",
+    "minecraft:jukebox",
+    "minecraft:lodestone",
+    "minecraft:spawner",
+    "minecraft:obsidian",
+    "minecraft:reinforced_deepslate",
+    "minecraft:respawn_anchor",
+    "minecraft:sculk_catalyst",
+    "minecraft:sculk_sensor",
+    "minecraft:sculk_shrieker",
+    "minecraft:piston_head"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:anvil",
+    "#minecraft:concrete_powder",
+    "#minecraft:sand",
+    "minecraft:gravel",
+    {"id": "minecraft:suspicious_gravel", "required": false}
+  ]
+}

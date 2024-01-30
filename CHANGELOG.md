@@ -1,6 +1,3 @@
-- **Update to Minecraft 1.20.4** 🦇
-- **Improved performance of light placement checks**
-- Moved dynamic light spawn location to eye level
-- Added global function api calls for placing dynamic lights
-- Added a check before removing light markers to make sure the light block itself got removed first
-- Added interaction entities to the ignore tag list
+- **Implemented a new system for finding valid locations for dynamic lights.** Checks now actively avoid blocking paths of fluids and pistons (closes [#15](https://github.com/Tschipcraft/dynamiclights/issues/15)), interfering with other redstone components and triggering certain block updates (closes [#12](https://github.com/Tschipcraft/dynamiclights/issues/12))
+- Gave dynamic light marker entities a custom name ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))
+- Fixed dynamic light position offset for item entities

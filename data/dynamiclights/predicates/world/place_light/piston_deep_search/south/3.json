@@ -1,0 +1,39 @@
+[
+  {
+    "//comment": "This predicate returns true if a piston block 3 blocks south is in direct pushing range of the current position",
+    "condition": "minecraft:location_check",
+    "offsetZ": 3,
+    "predicate": {
+      "block": {
+        "tag": "dynamiclights:piston",
+        "state": {
+          "facing": "north"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetZ": 2,
+      "predicate": {
+        "block": {
+          "tag": "dynamiclights:breaks_piston_push_chain"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetZ": 1,
+      "predicate": {
+        "block": {
+          "tag": "dynamiclights:breaks_piston_push_chain"
+        }
+      }
+    }
+  }
+]

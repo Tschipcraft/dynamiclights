@@ -1,10 +1,8 @@
 ##by Tschipcraft
-# Sets the light level for a marker entity and updates it
+# Sets the light level for a dynamic light entity and updates the block
 
 scoreboard players set @s ts.dl.l.level 6
 # Update existing dynamic light block
-execute if block ~ ~ ~ minecraft:light if score #light_exists ts.dl.settings matches 1 run function dynamiclights:internal/place_light/6/prev_it/update
-# Keep player placed light blocks
-execute if block ~ ~ ~ minecraft:light if score #light_exists ts.dl.settings matches 0 run function dynamiclights:internal/kill_marker
-# Place new light block
-execute unless block ~ ~ ~ minecraft:light run function dynamiclights:internal/place_light/6/place_block
+execute if score #light_exists ts.dl.temp matches 1 run function dynamiclights:internal/place_light/6/prev_it/update
+# Place new light block (checking for player placed light blocks is done in summon.mcfunction)
+execute if score #light_exists ts.dl.temp matches 0 run function dynamiclights:internal/place_light/6/place_block

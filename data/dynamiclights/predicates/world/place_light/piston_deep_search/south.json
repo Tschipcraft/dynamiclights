@@ -1,0 +1,17 @@
+[
+  {
+    "//comment": "This predicate returns false if the current position may be affected by a piston in the south direction",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:world/place_light/piston_deep_search/south/2"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:world/place_light/piston_deep_search/south/3"
+    }
+  }
+]
