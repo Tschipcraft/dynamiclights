@@ -12,11 +12,11 @@ execute as @s[type=minecraft:item,scores={ts.dl.in_water=1}] anchored eyes posit
 
 ## Sound cues for trident enchants
 scoreboard players add @s ts.dl.sound 0
-execute as @s[scores={ts.dl.sound=0},predicate=dynamiclights:entity/has_riptide_trident] run function dynamiclights:internal/enchantments/activate/riptide
-execute as @s[scores={ts.dl.sound=1},predicate=!dynamiclights:entity/has_riptide_trident] run function dynamiclights:internal/enchantments/deactivate/riptide
+execute if score $enable_sound ts.dl.settings matches 1..2 as @s[scores={ts.dl.sound=0},predicate=dynamiclights:entity/has_riptide_trident] run function dynamiclights:internal/enchantments/activate/riptide
+execute if score $enable_sound ts.dl.settings matches 1..2 as @s[scores={ts.dl.sound=1},predicate=!dynamiclights:entity/has_riptide_trident] run function dynamiclights:internal/enchantments/deactivate/riptide
 
-execute as @s[scores={ts.dl.sound=0},predicate=dynamiclights:entity/has_channeling_trident] run function dynamiclights:internal/enchantments/activate/channeling
-execute as @s[scores={ts.dl.sound=2},predicate=!dynamiclights:entity/has_channeling_trident] run function dynamiclights:internal/enchantments/deactivate/channeling
+execute if score $enable_sound ts.dl.settings matches 1..2 as @s[scores={ts.dl.sound=0},predicate=dynamiclights:entity/has_channeling_trident] run function dynamiclights:internal/enchantments/activate/channeling
+execute if score $enable_sound ts.dl.settings matches 1..2 as @s[scores={ts.dl.sound=2},predicate=!dynamiclights:entity/has_channeling_trident] run function dynamiclights:internal/enchantments/deactivate/channeling
 
 ## Dispatch light
 function dynamiclights:internal/sources/core

@@ -1,3 +1,4 @@
+- **Update to Minecraft 1.20.5**
 - **Implemented a new system for finding valid locations for dynamic lights.** Checks now actively avoid blocking paths of fluids and pistons (closes [#15](https://github.com/Tschipcraft/dynamiclights/issues/15)), interfering with other redstone components and triggering certain block updates (closes [#12](https://github.com/Tschipcraft/dynamiclights/issues/12))
 - Gave dynamic light marker entities a custom name ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))
 - Fixed dynamic light position offset for item entities

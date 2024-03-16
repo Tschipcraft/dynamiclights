@@ -1,0 +1,145 @@
+[
+  {
+    "//comment": "This predicate returns false, if the tested entity is holding or wearing any amethyst trimmed items",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "items": "#minecraft:trimmable_armor",
+            "count": {
+              "min": 1
+            },
+            "components": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "offhand": {
+            "items": "#minecraft:trimmable_armor",
+            "count": {
+              "min": 1
+            },
+            "components": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "head": {
+            "items": "#minecraft:trimmable_armor",
+            "count": {
+              "min": 1
+            },
+            "components": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "chest": {
+            "items": "#minecraft:trimmable_armor",
+            "count": {
+              "min": 1
+            },
+            "components": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "legs": {
+            "items": "#minecraft:trimmable_armor",
+            "count": {
+              "min": 1
+            },
+            "components": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "feet": {
+            "items": "#minecraft:trimmable_armor",
+            "count": {
+              "min": 1
+            },
+            "components": {
+              "minecraft:trim": {
+                "material": "minecraft:amethyst"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.is_ameth": 1
+      }
+    }
+  }
+]
