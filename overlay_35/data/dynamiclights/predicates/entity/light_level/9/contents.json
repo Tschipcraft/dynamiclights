@@ -1,0 +1,31 @@
+[
+  {
+    "//comment": "This predicate returns true, if the item in the contents slot should light up. The contents slot gets used by item entities and item frames since 24w11a.",
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "slots": {
+        "contents": {
+          "items": "#dynamiclights:light_level/9",
+          "count": {
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/contents/water_immersion_extinguish"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/contents/water_immersion_illuminate"
+    }
+  }
+]
