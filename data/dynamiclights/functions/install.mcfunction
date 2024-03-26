@@ -6,6 +6,7 @@ scoreboard objectives add ts.dl.in_water dummy
 scoreboard objectives add ts.dl.in_rain dummy
 scoreboard objectives add ts.dl.sound dummy
 scoreboard objectives add ts.dl.tnt.fuse dummy
+scoreboard objectives add ts.dl.shulker dummy
 
 # Item score specification
 # Type:

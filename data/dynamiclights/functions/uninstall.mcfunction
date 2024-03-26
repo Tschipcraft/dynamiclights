@@ -4,8 +4,6 @@
 execute as @e[type=minecraft:marker,tag=ts.dl.light] at @s run function dynamiclights:internal/remove_light
 # Kill parser armor stand
 kill @e[type=minecraft:armor_stand,tag=ts.dl.i.parser]
-# Kill area effect clouds
-kill @e[type=minecraft:area_effect_cloud,tag=ts.dl.explosion]
 
 # Remove scores
 scoreboard objectives remove ts.dl.ghast_cool
@@ -13,6 +11,7 @@ scoreboard objectives remove ts.dl.in_water
 scoreboard objectives remove ts.dl.in_rain
 scoreboard objectives remove ts.dl.sound
 scoreboard objectives remove ts.dl.tnt.fuse
+scoreboard objectives remove ts.dl.shulker
 
 scoreboard objectives remove ts.dl.i.type
 scoreboard objectives remove ts.dl.i.is_ench
