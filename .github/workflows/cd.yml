@@ -18,9 +18,12 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    name: Build and publish project
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
       - name: Extract tag
         id: tag_version
         run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
@@ -39,21 +42,27 @@ jobs:
           find: "${version}"
           replace: ${{ github.event.inputs.tag }}
           regex: false
+      - name: Find and replace supported mc versions
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version}"
+          replace: ${{ github.event.inputs.mc_version }}
+          regex: false
 
       # Check for existence of datapack, mod and/or resourcepack folders.
       - name: Check for data folder
         id: check_datapack_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "data"
       - name: Check for mod folders
         id: check_mod_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "META-INF, net, fabric.mod.json, assets"
       - name: Check for resource pack folder
         id: check_assets_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "assets/minecraft"
 

@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "player_interacted": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "type": "#dynamiclights:reparse_interactible"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "player_interacted"
+    ]
+  ],
+  "rewards": {
+    "function": "dynamiclights:internal/item_frame/interacted"
+  }
+}

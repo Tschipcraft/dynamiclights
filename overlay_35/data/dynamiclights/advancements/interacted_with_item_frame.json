@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "player_interacted": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "dynamiclights:internal/item_frame/interacted"
+  }
+}

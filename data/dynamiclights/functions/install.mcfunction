@@ -67,6 +67,9 @@ scoreboard objectives add tvc_ignore dummy
 # 17 for v1.7
 scoreboard players set dynamiclights load.status 17
 
+# Reset advancement
+advancement revoke @a only dynamiclights:interacted_with_item_frame
+
 ## Schedule functions
 schedule function dynamiclights:internal/main 5t
 schedule function dynamiclights:internal/loop 4t
