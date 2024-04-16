@@ -28,8 +28,6 @@ Additionally, all enchanted items will emit light level 6 while Fire Aspect, Rip
 
 **Supported Entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Shulker Bullets, Firework Rockets and Flying Wither Skulls
 
-This data pack/mod is completely server-side! No Optifine required!
-
 Since this project is completely server-side, players joining a server with Dynamic Lights installed do not have to install anything on their end for it to work! Nontheless, you can still use the mod on
 the client for singleplayer worlds only. Joining a server that has not installed Dynamic Lights will have no effect.
 
