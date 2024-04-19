@@ -1,6 +1,6 @@
 [
   {
-    "//comment": "This predicate returns false if the tested entity is holding a item that should extinguish inside water (Specified in tags/items/water_sensitive/turn_off)",
+    "//comment": "This predicate returns false if the tested entity is holding or wearing an item that should extinguish inside water (specified in tags/items/water_sensitive/turn_off)",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:entity_properties",
@@ -40,6 +40,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
+        "type": "#dynamiclights:single_slot_entities",
         "slots": {
           "contents": {
             "items": "#dynamiclights:water_sensitive/turn_off",

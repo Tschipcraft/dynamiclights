@@ -1,6 +1,6 @@
 [
   {
-    "//comment": "This predicate returns true, if the item in the mainhand is a light level 15 item (Used by the item parser)",
+    "//comment": "This predicate returns true, if the item in the mainhand is a light level 15 item (solely used by the item parser)",
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {

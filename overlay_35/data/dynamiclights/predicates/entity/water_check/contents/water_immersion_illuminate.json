@@ -1,9 +1,10 @@
 [
   {
-    "//comment": "This predicate returns true if the item in the head should not light up, because the entity is outside water.",
+    "//comment": "This predicate returns true if the item in the contents slot should not light up, because the entity is outside water.",
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
+      "type": "#dynamiclights:single_slot_entities",
       "slots": {
         "contents": {
           "items": "#dynamiclights:water_sensitive/turn_on",

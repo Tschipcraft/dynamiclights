@@ -1,4 +1,5 @@
 {
+  "//version_notice": "This advancement is not needed anymore, since item frame content is now checkable via the slot contents. Take a look at tags/entity_types/single_slot_entities.json.",
   "criteria": {
     "player_interacted": {
       "trigger": "minecraft:impossible"

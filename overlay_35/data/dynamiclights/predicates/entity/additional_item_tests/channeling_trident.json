@@ -64,6 +64,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
+        "type": "#dynamiclights:single_slot_entities",
         "slots": {
           "contents": {
             "items": [

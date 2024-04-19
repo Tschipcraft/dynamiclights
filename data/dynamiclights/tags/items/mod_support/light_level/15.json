@@ -1,0 +1,8 @@
+{
+  "//comment": "Items listed here will emit light level 15 - Intended to get populated by mods",
+  "replace": false,
+  "values": [
+    {"id": "#c:lanterns", "required": false},
+    {"id": "#c:lava_buckets", "required": false}
+  ]
+}
