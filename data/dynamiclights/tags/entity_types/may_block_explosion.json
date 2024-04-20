@@ -4,6 +4,7 @@
     "minecraft:creeper",
     "minecraft:fireball",
     "minecraft:small_fireball",
-    "minecraft:wither_skull"
+    "minecraft:wither_skull",
+    "minecraft:tnt_minecart"
   ]
 }

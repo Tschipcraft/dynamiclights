@@ -44,7 +44,7 @@ public class Init {
 				@SubscribeEvent
 				public void onServerStarted(ServerStartedEvent event) {
 					if (ModList.get().isLoaded("midnightlib")) {
-						LOGGER.info("[Dynamic Lights] Sending global config to server...");
+						LOGGER.info("[Dynamic Lights] Sending global config to world...");
 						sendConfig.sendConfig(event.getServer());
 					}
 				}
