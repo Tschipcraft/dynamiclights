@@ -3,6 +3,7 @@
   "replace": false,
   "values": [
     "minecraft:tnt",
-    "minecraft:shulker_bullet"
+    "minecraft:shulker_bullet",
+    {"id": "minecraft:allay", "required": false}
   ]
 }

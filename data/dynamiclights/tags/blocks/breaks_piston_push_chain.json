@@ -15,11 +15,11 @@
     "minecraft:lodestone",
     "minecraft:spawner",
     "minecraft:obsidian",
-    "minecraft:reinforced_deepslate",
+    "minecraft:piston_head",
     "minecraft:respawn_anchor",
-    "minecraft:sculk_catalyst",
-    "minecraft:sculk_sensor",
-    "minecraft:sculk_shrieker",
-    "minecraft:piston_head"
+    {"id": "minecraft:reinforced_deepslate", "required": false},
+    {"id": "minecraft:sculk_catalyst", "required": false},
+    {"id": "minecraft:sculk_sensor", "required": false},
+    {"id": "minecraft:sculk_shrieker", "required": false}
   ]
 }

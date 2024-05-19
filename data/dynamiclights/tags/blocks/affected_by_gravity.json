@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#minecraft:anvil",
-    "#minecraft:concrete_powder",
+    {"id": "#minecraft:concrete_powder", "required": false},
     "#minecraft:sand",
     "minecraft:gravel",
     {"id": "minecraft:suspicious_gravel", "required": false}

@@ -8,10 +8,12 @@
     "minecraft:nether_star",
     "minecraft:amethyst_cluster",
     "minecraft:amethyst_shard",
-    "minecraft:enchanting_table",
-    "minecraft:ender_chest",
-    "minecraft:sculk_catalyst",
     "minecraft:glow_lichen",
+    "minecraft:enchanted_golden_apple",
+    "minecraft:enchanting_table",
+    "minecraft:enchanted_book",
+    "minecraft:ender_chest",
+    {"id": "minecraft:sculk_catalyst", "required": false},
     {"id": "minecraft:vault", "required": false},
     {"id": "#dynamiclights:mod_support/light_level/6", "required": false}
   ]

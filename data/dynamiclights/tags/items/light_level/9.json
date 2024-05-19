@@ -2,19 +2,19 @@
   "//comment": "Items listed here will emit light level 9",
   "replace": false,
   "values": [
-    "minecraft:blaze_rod",
-    "minecraft:crying_obsidian",
-    "minecraft:end_crystal",
-    "minecraft:glow_berries",
-    "minecraft:glow_ink_sac",
-    "minecraft:glow_item_frame",
-    "minecraft:glowstone_dust",
-    "minecraft:prismarine_crystals",
-    "minecraft:sea_pickle",
     "minecraft:soul_torch",
     "minecraft:soul_lantern",
     "minecraft:soul_campfire",
+    "minecraft:glowstone_dust",
+    "minecraft:blaze_rod",
     "minecraft:spectral_arrow",
+    "minecraft:glow_berries",
+    "minecraft:glow_item_frame",
+    "minecraft:glow_ink_sac",
+    "minecraft:prismarine_crystals",
+    "minecraft:sea_pickle",
+    "minecraft:crying_obsidian",
+    "minecraft:end_crystal",
     {"id": "#dynamiclights:mod_support/light_level/9", "required": false}
   ]
 }

@@ -2,7 +2,7 @@
 
 ## In Rain? (exclusive 1.19.4+ feature)
 scoreboard players reset @s ts.dl.in_rain
-execute if score $global ts.dl.version matches 3337.. if score $rain_sensitive ts.dl.settings matches 1..2 if predicate dynamiclights:world/is_raining run function dynamiclights:internal/water/rain_check
+execute if score $global ts.dl.version matches 3337.. if score $rain_sensitive ts.dl.settings matches 1..2 if predicate dynamiclights:world/is_raining run function dynamiclights:internal/water/rain_check_1194
 
 ## In water?
 scoreboard players add @s ts.dl.in_water 0

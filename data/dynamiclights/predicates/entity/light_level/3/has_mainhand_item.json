@@ -1,0 +1,17 @@
+[
+  {
+    "//comment": "This predicate returns true, if the item in the mainhand is a light level 3 item (solely used by the item parser)",
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "mainhand": {
+          "tag": "dynamiclights:light_level/3",
+          "count": {
+            "min": 1
+          }
+        }
+      }
+    }
+  }
+]

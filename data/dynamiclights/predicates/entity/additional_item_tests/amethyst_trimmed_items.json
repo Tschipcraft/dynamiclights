@@ -8,7 +8,7 @@
       "predicate": {
         "equipment": {
           "mainhand": {
-            "tag": "minecraft:trimmable_armor",
+            "tag": "dynamiclights:trimmable_armor",
             "count": {
               "min": 1
             },
@@ -26,7 +26,7 @@
       "predicate": {
         "equipment": {
           "offhand": {
-            "tag": "minecraft:trimmable_armor",
+            "tag": "dynamiclights:trimmable_armor",
             "count": {
               "min": 1
             },
@@ -44,7 +44,7 @@
       "predicate": {
         "equipment": {
           "head": {
-            "tag": "minecraft:trimmable_armor",
+            "tag": "dynamiclights:trimmable_armor",
             "count": {
               "min": 1
             },
@@ -62,7 +62,7 @@
       "predicate": {
         "equipment": {
           "chest": {
-            "tag": "minecraft:trimmable_armor",
+            "tag": "dynamiclights:trimmable_armor",
             "count": {
               "min": 1
             },
@@ -80,7 +80,7 @@
       "predicate": {
         "equipment": {
           "legs": {
-            "tag": "minecraft:trimmable_armor",
+            "tag": "dynamiclights:trimmable_armor",
             "count": {
               "min": 1
             },
@@ -98,7 +98,7 @@
       "predicate": {
         "equipment": {
           "feet": {
-            "tag": "minecraft:trimmable_armor",
+            "tag": "dynamiclights:trimmable_armor",
             "count": {
               "min": 1
             },
