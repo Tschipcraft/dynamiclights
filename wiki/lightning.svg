@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="7px" version="1.1" viewBox="0 0 7 7" width="7px">
+  <defs/>
+  <g id="xfff200_r255_g242_b0_a1.0">
+    <path d="M 5,4 5,5 4,5 4,4 1,4 1,3 2,3 2,2 3,2 3,3 6,3 6,4 z" fill="#fff200" fill-opacity="1.0" id="xfff200_r255_g242_b0_a1.0_shape1"/>
+    <path d="M 4,0 5,0 5,1 4,1 z" fill="#fff200" fill-opacity="1.0" id="xfff200_r255_g242_b0_a1.0_shape2"/>
+    <path d="M 4,2 3,2 3,1 4,1 z" fill="#fff200" fill-opacity="1.0" id="xfff200_r255_g242_b0_a1.0_shape3"/>
+    <path d="M 3,6 3,5 4,5 4,6 z" fill="#fff200" fill-opacity="1.0" id="xfff200_r255_g242_b0_a1.0_shape4"/>
+    <path d="M 2,7 2,6 3,6 3,7 z" fill="#fff200" fill-opacity="1.0" id="xfff200_r255_g242_b0_a1.0_shape5"/>
+  </g>
+  <g id="xffe300_r255_g227_b0_a1.0">
+    <path d="M 4,2 4,1 5,1 5,2 z" fill="#ffe300" fill-opacity="1.0" id="xffe300_r255_g227_b0_a1.0_shape1"/>
+    <path d="M 3,3 3,2 4,2 4,3 z" fill="#ffe300" fill-opacity="1.0" id="xffe300_r255_g227_b0_a1.0_shape2"/>
+    <path d="M 3,5 3,4 4,4 4,5 z" fill="#ffe300" fill-opacity="1.0" id="xffe300_r255_g227_b0_a1.0_shape3"/>
+    <path d="M 2,5 3,5 3,6 2,6 z" fill="#ffe300" fill-opacity="1.0" id="xffe300_r255_g227_b0_a1.0_shape4"/>
+  </g>
+</svg>

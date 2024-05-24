@@ -29,7 +29,7 @@
     }
   },
   {
-    "//comment": "This part ensures that the campfire item is lit or not. (Compatibility for The Creeper's Code)",
+    "//comment": "This part ensures that the campfire item is lit. (Compatibility for The Creeper's Code)",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:entity_properties",

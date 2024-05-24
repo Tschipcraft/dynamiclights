@@ -3,13 +3,13 @@
   Dynamic Lights
 </h1>
 <p align="center">
-  <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
-  <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights"><img src="https://img.shields.io/curseforge/dt/831385?logo=curseforge&label=CurseForge&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
-  <a href="https://modrinth.com/datapack/dynamic-lights"><img src="https://img.shields.io/modrinth/dt/dynamic-lights?label=Modrinth&colorA=0c0906&colorB=fbc703&style=for-the-badge&logo=modrinth"></a>
-  <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
+  <a href="https://github.com/Tschipcraft/dynamiclights/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/Tschipcraft/dynamiclights?colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
+  <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights"><img alt="CurseForge Downloads" src="https://img.shields.io/curseforge/dt/831385?logo=curseforge&label=CurseForge&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
+  <a href="https://modrinth.com/datapack/dynamic-lights"><img alt="Modrinth Downloads" src="https://img.shields.io/modrinth/dt/dynamic-lights?label=Modrinth&colorA=0c0906&colorB=fbc703&style=for-the-badge&logo=modrinth"></a>
+  <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
-> A data pack/mod for Minecraft 1.17x-1.20x
+> A server-side data pack/mod for Minecraft 1.17x-1.20x
 
 <details>
 <summary>YouTube showcase</summary>
@@ -28,7 +28,8 @@ Additionally, all enchanted items will emit light level 6 while Fire Aspect, Rip
 
 **Supported Entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Shulker Bullets, Firework Rockets and Flying Wither Skulls
 
-This data pack/mod is completely server-side! No Optifine required!
+Since this project is completely server-side, players joining a server with Dynamic Lights installed do not have to install anything on their end for it to work! Nontheless, you can still use the mod on
+the client for singleplayer worlds only. Joining a server that has not installed Dynamic Lights will have no effect.
 
 [➜ For available settings and planned features, take a look at the wiki](https://github.com/Tschipcraft/dynamiclights/wiki)
 
@@ -37,7 +38,7 @@ This data pack/mod is completely server-side! No Optifine required!
 
 Download the latest release from [here](https://github.com/Tschipcraft/dynamiclights/releases/latest) and put the datapack zip file into the `datapacks` folder of your Minecraft world.
 
-This data pack is also available as a mod with an additional global settings menu when installed alongside [MidnightLib](https://modrinth.com/mod/midnightlib). Download the latest release and put the mod .jar file into your `.minecraft/mods` folder.
+This data pack is also available as a mod with an additional global config file and settings menu when installed alongside [MidnightLib](https://modrinth.com/mod/midnightlib). Download the latest release and put the mod .jar file into your `.minecraft/mods` folder.
 
 Also available on Modrinth and CurseForge!
 

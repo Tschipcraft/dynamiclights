@@ -9,8 +9,10 @@ scoreboard players set .global ts.dl.i.is_ript 0
 scoreboard players set .global ts.dl.i.is_chann 0
 
 # Light Level
+execute if predicate dynamiclights:entity/light_level/3/has_mainhand_item run scoreboard players set .global ts.dl.i.type 1
 execute if predicate dynamiclights:entity/light_level/6/has_mainhand_item run scoreboard players set .global ts.dl.i.type 2
 execute if predicate dynamiclights:entity/light_level/9/has_mainhand_item run scoreboard players set .global ts.dl.i.type 3
+execute if predicate dynamiclights:entity/light_level/12/has_mainhand_item run scoreboard players set .global ts.dl.i.type 4
 execute if predicate dynamiclights:entity/light_level/15/has_mainhand_item run scoreboard players set .global ts.dl.i.type 5
 
 # Water Check

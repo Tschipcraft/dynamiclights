@@ -3,4 +3,4 @@
 
 scoreboard players reset @e[type=#dynamiclights:reparse] ts.dl.i.type
 
-schedule function dynamiclights:internal/loop 8t
+schedule function dynamiclights:internal/loop 4s

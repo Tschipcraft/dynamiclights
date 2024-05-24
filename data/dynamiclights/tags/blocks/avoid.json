@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:moving_piston",
+    "minecraft:piston",
+    "minecraft:sticky_piston",
+    "minecraft:piston_head",
+    "minecraft:redstone_torch",
+    "minecraft:redstone_wall_torch",
+    "minecraft:redstone_wire",
+    "minecraft:repeater",
+    "minecraft:comparator",
+    "minecraft:observer",
+    "minecraft:redstone_lamp",
+    "minecraft:detector_rail",
+    "minecraft:iron_trapdoor",
+    "minecraft:iron_door",
+    "minecraft:slime_block",
+    "minecraft:honey_block",
+    "minecraft:tnt",
+    "minecraft:sponge",
+    "minecraft:lava",
+    "minecraft:frosted_ice",
+    "#dynamiclights:affected_by_gravity"
+  ]
+}

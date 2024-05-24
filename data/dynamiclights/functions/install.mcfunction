@@ -6,6 +6,7 @@ scoreboard objectives add ts.dl.in_water dummy
 scoreboard objectives add ts.dl.in_rain dummy
 scoreboard objectives add ts.dl.sound dummy
 scoreboard objectives add ts.dl.tnt.fuse dummy
+scoreboard objectives add ts.dl.shulker dummy
 
 # Item score specification
 # Type:
@@ -65,6 +66,9 @@ scoreboard objectives add tvc_ignore dummy
 ## Set load status
 # 17 for v1.7
 scoreboard players set dynamiclights load.status 17
+
+# Reset advancement
+advancement revoke @a only dynamiclights:interacted_with_item_frame
 
 ## Schedule functions
 schedule function dynamiclights:internal/main 5t

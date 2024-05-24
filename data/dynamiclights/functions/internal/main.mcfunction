@@ -7,7 +7,7 @@ tag @e[type=minecraft:marker,tag=ts.dl.light] add ts.dl.remove
 execute as @e[type=minecraft:tnt] at @s run function dynamiclights:internal/explosion_detection/tnt
 
 # Core
-execute as @e[type=!#dynamiclights:dyn_ignore,tag=!smithed.strict,tag=!global.ignore,tag=!global.ignore.gui] at @s run function dynamiclights:internal/main_exec
+execute unless score $global ts.dl.tnt.fuse matches 1 as @e[type=!#dynamiclights:dyn_ignore,tag=!smithed.strict,tag=!global.ignore,tag=!global.ignore.gui] unless entity @s[type=minecraft:player,gamemode=spectator] at @s run function dynamiclights:internal/main_exec
 
 # Clear old lights
 execute as @e[type=minecraft:marker,tag=ts.dl.remove] at @s run function dynamiclights:internal/remove_light

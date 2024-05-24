@@ -13,14 +13,17 @@ on:
       mc_version_range:
         description: 'Minecraft version(s) the data pack runs in (encoded in version range spec)'
         required: true
-        default: '[1.17,1.20.4]'
+        default: '>=1.17 <=1.20.4'
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    name: Build and publish project
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.5.3
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
       - name: Extract tag
         id: tag_version
         run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
@@ -39,21 +42,27 @@ jobs:
           find: "${version}"
           replace: ${{ github.event.inputs.tag }}
           regex: false
+      - name: Find and replace supported mc versions
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version}"
+          replace: ${{ github.event.inputs.mc_version }}
+          regex: false
 
       # Check for existence of datapack, mod and/or resourcepack folders.
       - name: Check for data folder
         id: check_datapack_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "data"
       - name: Check for mod folders
         id: check_mod_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "META-INF, net, fabric.mod.json, assets"
       - name: Check for resource pack folder
         id: check_assets_folder
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "assets/minecraft"
 
@@ -75,20 +84,6 @@ jobs:
           args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r assets pack.mcmeta pack.png LICENSE README.md
 
       # Upload
-      - name: Upload outputs to GitHub releases
-        uses: Kir-Antipov/mc-publish@v3.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          github-tag: v${{ github.event.inputs.tag }}
-          game-versions: ${{ github.event.inputs.mc_version_range }}
-
-          name: Release v${{ github.event.inputs.tag }}
-          version: v${{ github.event.inputs.tag }}
-          changelog-file: CHANGELOG.*
-
-          files: |
-           ./${{ github.event.repository.name }}-*.@(zip|jar)
-
       - name: Upload data pack version to Modrinth
         uses: Kir-Antipov/mc-publish@v3.3
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
@@ -174,3 +169,19 @@ jobs:
             quilt
           files: |
             ./${{ github.event.repository.name }}-*-mod.jar
+
+      - name: Add changelog header for GitHub release
+        run: sed -i '1i_Changelog:_' CHANGELOG.md
+      - name: Upload outputs to GitHub releases
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-tag: v${{ github.event.inputs.tag }}
+          game-versions: ${{ github.event.inputs.mc_version_range }}
+
+          name: Release v${{ github.event.inputs.tag }}
+          version: v${{ github.event.inputs.tag }}
+          changelog-file: CHANGELOG.md
+
+          files: |
+           ./${{ github.event.repository.name }}-*.@(zip|jar)
