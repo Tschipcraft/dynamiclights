@@ -8,15 +8,15 @@
   "overlays": {
     "entries": [
       {
-        "formats": [16,41],
+        "formats": [16,99],
         "directory": "overlay_16"
       },
       {
-        "formats": [33,41],
+        "formats": [33,99],
         "directory": "overlay_33"
       },
       {
-        "formats": [35,41],
+        "formats": [35,99],
         "directory": "overlay_35"
       },
       {
