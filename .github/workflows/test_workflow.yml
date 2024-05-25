@@ -71,17 +71,17 @@ jobs:
         uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r data 'overlay_*' pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r data overlay_16 overlay_33 overlay_35 overlay_disable_trim pack.mcmeta pack.png LICENSE README.md
       - name: Create mod jar file
         uses: montudor/action-zip@v1
         if: steps.check_mod_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r data 'overlay_*' assets META-INF net fabric.mod.json pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r data overlay_16 overlay_33 overlay_35 overlay_disable_trim assets META-INF net fabric.mod.json pack.mcmeta pack.png LICENSE README.md
       - name: Create asset pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r assets 'overlay_*' pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r assets overlay_16 overlay_33 overlay_35 overlay_disable_trim pack.mcmeta pack.png LICENSE README.md
 
       # Upload
       - name: Capture datapack build artifact
