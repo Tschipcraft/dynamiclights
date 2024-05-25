@@ -1,3 +1,5 @@
+Hotfix for v1.8 - the data pack now actually includes the overlays for compatibility with 1.20.6 (closes [#34](https://github.com/Tschipcraft/dynamiclights/issues/34))
+
 - **Update to Minecraft 1.20.6 🐺**  
   These changes utilize overlays to maintain backwards compatibility  
   - Switched to testing components rather than NBT  in predicates
