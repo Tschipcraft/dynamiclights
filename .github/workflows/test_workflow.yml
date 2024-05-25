@@ -1,0 +1,98 @@
+name: Continuous Deployment (Test)
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version of the data pack'
+        required: true
+        default: '1.0'
+      mc_version:
+        description: 'Minecraft version(s) the data pack runs in (human readable)'
+        required: true
+        default: '1.17x-1.20x'
+      mc_version_range:
+        description: 'Minecraft version(s) the data pack runs in (encoded in version range spec)'
+        required: true
+        default: '>=1.17 <=1.20.4'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build and publish project
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+      - name: Extract tag
+        id: tag_version
+        run: echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+
+      # Automatically set version numbers
+      - name: Find and replace uninstall file name
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${file_name}"
+          replace: ${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip
+          regex: false
+          include: "**uninstall.mcfunction"
+      - name: Find and replace data pack version
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${version}"
+          replace: ${{ github.event.inputs.tag }}
+          regex: false
+      - name: Find and replace supported mc versions
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version}"
+          replace: ${{ github.event.inputs.mc_version }}
+          regex: false
+
+      # Check for existence of datapack, mod and/or resourcepack folders.
+      - name: Check for data folder
+        id: check_datapack_folder
+        uses: andstor/file-existence-action@v3
+        with:
+          files: "data"
+      - name: Check for mod folders
+        id: check_mod_folder
+        uses: andstor/file-existence-action@v3
+        with:
+          files: "META-INF, net, fabric.mod.json, assets"
+      - name: Check for resource pack folder
+        id: check_assets_folder
+        uses: andstor/file-existence-action@v3
+        with:
+          files: "assets/minecraft"
+
+      # Package project
+      - name: Create data pack zip file
+        uses: montudor/action-zip@v1
+        if: steps.check_datapack_folder.outputs.files_exists == 'true'
+        with:
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r data 'overlay_*' pack.mcmeta pack.png LICENSE README.md
+      - name: Create mod jar file
+        uses: montudor/action-zip@v1
+        if: steps.check_mod_folder.outputs.files_exists == 'true'
+        with:
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r data 'overlay_*' assets META-INF net fabric.mod.json pack.mcmeta pack.png LICENSE README.md
+      - name: Create asset pack zip file
+        uses: montudor/action-zip@v1
+        if: steps.check_assets_folder.outputs.files_exists == 'true'
+        with:
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r assets 'overlay_*' pack.mcmeta pack.png LICENSE README.md
+
+      # Upload
+      - name: Capture datapack build artifact
+        if: steps.check_datapack_folder.outputs.files_exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: "Dynamic Lights (Datapack)"
+          path: ./${{ github.event.repository.name }}-*.zip
+      - name: Capture mod build artifact
+        if: steps.check_mod_folder.outputs.files_exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: "Dynamic Lights (Mod)"
+          path: ./${{ github.event.repository.name }}-*-mod.jar
