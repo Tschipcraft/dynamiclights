@@ -2,21 +2,21 @@
   "id": "dynamiclights",
   "pack": {
     "pack_format": 15,
-    "supported_formats": [7,41],
+    "supported_formats": [7,45],
     "description": "Tschipcraft's Dynamic Lights \n└ v${version} ● mc${mc_version}"
   },
   "overlays": {
     "entries": [
       {
-        "formats": [16,99],
+        "formats": [16,44],
         "directory": "overlay_16"
       },
       {
-        "formats": [33,99],
+        "formats": [33,44],
         "directory": "overlay_33"
       },
       {
-        "formats": [35,99],
+        "formats": [35,44],
         "directory": "overlay_35"
       },
       {

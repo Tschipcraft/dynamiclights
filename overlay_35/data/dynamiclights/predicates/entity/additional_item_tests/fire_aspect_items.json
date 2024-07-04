@@ -1,6 +1,7 @@
 [
   {
     "//comment": "This predicate returns false, if the tested entity is holding any fire aspect enchanted items",
+    "//version": "enchantments alongside enchantment is included for 24w18a-24w21a",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:entity_properties",
@@ -15,6 +16,7 @@
               "minecraft:enchantments": [
                 {
                   "enchantment": "minecraft:fire_aspect",
+                  "enchantments": "minecraft:fire_aspect",
                   "levels": {
                     "min": 1
                   }
@@ -41,6 +43,7 @@
               "minecraft:enchantments": [
                 {
                   "enchantment": "minecraft:fire_aspect",
+                  "enchantments": "minecraft:fire_aspect",
                   "levels": {
                     "min": 1
                   }
@@ -68,6 +71,7 @@
               "minecraft:enchantments": [
                 {
                   "enchantment": "minecraft:fire_aspect",
+                  "enchantments": "minecraft:fire_aspect",
                   "levels": {
                     "min": 1
                   }
