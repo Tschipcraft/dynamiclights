@@ -1,0 +1,9 @@
+{
+  "//comment": "Entities specified here will always emit light level 6",
+  "replace": false,
+  "values": [
+    "minecraft:tnt",
+    "minecraft:shulker_bullet",
+    {"id": "minecraft:allay", "required": false}
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "//comment": "This predicate returns true, if the tested entity is holding a with riptide enchanted trident underwater and this feature is enabled",
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$riptide"
+      },
+      "score": "ts.dl.settings"
+    },
+    "range": {
+      "min": 1,
+      "max": 2
+    }
+  },
+  {
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+      "ts.dl.in_water": 1
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/additional_item_tests/riptide_trident"
+    }
+  }
+]

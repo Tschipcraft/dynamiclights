@@ -1,0 +1,10 @@
+[
+  {
+    "//comment": "This predicate returns true if the tested entity should emit light level 6",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/6"
+    }
+  }
+]

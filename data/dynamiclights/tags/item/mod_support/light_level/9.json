@@ -1,0 +1,9 @@
+{
+  "//comment": "Items listed here will emit light level 9 - Intended to get populated by mods",
+  "replace": false,
+  "values": [
+    {"id": "#c:glow_berries", "required": false},
+    {"id": "#c:glowstone_dusts", "required": false},
+    {"id": "#forge:rods/blaze", "required": false}
+  ]
+}

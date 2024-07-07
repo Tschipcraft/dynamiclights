@@ -1,0 +1,27 @@
+[
+  {
+    "//comment": "This predicate returns true, if the tested entity is on fire and this feature is enabled",
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$enable_on_fire"
+      },
+      "score": "ts.dl.settings"
+    },
+    "range": {
+      "min": 1,
+      "max": 2
+    }
+  },
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "flags": {
+        "is_on_fire": true
+      }
+    }
+  }
+]

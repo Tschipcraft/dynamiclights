@@ -1,0 +1,7 @@
+{
+  "//comment": "Items listed here will emit light level 12",
+  "replace": false,
+  "values": [
+    {"id": "#dynamiclights:mod_support/light_level/12", "required": false}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "//comment": "Items listed here will only emit light inside water",
+  "replace": false,
+  "values": [
+    "minecraft:sea_pickle",
+    "minecraft:prismarine_crystals",
+    "minecraft:heart_of_the_sea",
+    {"id": "#dynamiclights:mod_support/water_sensitive/turn_on", "required": false}
+  ]
+}

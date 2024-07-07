@@ -1,0 +1,40 @@
+[
+  {
+    "//comment": "This predicate returns true, if the item in the mainhand is a light level 15 item (solely used by the item parser)",
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "mainhand": {
+          "items": "#dynamiclights:light_level/15",
+          "count": {
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "//comment": "This part ensures that the campfire item is lit. (Compatibility for The Creeper's Code)",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "equipment": {
+          "mainhand": {
+            "items": [
+              "minecraft:campfire",
+              "minecraft:soul_campfire"
+            ],
+            "components": {
+              "minecraft:block_state": {
+                "lit": "fase"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

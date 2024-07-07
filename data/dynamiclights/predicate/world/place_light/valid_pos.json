@@ -1,0 +1,132 @@
+[
+  {
+    "//comment": "This predicate returns true if the tested location including its surroundings is safe to place a light source",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:world/place_light/pos_blocked"
+    }
+  },
+  {
+    "//comment": "Don't block off flowing water above",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetY": 1,
+      "predicate": {
+        "fluid": {
+          "fluids": "minecraft:flowing_water"
+        }
+      }
+    }
+  },
+  {
+    "//comment": "Don't block off flowing lava above",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetY": 1,
+      "predicate": {
+        "fluid": {
+          "fluids": "minecraft:flowing_lava"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetY": 1,
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:avoid"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetY": -1,
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:avoid"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetX": 1,
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:avoid"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetX": -1,
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:avoid"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetZ": 1,
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:avoid"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetZ": -1,
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:avoid"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:world/place_light/piston_deep_search/north"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:world/place_light/piston_deep_search/south"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:world/place_light/piston_deep_search/west"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:world/place_light/piston_deep_search/east"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:world/place_light/piston_deep_search/up"
+  },
+  {
+    "condition": "minecraft:reference",
+    "name": "dynamiclights:world/place_light/piston_deep_search/down"
+  }
+]

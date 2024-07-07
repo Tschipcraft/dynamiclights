@@ -1,0 +1,29 @@
+[
+  {
+    "//comment": "This predicate returns true, if the tested entity is holding a with riptide enchanted trident while in a thunderstorm and this feature is enabled",
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$channeling"
+      },
+      "score": "ts.dl.settings"
+    },
+    "range": {
+      "min": 1,
+      "max": 2
+    }
+  },
+  {
+    "condition": "minecraft:weather_check",
+    "thundering": true
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/additional_item_tests/channeling_trident"
+    }
+  }
+]

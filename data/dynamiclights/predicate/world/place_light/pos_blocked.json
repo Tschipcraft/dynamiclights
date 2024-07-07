@@ -1,0 +1,30 @@
+[
+  {
+    "//comment": "This predicate returns false if the tested position is replacable by a light block",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "block": {
+          "blocks": "#dynamiclights:air"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "block": {
+          "//comment": "Specifying water here prevents replacing any waterlogged blocks that are not purely water",
+          "blocks": "minecraft:water"
+        },
+        "fluid": {
+          "//comment": "Specifying water here prevents replacing flowing_water blocks with water source blocks",
+          "fluids": "minecraft:water"
+        }
+      }
+    }
+  }
+]

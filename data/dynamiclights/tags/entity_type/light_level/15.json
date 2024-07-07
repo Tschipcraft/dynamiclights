@@ -1,0 +1,9 @@
+{
+  "//comment": "Entities specified here will always emit light level 15",
+  "replace": false,
+  "values": [
+    "minecraft:end_crystal",
+    "minecraft:fireball",
+    "minecraft:lightning_bolt"
+  ]
+}
