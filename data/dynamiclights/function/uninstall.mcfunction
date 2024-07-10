@@ -32,7 +32,6 @@ scoreboard objectives remove tvc_ignore
 
 # Clear schedules
 schedule clear dynamiclights:internal/main
-schedule clear dynamiclights:internal/loop
 
 # Disable data pack
 datapack disable "file/dynamiclights"

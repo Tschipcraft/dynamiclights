@@ -1,4 +1,5 @@
 ##by Tschipcraft
+# This doesn't seem to work anymore :(
 
 execute store result score $gamerule.send_feedback ts.dl.settings run gamerule sendCommandFeedback
 

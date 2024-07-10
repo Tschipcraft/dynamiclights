@@ -12,8 +12,5 @@ execute unless score $global ts.dl.tnt.fuse matches 1 as @e[type=!#dynamiclights
 # Clear old lights
 execute as @e[type=minecraft:marker,tag=ts.dl.remove] at @s run function dynamiclights:internal/remove_light
 
-# Menu
-function dynamiclights:internal/menu
-
 # Repeat
 schedule function dynamiclights:internal/main 1t

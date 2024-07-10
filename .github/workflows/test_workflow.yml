@@ -71,17 +71,17 @@ jobs:
         uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r . -x assets/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* CHANGELOG.md ".*"
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r . -x assets/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* CHANGES.md ".*"
       - name: Create mod jar file
         uses: montudor/action-zip@v1
         if: steps.check_mod_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r . -x unused/* src/* wiki/* CHANGELOG.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip"
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r . -x unused/* src/* wiki/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip"
       - name: Create asset pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r . -x data/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* CHANGELOG.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar"
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r . -x data/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar"
 
       # Upload
       - name: Capture datapack build artifact

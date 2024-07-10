@@ -1,2 +1,0 @@
-- **Update to Minecraft 1.21**
-- Fixed performance overlay for Minecraft 1.20.2+ not having an effect

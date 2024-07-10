@@ -1,4 +1,8 @@
 ##by Tschipcraft
 
-scoreboard players set @s tschipcraft.menu 1
-function dynamiclights:settings/hide_feedback/main
+scoreboard players reset @s tschipcraft.menu
+scoreboard players enable @a tschipcraft.menu
+advancement revoke @s only tschipcraft:menu
+
+# Call menu hook
+function #tschipcraft:menu

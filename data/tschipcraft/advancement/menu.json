@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "trigger_menu": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "tschipcraft.menu": {
+                "min": 1
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "tschipcraft:menu"
+  }
+}

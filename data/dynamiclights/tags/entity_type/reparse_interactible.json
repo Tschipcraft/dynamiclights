@@ -1,9 +1,0 @@
-{
-  "//comment": "These entities need special parsing and are dynamic item holders, meaning that they may change their item over time. They are interactible by players and should listen to player interact events.",
-  "//version_notice": "Only needed until 24w11a.",
-  "replace": false,
-  "values": [
-    "minecraft:item_frame",
-    "minecraft:glow_item_frame"
-  ]
-}

@@ -9,10 +9,9 @@ kill @e[type=minecraft:armor_stand,tag=ts.dl.i.parser]
 function dynamiclights:internal/explosion_detection/reset
 
 # Reset advancement
-advancement revoke @a only dynamiclights:interacted_with_item_frame
+advancement revoke @a only tschipcraft:menu
 
-# Reschedule functions
+# Reschedule main function
 schedule function dynamiclights:internal/main 5t
-schedule function dynamiclights:internal/loop 4t
 
 say ⏏ Successfully resetted Dynamic lights!

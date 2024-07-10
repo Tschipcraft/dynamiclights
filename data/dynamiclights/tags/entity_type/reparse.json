@@ -1,9 +1,0 @@
-{
-  "//comment": "These entities need special parsing and are dynamic item holders, meaning that they may change their item over time. They will get reparsed every 4 seconds by default.",
-  "//version_notice": "Only needed until 24w11a.",
-  "replace": false,
-  "values": [
-    "#dynamiclights:reparse_interactible",
-    {"id": "minecraft:item_display", "required": false}
-  ]
-}

@@ -10,20 +10,20 @@ scoreboard objectives add ts.dl.shulker dummy
 
 # Item score specification
 # Type:
-# 1: Light level 3 (unused)
+# 1: Light level 3
 # 2: Light level 6
 # 3: Light level 9
-# 4: Light level 12 (unused)
+# 4: Light level 12
 # 5: Light level 15
-# 6: Light level 3 (unused) outside water
+# 6: Light level 3 outside water
 # 7: Light level 6 outside water
 # 8: Light level 9 outside water
-# 9: Light level 12 (unused) outside water
+# 9: Light level 12 outside water
 # 10: Light level 15 outside water
-# 11: Light level 3 (unused) inside water
+# 11: Light level 3 inside water
 # 12: Light level 6 inside water
 # 13: Light level 9 inside water
-# 14: Light level 12 (unused) inside water
+# 14: Light level 12 inside water
 # 15: Light level 15 inside water
 scoreboard objectives add ts.dl.i.type dummy
 
@@ -64,8 +64,8 @@ scoreboard objectives add tschipcraft.menu trigger
 scoreboard objectives add tvc_ignore dummy
 
 ## Set load status
-# 17 for v1.7
-scoreboard players set dynamiclights load.status 17
+# 18 for v1.8
+scoreboard players set dynamiclights load.status 18
 
 # Reset advancement
 advancement revoke @a only dynamiclights:interacted_with_item_frame
