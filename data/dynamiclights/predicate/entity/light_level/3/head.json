@@ -1,0 +1,31 @@
+[
+  {
+    "//comment": "This predicate returns true, if the item in the head should light up",
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "head": {
+          "items": "#dynamiclights:light_level/3",
+          "count": {
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/head/water_immersion_extinguish"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/head/water_immersion_illuminate"
+    }
+  }
+]

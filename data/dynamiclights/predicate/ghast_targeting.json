@@ -1,0 +1,26 @@
+[
+  {
+    "//comment": "This predicate returns true if the tested entity is a ghast targeting the player and this feature is enabled",
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$enable_ghast"
+      },
+      "score": "ts.dl.settings"
+    },
+    "range": {
+      "min": 1,
+      "max": 2
+    }
+  },
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "type": "minecraft:ghast",
+      "targeted_entity": {}
+    }
+  }
+]

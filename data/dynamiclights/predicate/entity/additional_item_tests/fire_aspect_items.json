@@ -1,0 +1,92 @@
+[
+  {
+    "//comment": "This predicate returns false, if the tested entity is holding any fire aspect enchanted items",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "weapon.*": {
+            "count": {
+              "min": 1
+            },
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "armor.*": {
+            "count": {
+              "min": 1
+            },
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dynamiclights:single_slot_entities",
+        "slots": {
+          "contents": {
+            "count": {
+              "min": 1
+            },
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "minecraft:fire_aspect",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.is_firea": 1
+      }
+    }
+  }
+]

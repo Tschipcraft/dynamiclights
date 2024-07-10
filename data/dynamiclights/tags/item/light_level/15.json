@@ -1,0 +1,21 @@
+{
+  "//comment": "Items listed here will emit light level 15",
+  "replace": false,
+  "values": [
+    "minecraft:torch",
+    "minecraft:lantern",
+    "minecraft:campfire",
+    "minecraft:lava_bucket",
+    "minecraft:glowstone",
+    "minecraft:sea_lantern",
+    "minecraft:jack_o_lantern",
+    "minecraft:shroomlight",
+    "minecraft:end_rod",
+    "minecraft:beacon",
+    "minecraft:conduit",
+    {"id": "minecraft:ochre_froglight", "required": false},
+    {"id": "minecraft:pearlescent_froglight", "required": false},
+    {"id": "minecraft:verdant_froglight", "required": false},
+    {"id": "#dynamiclights:mod_support/light_level/15", "required": false}
+  ]
+}

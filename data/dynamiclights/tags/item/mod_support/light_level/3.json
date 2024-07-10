@@ -1,0 +1,9 @@
+{
+  "//comment": "Items listed here will emit light level 3 - Intended to get populated by mods",
+  "replace": false,
+  "values": [
+    {"id": "#c:amethysts", "required": false},
+    {"id": "#c:glowing_calamari", "required": false},
+    {"id": "#forge:gems/amethyst", "required": false}
+  ]
+}

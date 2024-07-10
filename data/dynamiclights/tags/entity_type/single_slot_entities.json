@@ -1,0 +1,13 @@
+{
+  "//comment": "Single slot item holder entities that correctly expose their slots contents tag to check for light emitting items.",
+  "replace": false,
+  "values": [
+    "#minecraft:arrows",
+    "minecraft:trident",
+    "minecraft:item",
+    "minecraft:item_display",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    {"id": "minecraft:ominous_item_spawner", "required": false}
+  ]
+}

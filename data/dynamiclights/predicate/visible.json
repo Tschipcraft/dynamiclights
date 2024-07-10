@@ -1,0 +1,11 @@
+{
+  "//comment": "This predicate checks if dynamic lights with light levels 9 and 6 would be visible if placed.",
+  "condition": "minecraft:location_check",
+  "predicate": {
+    "light": {
+      "light": {
+        "max": 9
+      }
+    }
+  }
+}

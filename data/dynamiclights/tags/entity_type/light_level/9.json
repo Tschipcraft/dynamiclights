@@ -1,0 +1,13 @@
+{
+  "//comment": "Entities specified here will always emit light level 9",
+  "replace": false,
+  "values": [
+    "minecraft:blaze",
+    "minecraft:glow_squid",
+    "minecraft:glow_item_frame",
+    "minecraft:spectral_arrow",
+    "minecraft:firework_rocket",
+    "minecraft:wither_skull",
+    "minecraft:small_fireball"
+  ]
+}

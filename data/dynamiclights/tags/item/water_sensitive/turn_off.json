@@ -1,0 +1,14 @@
+{
+  "//comment": "Items listed here will only emit light outside water",
+  "replace": false,
+  "values": [
+    "minecraft:torch",
+    "minecraft:campfire",
+    "minecraft:lava_bucket",
+    "minecraft:soul_torch",
+    "minecraft:soul_campfire",
+    "minecraft:redstone_torch",
+    "minecraft:fire_charge",
+    {"id": "#dynamiclights:mod_support/water_sensitive/turn_off", "required": false}
+  ]
+}

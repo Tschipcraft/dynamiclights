@@ -71,17 +71,17 @@ jobs:
         uses: montudor/action-zip@v1
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r data overlay_16 overlay_33 overlay_35 overlay_disable_trim pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" -r . -x assets/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* CHANGES.md ".*"
       - name: Create mod jar file
         uses: montudor/action-zip@v1
         if: steps.check_mod_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r data overlay_16 overlay_33 overlay_35 overlay_disable_trim assets META-INF net fabric.mod.json pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar" -r . -x unused/* src/* wiki/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip"
       - name: Create asset pack zip file
         uses: montudor/action-zip@v1
         if: steps.check_assets_folder.outputs.files_exists == 'true'
         with:
-          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r assets overlay_16 overlay_33 overlay_35 overlay_disable_trim pack.mcmeta pack.png LICENSE README.md
+          args: zip -qq "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-resourcepack.zip" -r . -x data/* net/* META-INF/* fabric.mod.json unused/* src/* wiki/* CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-datapack.zip" "${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ github.event.inputs.mc_version }}-mod.jar"
 
       # Upload
       - name: Upload data pack version to Modrinth
@@ -95,7 +95,7 @@ jobs:
 
           name: "[DP] Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGELOG.*
+          changelog-file: CHANGES.*
 
           loaders: |
             datapack
@@ -113,7 +113,7 @@ jobs:
 
           name: "[Mod] Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGELOG.*
+          changelog-file: CHANGES.*
 
           dependencies: |
             fabric-api(optional){modrinth:P7dR8mSH}
@@ -138,7 +138,7 @@ jobs:
 
           name: "Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGELOG.*
+          changelog-file: CHANGES.*
 
           loaders: |
             datapack
@@ -156,7 +156,7 @@ jobs:
 
           name: "Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGELOG.*
+          changelog-file: CHANGES.*
 
           dependencies: |
             catalogue(optional){curseforge:459701}
@@ -173,7 +173,7 @@ jobs:
             ./${{ github.event.repository.name }}-*-mod.jar
 
       - name: Add changelog header for GitHub release
-        run: sed -i '1i_Changelog:_' CHANGELOG.md
+        run: sed -i '1i_Changelog:_' CHANGES.md
       - name: Upload outputs to GitHub releases
         uses: Kir-Antipov/mc-publish@v3.3
         with:
@@ -183,7 +183,7 @@ jobs:
 
           name: Release v${{ github.event.inputs.tag }}
           version: v${{ github.event.inputs.tag }}
-          changelog-file: CHANGELOG.md
+          changelog-file: CHANGES.md
 
           files: |
            ./${{ github.event.repository.name }}-*.@(zip|jar)

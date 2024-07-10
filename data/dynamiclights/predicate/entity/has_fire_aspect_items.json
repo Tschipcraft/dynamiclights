@@ -1,0 +1,25 @@
+[
+  {
+    "//comment": "This predicate returns true, if the tested entity is holding any fire aspect enchanted items and this feature is enabled",
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$fire_aspect"
+      },
+      "score": "ts.dl.settings"
+    },
+    "range": {
+      "min": 1,
+      "max": 2
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/additional_item_tests/fire_aspect_items"
+    }
+  }
+]

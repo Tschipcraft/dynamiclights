@@ -1,0 +1,14 @@
+{
+  "//comment": "Items listed here will emit light level 3",
+  "replace": false,
+  "values": [
+    "minecraft:magma_block",
+    "minecraft:magma_cream",
+    "minecraft:large_amethyst_bud",
+    "minecraft:medium_amethyst_bud",
+    "minecraft:small_amethyst_bud",
+    "minecraft:heart_of_the_sea",
+    "minecraft:totem_of_undying",
+    {"id": "#dynamiclights:mod_support/light_level/3", "required": false}
+  ]
+}

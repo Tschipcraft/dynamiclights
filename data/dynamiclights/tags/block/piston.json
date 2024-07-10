@@ -1,0 +1,8 @@
+{
+  "//comment": "This tag only needs the block ids that could extend and doesn't care about extending (minecraft:moving_piston) and extended (minecraft:piston_head) parts",
+  "replace": false,
+  "values": [
+    "minecraft:piston",
+    "minecraft:sticky_piston"
+  ]
+}

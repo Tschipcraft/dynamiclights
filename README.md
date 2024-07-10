@@ -9,7 +9,7 @@
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
-> A server-side data pack/mod for Minecraft 1.17x-1.20x
+> A server-side data pack/mod for Minecraft 1.17x-1.21x
 
 <details>
 <summary>YouTube showcase</summary>
@@ -22,16 +22,12 @@
 
 Supported entities and items such as torches or lanterns will emit light by using the light block added in 21w13a. Because of this, the dynamic lights are limited to the block grid. (see [#9](https://github.com/Tschipcraft/dynamiclights/issues/9) for more information)
 
-**Supported Items:** Torches, Lanterns, Campfires, Glowstone, Glowstone Dust, Blaze Rods, Blaze Powder, Spectral Arrows, Lava Buckets, Sea Lanterns, Prismarine Crystals, Froglights, Glow Ink Sacs, Glow Berries, Glow Item Frames, Glow Lichen, Jack o'Lanterns, Shroomlights, End Rods, End Crystals, Fire Charge, Amethyst Shards, Nether Stars, Ender Chests and Beacons
+Some items are water sensitive and only turn off or on inside water. Additionally, all enchanted items will emit light level 6 while some enchants under certain conditions emit light level 9.
+For a detailed overview of all supported items and entities, take a look at the wiki pages linked below.
 
-Additionally, all enchanted items will emit light level 6 while Fire Aspect, Riptide or Channeling enchanted items emit light level 9.
+Since this project is completely server-side, players joining a server with Dynamic Lights installed will not need to install anything on their end for it to work! However, you can still use the mod version on the client for single-player worlds only. Joining a server that does not have Dynamic Lights installed will have no effect.
 
-**Supported Entities:** Allays, Glow Squids, Glow Item Frames, Blazes, TNT, End Crystals, Fireballs, Spectral Arrows, Shulker Bullets, Firework Rockets and Flying Wither Skulls
-
-Since this project is completely server-side, players joining a server with Dynamic Lights installed do not have to install anything on their end for it to work! Nontheless, you can still use the mod on
-the client for singleplayer worlds only. Joining a server that has not installed Dynamic Lights will have no effect.
-
-[➜ For available settings and planned features, take a look at the wiki](https://github.com/Tschipcraft/dynamiclights/wiki)
+[➜ For a detailed overview and available settings, take a look at the wiki](https://github.com/Tschipcraft/dynamiclights/wiki)
 
 
 ## Installation
@@ -46,7 +42,7 @@ Also available on Modrinth and CurseForge!
 <picture>
   <source height="72px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-dark.svg">
   <source height="72px" media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-light.svg">
-  <img height="72px" alt="Download on Modrinth" src="https://raw.githubusercontent.com/modrinth/art/main/Branding/Badge/badge-dark.svg">
+  <img height="72px" alt="Download on Modrinth" src="https://raw.githubusercontent.com/Tschipcraft/badges/main/assets/modrinth-badge-dark.svg">
 </picture>
 </a>
 <a href="https://www.curseforge.com/minecraft/texture-packs/tschipcrafts-dynamic-lights">

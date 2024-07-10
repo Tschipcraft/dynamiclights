@@ -1,0 +1,9 @@
+{
+  "//comment": "Checks if the tested position is inside water",
+  "condition": "minecraft:location_check",
+  "predicate": {
+    "fluid": {
+      "fluids": "#minecraft:water"
+    }
+  }
+}

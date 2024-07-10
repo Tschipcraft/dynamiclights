@@ -1,6 +1,7 @@
 [
   {
     "//comment": "This predicate returns false, if the tested entity is holding a with riptide enchanted trident",
+    "//version": "enchantments alongside enchantment is included for 24w18a-24w21a",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:entity_properties",
@@ -18,6 +19,7 @@
               "minecraft:enchantments": [
                 {
                   "enchantment": "minecraft:riptide",
+                  "enchantments": "minecraft:riptide",
                   "levels": {
                     "min": 1
                   }
@@ -47,6 +49,7 @@
               "minecraft:enchantments": [
                 {
                   "enchantment": "minecraft:riptide",
+                  "enchantments": "minecraft:riptide",
                   "levels": {
                     "min": 1
                   }
@@ -77,6 +80,7 @@
               "minecraft:enchantments": [
                 {
                   "enchantment": "minecraft:riptide",
+                  "enchantments": "minecraft:riptide",
                   "levels": {
                     "min": 1
                   }

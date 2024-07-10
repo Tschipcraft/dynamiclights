@@ -1,0 +1,9 @@
+{
+  "//comment": "These entities use a different NBT tag for storing their item and need special parsing for detection.",
+  "//version_notice": "Mentions for single slot entities and reparse functionality are not needed anymore since 24w11a. Instead, take a look at single_slot_entities.json.",
+  "replace": false,
+  "values": [
+    "minecraft:falling_block",
+    {"id": "minecraft:block_display", "required": false}
+  ]
+}
