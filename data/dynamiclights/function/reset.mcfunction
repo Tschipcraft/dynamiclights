@@ -10,6 +10,7 @@ function dynamiclights:internal/explosion_detection/reset
 
 # Reset advancement
 advancement revoke @a only tschipcraft:menu
+scoreboard players enable @a tschipcraft.menu
 
 # Reschedule main function
 schedule function dynamiclights:internal/main 5t

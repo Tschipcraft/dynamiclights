@@ -59,6 +59,7 @@ execute unless score $rain_sensitive ts.dl.settings matches -1..2 run scoreboard
 execute unless score $unlimited ts.dl.settings matches -1..2 run scoreboard players set $unlimited ts.dl.settings 0
 
 scoreboard objectives add tschipcraft.menu trigger
+scoreboard players enable @a tschipcraft.menu
 
 scoreboard objectives add tvc_ignore dummy
 
