@@ -30,6 +30,9 @@ scoreboard objectives remove tschipcraft.menu
 scoreboard objectives remove ts.dl.version
 scoreboard objectives remove tvc_ignore
 
+# Clear storage
+data remove storage dynamiclights:curios stacks
+
 # Clear schedules
 schedule clear dynamiclights:internal/main
 schedule clear dynamiclights:internal/loop

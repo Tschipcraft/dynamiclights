@@ -12,6 +12,10 @@ function dynamiclights:internal/explosion_detection/reset
 advancement revoke @a only tschipcraft:menu
 scoreboard players enable @a tschipcraft.menu
 
+# Reset parsed data
+scoreboard objectives remove ts.dl.i.type
+scoreboard objectives add ts.dl.i.type dummy
+
 # Reschedule main function
 schedule function dynamiclights:internal/main 5t
 
