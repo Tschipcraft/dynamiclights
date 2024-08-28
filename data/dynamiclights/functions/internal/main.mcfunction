@@ -1,5 +1,8 @@
 ## by Tschipcraft
 
+# Schedule for next tick
+schedule function dynamiclights:internal/main 1t
+
 # Tag old lights
 tag @e[type=minecraft:marker,tag=ts.dl.light] add ts.dl.remove
 
@@ -14,6 +17,3 @@ execute as @e[type=minecraft:marker,tag=ts.dl.remove] at @s run function dynamic
 
 # Menu
 function dynamiclights:internal/menu
-
-# Repeat
-schedule function dynamiclights:internal/main 1t

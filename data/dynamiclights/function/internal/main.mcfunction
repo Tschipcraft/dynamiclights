@@ -1,5 +1,8 @@
 ## by Tschipcraft
 
+# Schedule for next tick
+schedule function dynamiclights:internal/main 1t
+
 # Tag old lights
 tag @e[type=minecraft:marker,tag=ts.dl.light] add ts.dl.remove
 
@@ -11,6 +14,3 @@ execute unless score $global ts.dl.tnt.fuse matches 1 as @e[type=!#dynamiclights
 
 # Clear old lights
 execute as @e[type=minecraft:marker,tag=ts.dl.remove] at @s run function dynamiclights:internal/remove_light
-
-# Repeat
-schedule function dynamiclights:internal/main 1t
