@@ -60,7 +60,9 @@ execute unless score $rain_sensitive ts.dl.settings matches -1..2 run scoreboard
 execute unless score $unlimited ts.dl.settings matches -1..2 run scoreboard players set $unlimited ts.dl.settings 0
 
 scoreboard objectives add tschipcraft.menu trigger
+scoreboard objectives add ts.dl.toggle trigger
 scoreboard players enable @a tschipcraft.menu
+scoreboard players enable @a ts.dl.toggle
 
 scoreboard objectives add tvc_ignore dummy
 
@@ -68,8 +70,9 @@ scoreboard objectives add tvc_ignore dummy
 # 18 for v1.8
 scoreboard players set dynamiclights load.status 18
 
-# Reset advancement
+# Reset advancements
 advancement revoke @a only tschipcraft:menu
+advancement revoke @a only dynamiclights:toggle_enable
 
 ## Schedule main function
 schedule function dynamiclights:internal/main 5t

@@ -25,6 +25,7 @@ scoreboard objectives remove ts.dl.temp
 
 scoreboard objectives remove ts.dl.mess.welc
 scoreboard objectives remove ts.dl.settings
+scoreboard objectives remove ts.dl.toggle
 scoreboard objectives remove tschipcraft.menu
 
 scoreboard objectives remove ts.dl.version

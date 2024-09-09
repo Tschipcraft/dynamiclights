@@ -8,8 +8,10 @@ kill @e[type=minecraft:armor_stand,tag=ts.dl.i.parser]
 # Reset explosion alarm
 function dynamiclights:internal/explosion_detection/reset
 
-# Reset advancement
+# Reset advancements
 advancement revoke @a only dynamiclights:interacted_with_item_frame
+advancement revoke @a only dynamiclights:toggle_enable
+scoreboard players enable @a ts.dl.toggle
 
 # Reset parsed data
 scoreboard objectives remove ts.dl.i.type
