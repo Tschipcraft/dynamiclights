@@ -2,6 +2,13 @@
 
 tellraw @s {"text":"\n=-=Dynamic Lights Settings=-=","bold":true,"color":"dark_green"}
 
+execute if score $enable ts.dl.settings matches 1 run tellraw @s [{"text":"[✔] ","bold":true,"color":"green","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle Dynamic Lights "},{"text":"off","color":"red"},{"text":"."}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_enable"}},{"text":"Enable Dynamic Lights","color":"white"}]
+execute if score $enable ts.dl.settings matches 0 run tellraw @s [{"text":"[❌] ","bold":true,"color": "red","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle Dynamic Lights "},{"text":"on","color":"green"},{"text":"."}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_enable"}},{"text":"Enable Dynamic Lights","color":"white"}]
+execute if score $enable ts.dl.settings matches -1 run tellraw @s [{"text":"[❌] Enable Dynamic Lights","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
+execute if score $enable ts.dl.settings matches 2 run tellraw @s [{"text":"[✔] Enable Dynamic Lights","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
+execute if score $enable ts.dl.settings matches -1..0 run tellraw @s {"text":"-- \u26a0 Dynamic Lights disabled \u26a0 --","color":"red"}
+
+
 tellraw @s {"text":"\nEnable light emitting from...","bold":true,"color":"white"}
 
 execute if score $enable_on_fire ts.dl.settings matches 1 run tellraw @s [{"text":"[✔] ","bold":true,"color":"green","hoverEvent":{"action":"show_text","contents":[{"text":"Click here to toggle this feature "},{"text":"off","color":"red"},{"text":"."}]},"clickEvent":{"action":"run_command","value":"/function dynamiclights:settings/toggle_on_fire"}},{"text":"Burning entities","color":"white"}]

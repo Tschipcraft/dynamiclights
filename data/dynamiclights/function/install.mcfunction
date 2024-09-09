@@ -42,6 +42,7 @@ scoreboard objectives add ts.dl.temp dummy
 scoreboard objectives add ts.dl.settings dummy
 
 # defaults
+execute unless score $enable ts.dl.settings matches -1..2 run scoreboard players set $enable ts.dl.settings 1
 execute unless score $enable_on_fire ts.dl.settings matches -1..2 run scoreboard players set $enable_on_fire ts.dl.settings 1
 execute unless score $enable_glowing ts.dl.settings matches -1..2 run scoreboard players set $enable_glowing ts.dl.settings 0
 execute unless score $fire_aspect ts.dl.settings matches -1..2 run scoreboard players set $fire_aspect ts.dl.settings 1

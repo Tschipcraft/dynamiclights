@@ -12,6 +12,8 @@
   "dynamiclights.midnightconfig.empty3": "",
   "dynamiclights.midnightconfig.other": "§lOther",
 
+  "dynamiclights.midnightconfig.enable": "Dynamic Lights",
+  "dynamiclights.midnightconfig.enable.tooltip": "Enable Dynamic Lights\nDefault: §aYes§f",
   "dynamiclights.midnightconfig.enable_on_fire": "Burning entities",
   "dynamiclights.midnightconfig.enable_on_fire.tooltip": "Default: §aYes§f",
   "dynamiclights.midnightconfig.enable_glowing": "Entities with the glowing potion effect",

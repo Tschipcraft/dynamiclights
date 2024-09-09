@@ -8,6 +8,15 @@ public class sendConfig {
 
     public static void sendConfig(MinecraftServer server) {
         sendCommand("scoreboard objectives add ts.dl.settings dummy", server);
+        if (Config.enable == Config.bool.YES) {
+            sendCommand("scoreboard players set $enable ts.dl.settings 2", server);
+        } else if (Config.enable == Config.bool.NO) {
+            sendCommand("scoreboard players set $enable ts.dl.settings -1", server);
+        } else {
+            sendCommand("execute if score $enable ts.dl.settings matches -1 run scoreboard players set $enable ts.dl.settings 0", server);
+            sendCommand("execute if score $enable ts.dl.settings matches 2 run scoreboard players set $enable ts.dl.settings 1", server);
+        }
+
         if (Config.enable_on_fire == Config.bool.YES) {
             sendCommand("scoreboard players set $enable_on_fire ts.dl.settings 2", server);
         } else if (Config.enable_on_fire == Config.bool.NO) {
