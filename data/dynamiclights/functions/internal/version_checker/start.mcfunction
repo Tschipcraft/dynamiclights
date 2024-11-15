@@ -2,6 +2,7 @@
 
 scoreboard objectives add ts.dl.version dummy
 execute store result score $global ts.dl.version run data get entity @r DataVersion
+# Note: 1.21+ uses the new folder names (functions -> function)
 #execute if score $global ts.dl.version matches 2976..3106 run say 1.19 detected!
 #execute if score $global ts.dl.version matches 2731..2975 run say 1.18 detected!
 #execute if score $global ts.dl.version matches 2587..2730 run say 1.17 detected!

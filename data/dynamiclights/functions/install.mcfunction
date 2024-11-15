@@ -75,7 +75,7 @@ scoreboard players set dynamiclights load.status 18
 advancement revoke @a only dynamiclights:interacted_with_item_frame
 advancement revoke @a only dynamiclights:toggle_enable
 
-## Schedule functions
+## Schedule main and loop function
 schedule function dynamiclights:internal/main 5t
 schedule function dynamiclights:internal/loop 4t
 

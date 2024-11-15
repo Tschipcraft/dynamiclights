@@ -1,4 +1,4 @@
-## by Tschipcraft
+##by Tschipcraft
 
 # Schedule for next tick
 schedule function dynamiclights:internal/main 1t

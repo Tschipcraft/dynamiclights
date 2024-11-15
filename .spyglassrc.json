@@ -1,0 +1,9 @@
+{
+  "env": {
+    "gameVersion": "1.21"
+  },
+  "lint": {
+    "idOmitDefaultNamespace": ["warning", false],
+    "nbtTypeCheck": ["warning", "strictly"]
+  }
+}

@@ -96,7 +96,7 @@ jobs:
 
           name: "[DP] Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           loaders: |
             datapack
@@ -115,7 +115,7 @@ jobs:
 
           name: "[Mod] Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           dependencies: |
             fabric-api(optional){modrinth:P7dR8mSH}
@@ -141,7 +141,7 @@ jobs:
 
           name: "Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           loaders: |
             datapack
@@ -160,7 +160,7 @@ jobs:
 
           name: "Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           dependencies: |
             catalogue(optional){curseforge:459701}
