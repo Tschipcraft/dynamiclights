@@ -9,11 +9,11 @@ on:
       mc_version:
         description: 'Minecraft version(s) the data pack runs in (human readable)'
         required: true
-        default: '1.17x-1.20x'
+        default: '1.17x-1.21x'
       mc_version_range:
         description: 'Minecraft version(s) the data pack runs in (encoded in version range spec)'
         required: true
-        default: '>=1.17 <=1.20.4'
+        default: '>=1.17 <=1.21'
 
 jobs:
   deploy:
@@ -91,11 +91,12 @@ jobs:
           modrinth-id: 7YjclEGc
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
           fail-mode: skip
 
           name: "[DP] Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           loaders: |
             datapack
@@ -109,11 +110,12 @@ jobs:
           modrinth-id: 7YjclEGc
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
           fail-mode: skip
 
           name: "[Mod] Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           dependencies: |
             fabric-api(optional){modrinth:P7dR8mSH}
@@ -134,11 +136,12 @@ jobs:
           curseforge-id: 831385
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
           fail-mode: skip
 
           name: "Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           loaders: |
             datapack
@@ -152,17 +155,19 @@ jobs:
           curseforge-id: 910095
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           game-versions: ${{ github.event.inputs.mc_version_range }}
+          game-version-filter: any
           fail-mode: skip
 
           name: "Release v${{ github.event.inputs.tag }}"
           version: ${{ github.event.inputs.tag }}+mod
-          changelog-file: CHANGES.*
+          changelog-file: CHANGES.md
 
           dependencies: |
             catalogue(optional){curseforge:459701}
             catalogue-fabric(optional){curseforge:667377}
             midnightlib(optional){curseforge:488090}
           java: |
+            Java 21
             Java 17
             Java 18
           loaders: |

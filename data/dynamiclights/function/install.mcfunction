@@ -42,6 +42,7 @@ scoreboard objectives add ts.dl.temp dummy
 scoreboard objectives add ts.dl.settings dummy
 
 # defaults
+execute unless score $enable ts.dl.settings matches -1..2 run scoreboard players set $enable ts.dl.settings 1
 execute unless score $enable_on_fire ts.dl.settings matches -1..2 run scoreboard players set $enable_on_fire ts.dl.settings 1
 execute unless score $enable_glowing ts.dl.settings matches -1..2 run scoreboard players set $enable_glowing ts.dl.settings 0
 execute unless score $fire_aspect ts.dl.settings matches -1..2 run scoreboard players set $fire_aspect ts.dl.settings 1
@@ -59,6 +60,9 @@ execute unless score $rain_sensitive ts.dl.settings matches -1..2 run scoreboard
 execute unless score $unlimited ts.dl.settings matches -1..2 run scoreboard players set $unlimited ts.dl.settings 0
 
 scoreboard objectives add tschipcraft.menu trigger
+scoreboard objectives add ts.dl.toggle trigger
+scoreboard players enable @a tschipcraft.menu
+scoreboard players enable @a ts.dl.toggle
 
 scoreboard objectives add tvc_ignore dummy
 
@@ -66,8 +70,10 @@ scoreboard objectives add tvc_ignore dummy
 # 18 for v1.8
 scoreboard players set dynamiclights load.status 18
 
-# Reset advancement
+# Reset advancements
 advancement revoke @a only tschipcraft:menu
+advancement revoke @a only dynamiclights:toggle_enable
 
-## Schedule main function
+## Schedule main and loop function
 schedule function dynamiclights:internal/main 5t
+schedule function dynamiclights:internal/loop 10s

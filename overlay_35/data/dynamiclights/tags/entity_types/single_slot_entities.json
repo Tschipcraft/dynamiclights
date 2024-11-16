@@ -7,7 +7,6 @@
     "minecraft:item",
     "minecraft:item_display",
     "minecraft:item_frame",
-    "minecraft:glow_item_frame",
-    {"id": "minecraft:ominous_item_spawner", "required": false}
+    "minecraft:glow_item_frame"
   ]
 }

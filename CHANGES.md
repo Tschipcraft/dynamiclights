@@ -1,6 +1,7 @@
-- **Support for Minecraft 1.21** ⚔️ (closes [#29](https://github.com/Tschipcraft/dynamiclights/issues/29), [#41](https://github.com/Tschipcraft/dynamiclights/issues/41), [#42](https://github.com/Tschipcraft/dynamiclights/issues/42), [#44](https://github.com/Tschipcraft/dynamiclights/issues/44))
-  - Copied the contents of the legacy folders to their new names and removed unused code
-  - Used new enchantment check format in predicates
-  - Updated menu trigger to use advancements instead and added menu message header
-- Fixed performance overlay for Minecraft 1.20.2+ not having an effect
-- Updated LICENSE
+- **Added support for Minecraft 1.21.3** 💰
+- **Added Curios API and Curios API Continuation support** (closes [#52](https://github.com/Tschipcraft/dynamiclights/issues/52))
+- **Added global and per-player toggle for Dynamic Lights** (closes [#56](https://github.com/Tschipcraft/dynamiclights/issues/56), closes [#37](https://github.com/Tschipcraft/dynamiclights/issues/37), closes [#26](https://github.com/Tschipcraft/dynamiclights/issues/26), closes [#47](https://github.com/Tschipcraft/dynamiclights/issues/47))
+- Added mod support for Lucky's Wardrobe
+- Fixed ominous item spawners not being parsed for light emitting items
+- Fixed Dynamic Lights breaking after some time on paper servers (closes [#45](https://github.com/Tschipcraft/dynamiclights/issues/45), closes [#21](https://github.com/Tschipcraft/dynamiclights/issues/21))
+- Fixed tschipcraft.menu trigger not being enabled in 1.21+

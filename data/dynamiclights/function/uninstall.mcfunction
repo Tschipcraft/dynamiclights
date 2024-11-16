@@ -25,10 +25,14 @@ scoreboard objectives remove ts.dl.temp
 
 scoreboard objectives remove ts.dl.mess.welc
 scoreboard objectives remove ts.dl.settings
+scoreboard objectives remove ts.dl.toggle
 scoreboard objectives remove tschipcraft.menu
 
 scoreboard objectives remove ts.dl.version
 scoreboard objectives remove tvc_ignore
+
+# Clear storage
+data remove storage dynamiclights:curios stacks
 
 # Clear schedules
 schedule clear dynamiclights:internal/main

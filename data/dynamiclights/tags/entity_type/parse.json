@@ -4,6 +4,7 @@
   "replace": false,
   "values": [
     "minecraft:falling_block",
-    {"id": "minecraft:block_display", "required": false}
+    {"id": "minecraft:block_display", "required": false},
+    {"id": "minecraft:ominous_item_spawner", "required": false}
   ]
 }

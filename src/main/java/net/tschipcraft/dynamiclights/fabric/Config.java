@@ -22,6 +22,9 @@ public class Config extends MidnightConfig {
     @Comment(centered = true)
     public static Comment info2;
 
+    @Entry
+    public static bool enable = bool.WORLD;
+
     @Comment
     public static Comment light;
 
