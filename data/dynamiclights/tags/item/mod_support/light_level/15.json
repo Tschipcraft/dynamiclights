@@ -4,6 +4,7 @@
   "values": [
     {"id": "#c:lanterns", "required": false},
     {"id": "#c:lava_buckets", "required": false},
+    {"id": "#c:buckets/lava", "required": false},
     {"id": "wardrobe:lantern_on_a_stick", "required": false}
   ]
 }
