@@ -1,7 +1,2 @@
-- **Added support for Minecraft 1.21.3** 💰
-- **Added Curios API and Curios API Continuation support** (closes [#52](https://github.com/Tschipcraft/dynamiclights/issues/52))
-- **Added global and per-player toggle for Dynamic Lights** (closes [#56](https://github.com/Tschipcraft/dynamiclights/issues/56), closes [#37](https://github.com/Tschipcraft/dynamiclights/issues/37), closes [#26](https://github.com/Tschipcraft/dynamiclights/issues/26), closes [#47](https://github.com/Tschipcraft/dynamiclights/issues/47))
-- Added mod support for Lucky's Wardrobe
-- Fixed ominous item spawners not being parsed for light emitting items
-- Fixed Dynamic Lights breaking after some time on paper servers (closes [#45](https://github.com/Tschipcraft/dynamiclights/issues/45), closes [#21](https://github.com/Tschipcraft/dynamiclights/issues/21))
-- Fixed tschipcraft.menu trigger not being enabled in 1.21+
+- **Added support for Minecraft 1.21.4** 🪵
+- Fixed crash when loading or creating a world in Forge 52.0.0 or newer (1.21.1+) (closes [#65](https://github.com/Tschipcraft/dynamiclights/issues/65))

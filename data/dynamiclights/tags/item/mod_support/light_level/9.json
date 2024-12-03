@@ -4,7 +4,9 @@
   "values": [
     {"id": "#c:glow_berries", "required": false},
     {"id": "#c:glowstone_dusts", "required": false},
-    {"id": "#forge:rods/blaze", "required": false},
+    {"id": "#c:dusts/glowstone", "required": false},
+    {"id": "#c:rods/blaze", "required": false},
+    {"id": "#c:obsidians/crying", "required": false},
     {"id": "wardrobe:soul_lantern_on_a_stick", "required": false}
   ]
 }

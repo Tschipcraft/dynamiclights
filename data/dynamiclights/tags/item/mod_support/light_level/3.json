@@ -4,6 +4,6 @@
   "values": [
     {"id": "#c:amethysts", "required": false},
     {"id": "#c:glowing_calamari", "required": false},
-    {"id": "#forge:gems/amethyst", "required": false}
+    {"id": "#c:gems/amethyst", "required": false}
   ]
 }
