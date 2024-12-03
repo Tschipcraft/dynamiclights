@@ -1,6 +1,6 @@
 {
   "criteria": {
-    "trigger_menu": {
+    "trigger_toggle": {
       "trigger": "minecraft:tick",
       "conditions": {
         "player": [
