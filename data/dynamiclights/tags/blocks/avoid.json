@@ -1,4 +1,5 @@
 {
+  "//comment": "Blocks to avoid triggering block updates near them",
   "replace": false,
   "values": [
     "minecraft:moving_piston",

@@ -17,4 +17,4 @@ scoreboard players operation @s ts.dl.i.is_firea = .global ts.dl.i.is_firea
 scoreboard players operation @s ts.dl.i.is_ript = .global ts.dl.i.is_ript
 scoreboard players operation @s ts.dl.i.is_chann = .global ts.dl.i.is_chann
 
-# Item frame checking is not neccessary anymore
+# Item frame checking is not necessary anymore
