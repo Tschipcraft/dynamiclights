@@ -1,2 +1,1 @@
-- **Added support for Minecraft 1.21.4** 🪵
-- Fixed crash when loading or creating a world in Forge 52.0.0 or newer (1.21.1+) (closes [#65](https://github.com/Tschipcraft/dynamiclights/issues/65))
+- Slightly better performance by switching to `sort=arbitrary` to allow short-circuiting entity selectors

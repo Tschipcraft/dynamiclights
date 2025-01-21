@@ -88,11 +88,11 @@ jobs:
         if: steps.check_datapack_folder.outputs.files_exists == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: "Dynamic Lights (Datapack)"
+          name: "Dynamic Lights Data Pack (Unzip Me)"
           path: ./${{ github.event.repository.name }}-*.zip
       - name: Capture mod build artifact
         if: steps.check_mod_folder.outputs.files_exists == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: "Dynamic Lights (Mod)"
+          name: "Dynamic Lights Mod (Unzip Me)"
           path: ./${{ github.event.repository.name }}-*-mod.jar
