@@ -1,5 +1,8 @@
 ##by Tschipcraft
 
+# Menu - this needs to be the first function called (Issue #66)
+function dynamiclights:internal/menu
+
 # Schedule for next tick
 schedule function dynamiclights:internal/main 1t
 
@@ -14,6 +17,3 @@ execute if score $enable ts.dl.settings matches 1..2 unless score $global ts.dl.
 
 # Clear old lights
 execute as @e[type=minecraft:marker,tag=ts.dl.remove] at @s run function dynamiclights:internal/remove_light
-
-# Menu
-function dynamiclights:internal/menu

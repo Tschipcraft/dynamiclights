@@ -14,3 +14,4 @@ jobs:
         with:
           source: .
           stats: true
+          minecraft: 1.21
