@@ -1,3 +1,4 @@
+- **Added support for Minecraft 1.21.5** 📔
 - Fixed some zero tick piston contraptions from breaking (closes [#51](https://github.com/Tschipcraft/dynamiclights/issues/51))
 - Fixed chat flooding when triggering the menu in Minecraft 1.20.6 or below (closes [#66](https://github.com/Tschipcraft/dynamiclights/issues/66))
 - Added additional data to dynamic light marker entities to show a name when Axiom is installed ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))

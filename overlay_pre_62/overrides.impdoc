@@ -1,0 +1,6 @@
+@targets 24w21a..1.21.4
+@changes function calls and tags
+ 
+- Old text component format
+- `fill` without strict
+- Old avoid tag list including noncritical block update affected blocks
