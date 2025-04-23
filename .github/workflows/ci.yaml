@@ -1,0 +1,315 @@
+name: Validate & Build Dev Version
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version tag to build (if omitted, latest --describe tag from git is used)'
+        required: false
+      mc_upper:
+        description: 'Upper bound of Minecraft version range (exact version), e.g. "1.21.5"'
+        required: false
+      mc_lower:
+        description: 'Lower bound of Minecraft version range (exact version), e.g. "1.17"'
+        required: false
+      skip_check:
+        description: 'Set to true to skip command validation'
+        required: false
+        type: boolean
+        default: false
+
+env:
+  # Fallback Lower: when Spyglass API is unreachable
+  FALLBACK_MC_LOWER: "1.17"
+  # Fallback Upper: when Spyglass API and Mojang API are unreachable
+  FALLBACK_MC_UPPER: "1.21.5"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Validate and build development version
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+          fetch-depth: 25 # Fetch 25 commits to ensure we have enough history for git describe
+          fetch-tags: true
+
+      # Determine tag version to use
+      - name: Determine tag version
+        id: get_tag
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG_RAW=$(git describe --tags --always)
+            TAG="${TAG_RAW#v}"
+          fi
+          echo "Using tag: $TAG"
+          echo "TAG=$TAG" >> $GITHUB_ENV
+
+      # Determine Minecraft versions from pack.mcmeta using Spyglass API
+      - name: Determine Minecraft version bounds from pack.mcmeta using Spyglass API
+        id: determine_versions
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -n "${{ github.event.inputs.mc_upper }}" ]; then
+            MC_UPPER="${{ github.event.inputs.mc_upper }}"
+            MC_LOWER="${{ github.event.inputs.mc_lower }}"
+            if [ -z "$MC_LOWER" ]; then
+              MC_LOWER="$FALLBACK_MC_LOWER"
+            fi
+            echo "Using provided Minecraft version bounds: MC_LOWER=$MC_LOWER, MC_UPPER=$MC_UPPER"
+            # Build ranges
+            MACHINE_RANGE_FABRIC=">=${MC_LOWER} <=${MC_UPPER}"
+            MACHINE_RANGE_FORGE="[${MC_LOWER},${MC_UPPER}]"
+            MACHINE_RANGE_NEOFORGE="[1.20.5,${MC_UPPER}]"
+            CMD_VALIDATOR_MC=$(echo "$MC_UPPER" | awk -F. '{print $1"."$2}')
+            MC_HUMAN_VERSION_RANGE="${MC_LOWER}-${MC_UPPER}"
+          else
+
+            echo "::group::Determining Minecraft version bounds..."
+            echo "Reading supported_formats from pack.mcmeta..."
+            if [ -f pack.mcmeta ]; then
+              LOWER_DP=$(jq -r '.pack.supported_formats[0]' pack.mcmeta)
+              UPPER_DP=$(jq -r '.pack.supported_formats[1]' pack.mcmeta)
+            else
+              echo "::error:: pack.mcmeta file not found!"
+              exit 1
+            fi
+            echo "Lower data pack format: $LOWER_DP, Upper: $UPPER_DP"
+
+            echo "Fetching versions from Spyglass API..."
+            API_JSON=$(curl -s https://api.spyglassmc.com/mcje/versions || true)
+            if [ -z "$API_JSON" ] || ! echo "$API_JSON" | jq empty > /dev/null 2>&1; then
+              echo "::warning:: Spyglass API unreachable, using fallback values. The annotated Minecraft versions may not be accurate."
+              echo " Response: $API_JSON"
+              ENDPOINT_DOWN=true
+            else
+              ENDPOINT_DOWN=false
+            fi
+
+            if [ "$ENDPOINT_DOWN" = true ]; then
+              MC_LOWER=${FALLBACK_MC_LOWER}
+              # Use latest version from Mojang API as fallback upper
+              MC_UPPER=$(curl -s https://piston-meta.mojang.com/mc/game/version_manifest_v2.json || true | jq -r '.latest.release' || echo "${FALLBACK_MC_UPPER}")
+              # Build ranges
+              MACHINE_RANGE_FABRIC=">=${MC_LOWER}"
+              MACHINE_RANGE_FORGE="[${MC_LOWER},)"
+              MACHINE_RANGE_NEOFORGE="[1.20.5,)"
+              MC_HUMAN_VERSION_RANGE="${MC_LOWER}-${MC_UPPER}"
+              # Trim patch version for mecha validation
+              CMD_VALIDATOR_MC=$(echo "$MC_UPPER" | awk -F. '{print $1"."$2}')
+
+              echo "Used fallback values: MC_LOWER=$MC_LOWER, MC_UPPER=$MC_UPPER"
+            else
+              # Determine MC_LOWER: oldest version matching LOWER_DP
+              # LIMITATION: Mod loaders don't accept snapshot versions, so we assume lower pack format is a release (and not a snapshot)
+              MC_LOWER=$(echo "$API_JSON" | jq -r --argjson lower_dp "$LOWER_DP" '[.[] | select(.data_pack_version == $lower_dp and .type == "release")] | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | .[0].id')
+              if [ -z "$MC_LOWER" ] || [ "$MC_LOWER" = "null" ]; then
+                echo "::error:: Expected a release version for pack format ($LOWER_DP), but none was found!"
+                exit 1
+              fi
+
+              # Determine MC_UPPER: newest version matching UPPER_DP
+              CHOSEN_UPPER_OBJ=$(echo "$API_JSON" | jq -c --argjson upper_dp "$UPPER_DP" '[.[] | select(.data_pack_version == $upper_dp)] | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | reverse | .[0]')
+              if [ -z "$CHOSEN_UPPER_OBJ" ] || [ "$CHOSEN_UPPER_OBJ" = "null" ]; then
+                # If no version is found, use the latest version from the API
+                CHOSEN_UPPER_OBJ=$(echo "$API_JSON" | jq -c 'sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | reverse | .[0]')
+              fi
+              MC_UPPER=$(echo "$CHOSEN_UPPER_OBJ" | jq -r '.id')
+
+              echo "Found MC_LOWER=$MC_LOWER, MC_UPPER=$MC_UPPER"
+
+              # Check if upper version is a release
+              CHOSEN_UPPER_TYPE=$(echo "$CHOSEN_UPPER_OBJ" | jq -r '.type')
+              if [ "$CHOSEN_UPPER_TYPE" != "release" ]; then
+                echo "Exact upper version is not a release. Attempting to find the next release version for mod version ranges..."
+
+                # Exact upper is not a release, try to find the next higher release (i.e. one with a release_time greater than the chosen upper one)
+                CHOSEN_TIME_NUM=$(echo "$CHOSEN_UPPER_OBJ" | jq -r '.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601')
+                NEXT_RELEASE_OBJ=$(echo "$API_JSON" | jq -c --argjson chosen_time_num "$CHOSEN_TIME_NUM" 'map(select(.type == "release" and (.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601 > $chosen_time_num))) | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | .[0]')
+                NEXT_RELEASE=$(echo "$NEXT_RELEASE_OBJ" | jq -r '.id')
+
+                if [ -n "$NEXT_RELEASE" ] && [ "$NEXT_RELEASE" != "null" ]; then
+                  # Next release version is available, use it as the upper bound
+                  MACHINE_RANGE_FABRIC=">=${MC_LOWER} <${NEXT_RELEASE}"
+                  MACHINE_RANGE_FORGE="[${MC_LOWER},${NEXT_RELEASE})"
+                  MACHINE_RANGE_NEOFORGE="[1.20.5,${NEXT_RELEASE})"
+                  CMD_VALIDATOR_MC=$(echo "$NEXT_RELEASE" | awk -F. '{print $1"."$2}')
+
+                  echo "Next release version found: $NEXT_RELEASE"
+                else
+                  # Next release version is not available, omit the upper bound for Fabric and (Neo)Forge
+                  MACHINE_RANGE_FABRIC=">=${MC_LOWER}"
+                  MACHINE_RANGE_FORGE="[${MC_LOWER},)"
+                  MACHINE_RANGE_NEOFORGE="[1.20.5,)"
+
+                  # Pick the most recent release that is less than or equal to the chosen upper's release_time for mecha validation
+                  CMD_VALIDATOR_OBJ=$(echo "$API_JSON" | jq -c --argjson chosen_time_num "$CHOSEN_TIME_NUM" 'map(select(.type == "release" and (.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601 <= $chosen_time_num))) | sort_by(.release_time | sub("\\+00:00$"; "Z") | fromdateiso8601) | reverse | .[0]')
+                  CMD_VALIDATOR_MC=$(echo "$CMD_VALIDATOR_OBJ" | jq -r '.id' | awk -F. '{print $1"."$2}')
+                  # Use fallback upper if no release version is found
+                  if [ "$CMD_VALIDATOR_MC" = "null" ]; then
+                    CMD_VALIDATOR_MC=$(echo "${FALLBACK_MC_UPPER}" | awk -F. '{print $1"."$2}')
+                  fi
+
+                  echo "No next release version found, using lower bound $MC_LOWER for mod version ranges and $CMD_VALIDATOR_MC for command validation"
+                fi
+
+              else
+                # Exact upper is a release, use it as the upper bound
+                MACHINE_RANGE_FABRIC=">=${MC_LOWER} <=${MC_UPPER}"
+                MACHINE_RANGE_FORGE="[${MC_LOWER},${MC_UPPER}]"
+                MACHINE_RANGE_NEOFORGE="[1.20.5,${MC_UPPER}]"
+                CMD_VALIDATOR_MC=$(echo "$MC_UPPER" | awk -F. '{print $1"."$2}')
+              fi
+
+              # Use exact values for human-readable version range
+              MC_HUMAN_VERSION_RANGE="${MC_LOWER}-${MC_UPPER}"
+            fi
+            echo "::endgroup::"
+          fi
+
+          echo "MC_LOWER=$MC_LOWER" >> $GITHUB_ENV
+          echo "MC_UPPER=$MC_UPPER" >> $GITHUB_ENV
+          echo "MC_HUMAN_VERSION_RANGE=$MC_HUMAN_VERSION_RANGE" >> $GITHUB_ENV
+          echo "MACHINE_RANGE_FABRIC=$MACHINE_RANGE_FABRIC" >> $GITHUB_ENV
+          echo "MACHINE_RANGE_FORGE=$MACHINE_RANGE_FORGE" >> $GITHUB_ENV
+          echo "MACHINE_RANGE_NEOFORGE=$MACHINE_RANGE_NEOFORGE" >> $GITHUB_ENV
+          echo "CMD_VALIDATOR_MC=$CMD_VALIDATOR_MC" >> $GITHUB_ENV
+          echo "Determined versions:"
+          echo "  Human range: $MC_HUMAN_VERSION_RANGE"
+          echo "  Fabric range: $MACHINE_RANGE_FABRIC"
+          echo "  Forge range: $MACHINE_RANGE_FORGE"
+          echo "  NeoForge range: $MACHINE_RANGE_NEOFORGE"
+          echo "  Validator version: $CMD_VALIDATOR_MC"
+
+      # Optionally validate commands
+      - name: Validate commands
+        if: ${{ github.event.inputs.skip_check != 'true' }}
+        uses: mcbeet/check-commands@v1
+        with:
+          source: .
+          stats: true
+          minecraft: ${{ env.CMD_VALIDATOR_MC }}
+
+      # Update version info in files via find/replace actions
+      - name: Replace uninstall file name
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${file_name}"
+          replace: "${{ github.repository }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip"
+          regex: false
+          include: "**uninstall.mcfunction"
+      - name: Set data pack version
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${version}"
+          replace: "${{ env.TAG }}"
+          regex: false
+      - name: Set supported Minecraft version range (Human-readable)
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_human_version_range}"
+          replace: "${{ env.MC_HUMAN_VERSION_RANGE }}"
+          regex: false
+      - name: Set supported Minecraft version range (Fabric)
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version_range_fabric}"
+          replace: "${{ env.MACHINE_RANGE_FABRIC }}"
+          regex: false
+      - name: Set supported Minecraft version range (Forge)
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version_range_forge}"
+          replace: "${{ env.MACHINE_RANGE_FORGE }}"
+          regex: false
+      - name: Set supported Minecraft version range (NeoForge)
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${mc_version_range_neoforge}"
+          replace: "${{ env.MACHINE_RANGE_NEOFORGE }}"
+          regex: false
+
+      # Check for existence of directories
+      - name: Check for data pack folder
+        id: check_datapack
+        uses: andstor/file-existence-action@v3
+        with:
+          files: "data"
+      - name: Check for mod folder
+        id: check_mod
+        uses: andstor/file-existence-action@v3
+        with:
+          files: "META-INF, net, fabric.mod.json, assets"
+      - name: Check for resource pack folder
+        id: check_assets
+        uses: andstor/file-existence-action@v3
+        with:
+          files: "assets/minecraft"
+
+      # Package files (zip/jar) conditionally if folder exists
+      - name: Create data pack zip file
+        if: steps.check_datapack.outputs.files_exists == 'true'
+        shell: bash
+        run: |
+          zip "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip" -r . -x "assets/**" "net/**" "META-INF/**" fabric.mod.json "unused/**" "src/**" "wiki/**" CHANGES.md ".*"
+      - name: Create mod jar file
+        if: steps.check_mod.outputs.files_exists == 'true'
+        shell: bash
+        # Use jar -cvf "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar" -C . META-INF net fabric.mod.json assets data?
+        run: |
+          zip "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar" -r . -x "unused/**" "src/**" "wiki/**" CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip"
+      - name: Create resource pack zip file
+        if: steps.check_assets.outputs.files_exists == 'true'
+        shell: bash
+        run: |
+          zip "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-resourcepack.zip" -r . -x "data/**" "net/**" "META-INF/**" fabric.mod.json "unused/**" "src/**" "wiki/**" CHANGES.md ".*" "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip" "${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar"
+
+      # Capture and upload artifacts
+      - name: Upload artifacts
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: "${{ github.event.repository.name }} v${{ env.TAG }} Development Builds (Unzip Me)"
+          path: |
+            ./${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
+            ./${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
+            ./${{ github.event.repository.name }}-v${{ env.TAG }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-resourcepack.zip
+
+      # Build summary
+      - name: Set job summary
+        if: always()
+        shell: bash
+        run: |
+          echo "Building summary..."
+          if [ "${{ job.status }}" == "success" ]; then
+            cat << EOF >> $GITHUB_STEP_SUMMARY
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/success.svg">
+            <img alt="✅ Success" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg">
+          </picture><br>
+
+          **${{ github.event.repository.name }} v${{ env.TAG }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** built successfully! [See changes since last release](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGES.md).
+
+          [Download via nightly.link](https://nightly.link/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          Make sure to always back up your world before using development builds!
+          EOF
+
+          else
+            cat << EOF >> $GITHUB_STEP_SUMMARY
+          <picture>
+            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/error.svg">
+            <img alt="❌ Error" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/error.svg">
+          </picture><br>
+
+          The build v${{ env.TAG }} for mc${{ env.MC_HUMAN_VERSION_RANGE }} failed! Please check the action logs for details.
+          EOF
+          fi

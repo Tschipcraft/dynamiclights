@@ -3,7 +3,7 @@
   "pack": {
     "pack_format": 15,
     "supported_formats": [7,71],
-    "description": "Tschipcraft's Dynamic Lights \n└ v${version} ● mc${mc_version}"
+    "description": "Tschipcraft's Dynamic Lights \n└ v${version} ● mc${mc_human_version_range}"
   },
   "overlays": {
     "entries": [
