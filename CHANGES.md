@@ -1,5 +1,9 @@
-- **Added support for Minecraft 1.21.5** 📔
-- Fixed some zero tick piston contraptions from breaking (closes [#51](https://github.com/Tschipcraft/dynamiclights/issues/51))
+- **Added support for Minecraft 1.21.5** 🌸
+  - Updated to work with the new text component format
+  - Updated block placement commands to use the new `strict` argument, removing the restriction to avoid most block update affected blocks, such as falling blocks
+- **Added native NeoForge support**
+- Improved piston detection to search for slime blocks in all directions. This resolves an issue where some zero-tick piston contraptions would break (closes [#51](https://github.com/Tschipcraft/dynamiclights/issues/51))
 - Fixed chat flooding when triggering the menu in Minecraft 1.20.6 or below (closes [#66](https://github.com/Tschipcraft/dynamiclights/issues/66))
-- Added additional data to dynamic light marker entities to show a name when Axiom is installed ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))
-- Slightly better performance by switching to `sort=arbitrary` to allow short-circuiting entity selectors
+- Added additional data to Dynamic Lights' marker entities to display a name when [Axiom](https://modrinth.com/mod/N6n5dqoA) is installed ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))
+- Improved performance slightly by switching to `sort=arbitrary` to allow entity selector short-circuiting
+- Annotated the required Java version for mod versions

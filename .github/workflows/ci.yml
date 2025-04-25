@@ -296,7 +296,7 @@ jobs:
             <img alt="✅ Success" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg">
           </picture><br>
 
-          **${{ github.event.repository.name }} v${{ env.TAG }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** built successfully! [See changes since last release](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/CHANGES.md).
+          **${{ github.event.repository.name }} v${{ env.TAG }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** built successfully! [See changes since last release](https://github.com/${{ github.repository }}/blob/${{ github.sha }}/CHANGES.md).
 
           [Download via nightly.link](https://nightly.link/${{ github.repository }}/actions/runs/${{ github.run_id }})
 

@@ -29,7 +29,7 @@ scoreboard objectives remove ts.dl.toggle
 scoreboard objectives remove tschipcraft.menu
 
 scoreboard objectives remove ts.dl.version
-scoreboard objectives remove tvc_ignore
+execute unless score $global tvc_ignore matches 1 run scoreboard objectives remove tvc_ignore
 
 # Clear storage
 data remove storage dynamiclights:curios stacks
@@ -41,6 +41,7 @@ schedule clear dynamiclights:internal/main
 datapack disable "file/dynamiclights"
 datapack disable "file/dynamiclights.zip"
 datapack disable "mod:dynamiclights"
+datapack disable "mod/dynamiclights"
 datapack disable "file/${file_name}"
 
 say ⏻ Dynamic Lights v${version} by Tschipcraft has been uninstalled by @s! It is safe to disable and remove the data pack/mod.

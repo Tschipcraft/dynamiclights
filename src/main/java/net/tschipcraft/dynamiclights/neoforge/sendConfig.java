@@ -1,4 +1,4 @@
-package net.tschipcraft.dynamiclights.forge;
+package net.tschipcraft.dynamiclights.neoforge;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.commands.CommandSourceStack;

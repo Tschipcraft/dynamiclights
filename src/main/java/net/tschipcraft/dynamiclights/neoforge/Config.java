@@ -1,4 +1,4 @@
-package net.tschipcraft.dynamiclights.fabric;
+package net.tschipcraft.dynamiclights.neoforge;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 
