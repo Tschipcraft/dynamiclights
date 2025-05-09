@@ -5,5 +5,7 @@
 - Improved piston detection to search for slime blocks in all directions. This resolves an issue where some zero-tick piston contraptions would break (closes [#51](https://github.com/Tschipcraft/dynamiclights/issues/51))
 - Fixed chat flooding when triggering the menu in Minecraft 1.20.6 or below (closes [#66](https://github.com/Tschipcraft/dynamiclights/issues/66))
 - Added additional data to Dynamic Lights' marker entities to display a name when [Axiom](https://modrinth.com/mod/N6n5dqoA) is installed ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))
+- Added additional failsafes for menu interactions ([#70](https://github.com/Tschipcraft/dynamiclights/issues/70))
 - Improved performance slightly by switching to `sort=arbitrary` to allow entity selector short-circuiting
 - Annotated the required Java version for mod versions
+- Added Argentine Spanish (`es_ar`) language support (Thanks @Texaliuz)

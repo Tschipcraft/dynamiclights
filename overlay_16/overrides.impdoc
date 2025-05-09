@@ -1,0 +1,4 @@
+@targets 23w31a..24w20a (pre legacy renames)
+@changes function calls
+
+Redirects dynamic light summon function calls to use execute summon instead

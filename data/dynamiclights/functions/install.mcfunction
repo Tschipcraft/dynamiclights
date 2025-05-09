@@ -65,4 +65,4 @@ schedule function dynamiclights:internal/main 5t
 schedule function dynamiclights:internal/loop 4t
 
 # Break for any version below Minecraft 1.17
-execute if entity @e[type=minecraft:marker,limit=1]
+execute if entity @e[type=minecraft:marker,limit=1,x=0,dx=0]

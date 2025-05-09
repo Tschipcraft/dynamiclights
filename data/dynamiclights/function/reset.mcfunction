@@ -9,12 +9,12 @@ kill @e[type=minecraft:armor_stand,tag=ts.dl.i.parser]
 function dynamiclights:internal/explosion_detection/reset
 
 # Reset advancements
-advancement revoke @a only tschipcraft:menu
-scoreboard players enable @a tschipcraft.menu
 scoreboard players reset @a tschipcraft.menu
-advancement revoke @a only dynamiclights:toggle_enable
-scoreboard players enable @a ts.dl.toggle
+scoreboard players enable @a tschipcraft.menu
+advancement revoke @a only tschipcraft:menu
 scoreboard players reset @a ts.dl.toggle
+scoreboard players enable @a ts.dl.toggle
+advancement revoke @a only dynamiclights:toggle_enable
 
 # Reset parsed data
 scoreboard objectives remove ts.dl.i.type
@@ -23,4 +23,4 @@ scoreboard objectives add ts.dl.i.type dummy
 # Reschedule main function
 schedule function dynamiclights:internal/main 5t
 
-say ⏏ Successfully resetted Dynamic lights!
+say ⏏ Dynamic Lights successfully reset!

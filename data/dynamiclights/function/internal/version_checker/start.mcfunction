@@ -13,4 +13,5 @@ scoreboard players reset $curios_install ts.dl.version
 execute if data entity @r ForgeCaps.curios:inventory.Curios run scoreboard players set $curios_install ts.dl.version 1
 execute if data entity @r neoforge:attachments.curios:inventory.Curios run scoreboard players set $curios_install ts.dl.version 1
 
+# Retry if version retrieval failed
 execute unless score $global ts.dl.version matches 1.. run function dynamiclights:internal/version_checker/retry

@@ -12,8 +12,7 @@ execute if score $global ts.dl.version matches 1632..1976 run tellraw @a [{"text
 execute if score $global ts.dl.version matches 1343..1631 run tellraw @a [{"text":"[Dynamic Lights] ","color":"gray"},{"text":"\u26a0 Minecraft version ","color":"red"},{"text":"1.13","color":"red","bold": true},{"text":" detected! This data pack does not work in 1.13! Please use ","color":"red"},{"text": "1.17 or above", "color":"red","underlined":true},{"text":"!","color":"red"}]
 
 # Curios Compatibility
-scoreboard players reset $curios_install ts.dl.version
-execute if data entity @r ForgeCaps.curios:inventory.Curios run scoreboard players set $curios_install ts.dl.version 1
-execute if data entity @r neoforge:attachments.curios:inventory.Curios run scoreboard players set $curios_install ts.dl.version 1
+function dynamiclights:internal/version_checker/curios_compatibility
 
+# Retry if version retrieval failed
 execute unless score $global ts.dl.version matches 1.. run function dynamiclights:internal/version_checker/retry
