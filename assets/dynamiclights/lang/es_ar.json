@@ -1,0 +1,48 @@
+{
+  "dynamiclights.midnightconfig.title": "Configuración de Dynamic Lights",
+  "dynamiclights.midnightconfig.configure_ingame": "§dℹ Info:§r§f Para configurar este datapack de forma individual por mundo,",
+  "dynamiclights.midnightconfig.configure_ingame2": "entrar a un mundo y ejecutar el comando §o/function dynamiclights:settings§r.",
+  "dynamiclights.midnightconfig.empty": "",
+  "dynamiclights.midnightconfig.global_settings": "§n§l-=- Configuración Global -=-",
+  "dynamiclights.midnightconfig.info": "§dℹ Info:§r§f Estos ajustes se aplicarán a todos los mundos de manera global.",
+  "dynamiclights.midnightconfig.info2": "Asegurate de volver a entrar a un mundo para que los cambios globales tengan efecto.",
+  "dynamiclights.midnightconfig.light": "§lHabilitar emisión de luz desde...",
+  "dynamiclights.midnightconfig.empty2": "",
+  "dynamiclights.midnightconfig.additional_light": "§lHabilitar emisión de luz adicional desde...",
+  "dynamiclights.midnightconfig.empty3": "",
+  "dynamiclights.midnightconfig.other": "§lOtros",
+
+  "dynamiclights.midnightconfig.enable": "Luces Dinámicas",
+  "dynamiclights.midnightconfig.enable.tooltip": "Activar Luces Dinámicas\nPor defecto: §aSí§f",
+  "dynamiclights.midnightconfig.enable_on_fire": "Entidades en llamas",
+  "dynamiclights.midnightconfig.enable_on_fire.tooltip": "Por defecto: §aSí§f",
+  "dynamiclights.midnightconfig.enable_glowing": "Entidades con el efecto de brillo",
+  "dynamiclights.midnightconfig.enable_glowing.tooltip": "Por defecto: §cNo§f",
+  "dynamiclights.midnightconfig.enable_ghast": "Ghasts a punto de disparar una bola de fuego",
+  "dynamiclights.midnightconfig.enable_ghast.tooltip": "Por defecto: §aSí§f",
+  "dynamiclights.midnightconfig.enable_enchanted_items": "Ítems encantados",
+  "dynamiclights.midnightconfig.enable_enchanted_items.tooltip": "Por defecto: §aSí§f\n§6⚠ Nota: Activar esta opción puede afectar el rendimiento de algunas granjas de mobs.",
+  "dynamiclights.midnightconfig.enable_amethyst_trimmed": "Armadura con adorno de amatista",
+  "dynamiclights.midnightconfig.enable_amethyst_trimmed.tooltip": "Por defecto: §aSí§f\nSolo para Minecraft 1.20+.",
+
+  "dynamiclights.midnightconfig.enable_fire_aspect": "Ítems encantados con Aspecto Ígneo",
+  "dynamiclights.midnightconfig.enable_fire_aspect.tooltip": "Por defecto: §aSí§f\n§6⚠ Nota: Activar esta opción puede afectar el rendimiento de algunas granjas de mobs.",
+  "dynamiclights.midnightconfig.enable_riptide": "Tridentes encantados con Propulsión Acuática dentro del agua",
+  "dynamiclights.midnightconfig.enable_riptide.tooltip": "Por defecto: §aSí§f\nFunciona solo si está activado el chequeo de sensibilidad al agua.",
+  "dynamiclights.midnightconfig.enable_channeling": "Tridentes encantados con Canalización durante tormentas",
+  "dynamiclights.midnightconfig.enable_channeling.tooltip": "Por defecto: §aSí§f",
+
+  "dynamiclights.midnightconfig.enable_water_sensitive": "Chequeo de Sensibilidad al Agua",
+  "dynamiclights.midnightconfig.enable_water_sensitive.tooltip": "Por defecto: §aSí§f\nSi está activado, ítems sensibles al agua como antorchas se apagarán en contacto con agua.",
+  "dynamiclights.midnightconfig.enable_sound": " └ Sonidos de encendido/apagado",
+  "dynamiclights.midnightconfig.enable_sound.tooltip": "Por defecto: §aSí§f\nSi está activado, sonarán efectos de sonido cuando un ítem sensible al agua se apague o se encienda.",
+  "dynamiclights.midnightconfig.enable_rain_sensitive": " └ Chequeo de Lluvia",
+  "dynamiclights.midnightconfig.enable_rain_sensitive.tooltip": "Por defecto: §aSí§f\nSi está activado, tocar la lluvia cuenta como estar en contacto con agua.\nSolo tiene efecto si está activado el Chequeo de Sensibilidad al Agua.\nDisponible solo en Minecraft 1.19.4+.",
+
+  "dynamiclights.midnightconfig.enum.bool.WORLD": "§bPor Mundo",
+  "dynamiclights.midnightconfig.enum.bool.YES": "§a[✔] Sí",
+  "dynamiclights.midnightconfig.enum.bool.NO": "§c[❌] No",
+
+  "modmenu.summaryTranslation.dynamiclights": "¡Entidades y objetos como antorchas o faroles emiten luz! ¡Solo del lado del servidor!",
+  "modmenu.donate": "Donar"
+}

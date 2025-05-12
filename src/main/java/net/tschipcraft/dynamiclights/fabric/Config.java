@@ -62,4 +62,5 @@ public class Config extends MidnightConfig {
     public static bool enable_sound = bool.WORLD;
     @Entry
     public static bool enable_rain_sensitive = bool.WORLD;
+
 }

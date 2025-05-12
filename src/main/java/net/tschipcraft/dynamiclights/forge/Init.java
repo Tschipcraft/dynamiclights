@@ -14,8 +14,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Mod("dynamiclights")
-@Mod.EventBusSubscriber(modid = "dynamiclights")
+@Mod(Init.MODID)
+@Mod.EventBusSubscriber(modid = Init.MODID)
 public class Init {
 
 	public static final String MODID = "dynamiclights";
@@ -26,6 +26,7 @@ public class Init {
 			// Directly reference a slf4j logger
 			LOGGER = LoggerFactory.getLogger(MODID);
 		} catch (NoClassDefFoundError ignored) {
+			// No logging
 		}
 	}
 
@@ -36,7 +37,7 @@ public class Init {
 		modEventBus.addListener(this::setup);
 
 		try {
-			if (LOGGER != null) LOGGER.info("[Dynamic Lights] Registering server started event...");
+			if (LOGGER != null) LOGGER.info("[Dynamic Lights] Registering server started event ...");
 			Class.forName("net.minecraftforge.event.server.ServerStartedEvent");
 
 			// Register onServerStarted handler
@@ -44,7 +45,7 @@ public class Init {
 				@SubscribeEvent
 				public void onServerStarted(ServerStartedEvent event) {
 					if (ModList.get().isLoaded("midnightlib")) {
-						LOGGER.info("[Dynamic Lights] Sending global config to world...");
+						LOGGER.info("[Dynamic Lights] Sending global config to world ...");
 						sendConfig.sendConfig(event.getServer());
 					}
 				}
@@ -52,6 +53,7 @@ public class Init {
 
 		} catch (ClassNotFoundException e) {
 			// ServerStartedEvent doesn't exist, don't register
+			if (LOGGER != null) LOGGER.info("[Dynamic Lights] ServerStartedEvent not found, not registering event handler.");
 		}
 	}
 
@@ -70,4 +72,5 @@ public class Init {
 		}
 		if (LOGGER != null) LOGGER.info("[Dynamic Lights] Loaded Dynamic Lights by Tschipcraft successfully!");
 	}
+
 }

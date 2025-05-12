@@ -1,0 +1,10 @@
+@targets 24w09a..24w20a (pre legacy renames)
+@changes predicates
+https://misode.github.io/versions/?id=24w09a&tab=changelog&tags=breaking|predicate
+
+In location_check predicates:
+- Renames `tag` to `blocks` or `fluids`
+
+In entity_properties predicates:
+- Renames `tag` to `ìtems`
+- Introduces `components`

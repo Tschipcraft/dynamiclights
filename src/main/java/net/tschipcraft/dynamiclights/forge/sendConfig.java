@@ -124,4 +124,5 @@ public class sendConfig {
         } catch (CommandSyntaxException ignored) {
         }
     }
+
 }

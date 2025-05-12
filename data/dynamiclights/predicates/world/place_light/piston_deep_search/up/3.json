@@ -1,13 +1,13 @@
 [
   {
-    "//comment": "This predicate returns true if a piston block 3 blocks down is in direct pushing range of the current position",
+    "//comment": "This predicate returns true if a piston block 3 blocks up is in direct pushing range of the current position",
     "condition": "minecraft:location_check",
-    "offsetY": -3,
+    "offsetY": 3,
     "predicate": {
       "block": {
         "tag": "dynamiclights:piston",
         "state": {
-          "facing": "up"
+          "facing": "down"
         }
       }
     }
@@ -16,7 +16,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:location_check",
-      "offsetY": -2,
+      "offsetY": 2,
       "predicate": {
         "block": {
           "tag": "dynamiclights:breaks_piston_push_chain"
@@ -28,7 +28,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:location_check",
-      "offsetY": -1,
+      "offsetY": 1,
       "predicate": {
         "block": {
           "tag": "dynamiclights:breaks_piston_push_chain"

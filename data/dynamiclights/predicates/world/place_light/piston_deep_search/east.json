@@ -13,5 +13,31 @@
       "condition": "minecraft:reference",
       "name": "dynamiclights:world/place_light/piston_deep_search/east/3"
     }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetX": 1,
+      "offsetY": 1,
+      "predicate": {
+        "block": {
+          "tag": "dynamiclights:extends_piston"
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetX": 1,
+      "offsetY": -1,
+      "predicate": {
+        "block": {
+          "tag": "dynamiclights:extends_piston"
+        }
+      }
+    }
   }
 ]

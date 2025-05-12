@@ -1,2 +1,11 @@
-- **Added support for Minecraft 1.21.4** 🪵
-- Fixed crash when loading or creating a world in Forge 52.0.0 or newer (1.21.1+) (closes [#65](https://github.com/Tschipcraft/dynamiclights/issues/65))
+- **Added support for Minecraft 1.21.5** 🌸
+  - Updated to work with the new text component format
+  - Updated block placement commands to use the new `strict` argument, removing the restriction to avoid most block update affected blocks, such as falling blocks
+- **Added native NeoForge support**
+- Improved piston detection to search for slime blocks in all directions. This resolves an issue where some zero-tick piston contraptions would break (closes [#51](https://github.com/Tschipcraft/dynamiclights/issues/51))
+- Fixed chat flooding when triggering the menu in Minecraft 1.20.6 or below (closes [#66](https://github.com/Tschipcraft/dynamiclights/issues/66))
+- Added additional data to Dynamic Lights' marker entities to display a name when [Axiom](https://modrinth.com/mod/N6n5dqoA) is installed ([#19](https://github.com/Tschipcraft/dynamiclights/issues/19))
+- Added additional failsafes for menu interactions ([#70](https://github.com/Tschipcraft/dynamiclights/issues/70))
+- Improved performance slightly by switching to `sort=arbitrary` to allow entity selector short-circuiting
+- Annotated the required Java version for mod versions
+- Added Argentine Spanish (`es_ar`) language support (Thanks @Texaliuz)

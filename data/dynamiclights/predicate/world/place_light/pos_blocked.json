@@ -1,6 +1,6 @@
 [
   {
-    "//comment": "This predicate returns false if the tested position is replacable by a light block",
+    "//comment": "This predicate returns false if the tested position is replaceable by a light block",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:location_check",
