@@ -51,7 +51,7 @@ public class Init {
 				// Use MidnightLib features
 				LOGGER.info("[Dynamic Lights] MidnightLib detected!");
 				// Build config class
-				Config.init(MODID, Config.class);
+				MidnightConfig.init(MODID, Config.class);
 				// Initialize config screen
 				modContainer.registerExtensionPoint(IConfigScreenFactory.class,
 						(Supplier<IConfigScreenFactory>) () -> (client, parent) ->
