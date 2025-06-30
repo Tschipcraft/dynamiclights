@@ -1,2 +1,1 @@
-- **Added support for Minecraft 1.21.6** ☁️
-- Fixed 1.21.5 NeoForge crash when installed alongside MidnightLib
+- **Added support for Minecraft 1.21.7** 💿

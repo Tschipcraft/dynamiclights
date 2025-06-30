@@ -39,7 +39,7 @@ features={ java_version = "[21,)" }
     modId="midnightlib"
     type="optional"
     versionRange="[1.0.0,)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"
     referralUrl="https://modrinth.com/mod/codAaoxh/versions?l=neoforge"
     reason="Global settings across all worlds"

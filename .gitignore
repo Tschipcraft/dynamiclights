@@ -1,4 +1,9 @@
-/unused
+# Project-specific #
+unused
+wiki/pages
+
+# VSCode #
+.vscode
 
 # Package Files #
 *.jar
