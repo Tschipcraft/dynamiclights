@@ -250,6 +250,29 @@ jobs:
             datapack
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
+
+      - name: Upload Forge mod version to Modrinth # Forge mod version is uploaded separately atm due to it not being compatible with Minecraft 1.21.6 or above
+        id: upload_forge_modrinth_mod
+        uses: Kir-Antipov/mc-publish@v3.3
+        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
+        with:
+          modrinth-id: 7YjclEGc
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          game-versions: |
+            >=1.17 <=1.21.5
+          game-version-filter: any
+          fail-mode: skip
+
+          name: "[Mod] Release v${{ github.event.inputs.tag }}"
+          version: ${{ github.event.inputs.tag }}+mod
+          changelog-file: CHANGES.md
+
+          dependencies: |
+            midnightlib(optional){modrinth:codAaoxh}
+          loaders: |
+            forge
+          files: |
+            ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
       
       - name: Upload mod version to Modrinth
         id: upload_modrinth_mod
@@ -275,7 +298,6 @@ jobs:
           loaders: |
             fabric
             quilt
-            forge
             neoforge
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar
@@ -300,7 +322,7 @@ jobs:
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-datapack.zip
 
-      - name: Upload mod version to CurseForge
+      - name: Upload mod version to CurseForge # Duplicate uploads sadly don't work on CurseForge
         id: upload_curseforge_mod
         uses: Kir-Antipov/mc-publish@v3.3
         if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'
@@ -355,42 +377,43 @@ jobs:
         run: |
           echo "Building summary..."
           if [ "${{ job.status }}" == "success" ]; then
-            SUMMARY_CONTENT="<picture>
-              <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/success.svg\">
-              <img alt=\"✅ Success\" src=\"https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg\">
-            </picture><br>
+          SUMMARY_CONTENT="<picture>
+            <source media=\"(prefers-color-scheme: light)\" srcset=\"https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/success.svg\">
+            <img alt=\"✅ Success\" src=\"https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg\">
+          </picture><br>
 
-            **${{ github.event.repository.name }} v${{ github.event.inputs.tag }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** published successfully!
+          **${{ github.event.repository.name }} v${{ github.event.inputs.tag }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** published successfully!
 
-            [View Changelog](https://github.com/${{ github.repository }}/blob/v${{ github.event.inputs.tag }}/CHANGES.md)
+          [View Changelog](https://github.com/${{ github.repository }}/blob/v${{ github.event.inputs.tag }}/CHANGES.md)
 
-            **Downloads:**
-            "
+          **Downloads:**
+          "
 
-            if [ -n "${{ steps.upload_modrinth_dp.outputs.modrinth-url }}" ]; then
-              SUMMARY_CONTENT+="- [Modrinth (Data Pack)](${{ steps.upload_modrinth_dp.outputs.modrinth-url }})
-              "
-            fi
-            if [ -n "${{ steps.upload_modrinth_mod.outputs.modrinth-url }}" ]; then
-              SUMMARY_CONTENT+="- [Modrinth (Mod)](${{ steps.upload_modrinth_mod.outputs.modrinth-url }})
-              "
-            fi
-            if [ -n "${{ steps.upload_curseforge_dp.outputs.curseforge-url }}" ]; then
-              SUMMARY_CONTENT+="- [CurseForge (Data Pack)](${{ steps.upload_curseforge_dp.outputs.curseforge-url }})
-              "
-            fi
-            if [ -n "${{ steps.upload_curseforge_mod.outputs.curseforge-url }}" ]; then
-              SUMMARY_CONTENT+="- [CurseForge (Mod)](${{ steps.upload_curseforge_mod.outputs.curseforge-url }})
-              "
-            fi
-            if [ -n "${{ steps.upload_github.outputs.github-url }}" ]; then
-              SUMMARY_CONTENT+="- [GitHub Releases](${{ steps.upload_github.outputs.github-url }})
-              "
-            fi
+          if [ -n "${{ steps.upload_modrinth_dp.outputs.modrinth-url }}" ]; then
+            SUMMARY_CONTENT+="- [Modrinth (Data Pack)](${{ steps.upload_modrinth_dp.outputs.modrinth-url }})
+          "
+          fi
+          if [ -n "${{ steps.upload_modrinth_mod.outputs.modrinth-url }}" ]; then
+            SUMMARY_CONTENT+="- [Modrinth (Mod)](${{ steps.upload_modrinth_mod.outputs.modrinth-url }})
+          "
+          fi
+          if [ -n "${{ steps.upload_curseforge_dp.outputs.curseforge-url }}" ]; then
+            SUMMARY_CONTENT+="- [CurseForge (Data Pack)](${{ steps.upload_curseforge_dp.outputs.curseforge-url }})
+          "
+          fi
+          if [ -n "${{ steps.upload_curseforge_mod.outputs.curseforge-url }}" ]; then
+            SUMMARY_CONTENT+="- [CurseForge (Mod)](${{ steps.upload_curseforge_mod.outputs.curseforge-url }})
+          "
+          fi
+          if [ -n "${{ steps.upload_github.outputs.github-url }}" ]; then
+            SUMMARY_CONTENT+="- [GitHub Releases](${{ steps.upload_github.outputs.github-url }})
+          "
+          fi
 
-            echo -e "$SUMMARY_CONTENT" >> $GITHUB_STEP_SUMMARY
+          echo -e "$SUMMARY_CONTENT" >> $GITHUB_STEP_SUMMARY
+
           else
-            cat << EOF >> $GITHUB_STEP_SUMMARY
+          cat << EOF >> $GITHUB_STEP_SUMMARY
           <picture>
             <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/error.svg">
             <img alt="❌ Error" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/error.svg">

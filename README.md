@@ -13,7 +13,7 @@
 
 ## Features
 
-This data pack/mod brings **dynamic lighting** to Minecraft without any client-side requirements. Supported entities and items (like torches, glowstone, or enchanted gear), held or worn by players, mobs, or placed in item frames, will emit real light as they move, using the [light block](https://minecraft.wiki/w/Light_(block)) added in Snapshot 21w13a. Because of this, the dynamic lights are limited to the block grid. (see [#9](https://github.com/Tschipcraft/dynamiclights/issues/9) for more information)
+This data pack/mod brings dynamic lighting to Minecraft without any client-side requirements. Supported entities and items (like torches, glowstone, or enchanted gear), held or worn by players, mobs, or placed in item frames, will emit light using the [light block](https://minecraft.wiki/w/Light_(block)) added in Snapshot 21w13a. Because of this, the dynamic lights are limited to the block grid. (see [#9](https://github.com/Tschipcraft/dynamiclights/issues/9) for more information)
 
 * [**47+ supported vanilla items**](https://github.com/Tschipcraft/dynamiclights/wiki/Supported-Items) out of the box
 * **Multiple light levels**: 3, 6, 9, 12, and 15
