@@ -1,1 +1,2 @@
-- **Added support for Minecraft 1.21.7** 💿
+- **Fixed an issue where a structure void item would sometimes flicker below players with an equipped Curios slot** 🔧 (closes [#85](https://github.com/Tschipcraft/dynamiclights/issues/85))
+- Optimized execution by separating logic for players and non-players, capping non-player entities at 1000, and reducing the dynamic light radius around players from 65 to 55 blocks to include fewer entities ([#84](https://github.com/Tschipcraft/dynamiclights/issues/84))

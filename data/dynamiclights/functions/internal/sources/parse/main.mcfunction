@@ -1,6 +1,6 @@
 ##by Tschipcraft
 
-summon armor_stand ~ ~ ~ {UUID:[I;-1030365714,1276464731,-2084950084,-395075115],NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Marker:1b,Invisible:1b,NoBasePlate:1b,Tags:["ts.dl.i.parser"],HandItems:[{id:"minecraft:structure_void",Count:1b},{}],DisabledSlots:4144959}
+summon armor_stand ~ -65 ~ {UUID:[I;-1030365714,1276464731,-2084950084,-395075115],NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Marker:1b,Invisible:1b,NoBasePlate:1b,Tags:["ts.dl.i.parser"],HandItems:[{id:"minecraft:structure_void",Count:1b},{}],DisabledSlots:4144959}
 
 # Copy NBT data
 execute as @s[type=minecraft:item] run data modify entity c295ddee-4c15-4e5b-83ba-2fbce873a1d5 HandItems[0] set from entity @s Item

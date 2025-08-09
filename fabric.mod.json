@@ -26,9 +26,11 @@
     "java": ">=8"
   },
   "recommends": {
-    "modmenu": "*",
-    "modmenu-badges-lib": "*",
     "midnightlib": "*"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "modmenu-badges-lib": "*"
   },
   "conflicts": {
     "movingelevators": "<1.4.6"

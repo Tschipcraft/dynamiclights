@@ -290,7 +290,7 @@ jobs:
         run: |
           echo "Building summary..."
           if [ "${{ job.status }}" == "success" ]; then
-            cat << EOF >> $GITHUB_STEP_SUMMARY
+          cat << EOF >> $GITHUB_STEP_SUMMARY
           <picture>
             <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/success.svg">
             <img alt="✅ Success" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/success.svg">
@@ -304,12 +304,12 @@ jobs:
           EOF
 
           else
-            cat << EOF >> $GITHUB_STEP_SUMMARY
+          cat << EOF >> $GITHUB_STEP_SUMMARY
           <picture>
             <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/light-theme/error.svg">
             <img alt="❌ Error" src="https://raw.githubusercontent.com/Mqxx/GitHub-Markdown/main/blockquotes/badge/dark-theme/error.svg">
           </picture><br>
 
-          The build v${{ env.TAG }} for mc${{ env.MC_HUMAN_VERSION_RANGE }} failed! Please check the action logs for details.
+          The build **v${{ env.TAG }}** for **Minecraft ${{ env.MC_HUMAN_VERSION_RANGE }}** failed! Please check the action logs for details.
           EOF
           fi
