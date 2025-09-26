@@ -3,7 +3,9 @@
   "replace": false,
   "values": [
     "minecraft:torch",
+    {"id": "minecraft:copper_torch", "required": false},
     "minecraft:lantern",
+    {"id": "#dynamiclights:groups/copper_lanterns", "required": false},
     "minecraft:campfire",
     "minecraft:lava_bucket",
     "minecraft:glowstone",
