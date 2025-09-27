@@ -5,6 +5,8 @@
     {"id": "#c:glow_berries", "required": false},
     {"id": "#c:glowstone_dusts", "required": false},
     {"id": "#forge:rods/blaze", "required": false},
+    {"id": "bonetorch:soul_bonetorch", "required": false},
+    {"id": "tfc:sea_pickle", "required": false},
     {"id": "wardrobe:soul_lantern_on_a_stick", "required": false}
   ]
 }

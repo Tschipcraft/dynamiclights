@@ -5,6 +5,9 @@
     {"id": "#c:lanterns", "required": false},
     {"id": "#c:lava_buckets", "required": false},
     {"id": "#c:buckets/lava", "required": false},
+    {"id": "aquatictorches:aquatic_torch", "required": false},
+    {"id": "bonetorch:bonetorch", "required": false},
+    {"id": "tfc:torch", "required": false},
     {"id": "wardrobe:lantern_on_a_stick", "required": false}
   ]
 }
