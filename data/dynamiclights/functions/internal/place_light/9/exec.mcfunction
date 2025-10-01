@@ -8,4 +8,4 @@ scoreboard players set #block_placed ts.dl.temp 0
 execute if predicate dynamiclights:world/place_light/valid_pos run function dynamiclights:internal/place_light/9/summon
 
 # If not valid, try deeper layer
-execute unless score #block_placed ts.dl.temp matches 1 run function dynamiclights:internal/place_light/9/find_place/layer_1
+execute unless score #block_placed ts.dl.temp matches 1 run function dynamiclights:internal/place_light/9/find_place/layer_0

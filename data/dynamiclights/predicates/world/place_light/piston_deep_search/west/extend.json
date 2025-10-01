@@ -1,0 +1,24 @@
+[
+  {
+    "//comment": "This predicate returns true if a slime or honey block 2 blocks west is in direct pushing range of the current position",
+    "condition": "minecraft:location_check",
+    "offsetX": -2,
+    "predicate": {
+      "block": {
+        "tag": "dynamiclights:extends_piston"
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "offsetX": -1,
+      "predicate": {
+        "block": {
+          "tag": "dynamiclights:breaks_piston_push_chain"
+        }
+      }
+    }
+  }
+]

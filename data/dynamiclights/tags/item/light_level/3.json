@@ -9,6 +9,7 @@
     "minecraft:small_amethyst_bud",
     "minecraft:heart_of_the_sea",
     "minecraft:totem_of_undying",
+    {"id": "minecraft:firefly_bush", "required": false},
     {"id": "#dynamiclights:mod_support/light_level/3", "required": false}
   ]
 }

@@ -2,5 +2,6 @@
   "//comment": "Items listed here will only emit light inside water - Intended to get populated by mods",
   "replace": false,
   "values": [
+    {"id": "tfc:sea_pickle", "required": false}
   ]
 }

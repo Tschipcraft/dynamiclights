@@ -2,6 +2,9 @@
   "//comment": "Items listed here will only emit light outside water - Intended to get populated by mods",
   "replace": false,
   "values": [
-    {"id": "#c:lava_buckets", "required": false}
+    {"id": "#c:lava_buckets", "required": false},
+    {"id": "bonetorch:bonetorch", "required": false},
+    {"id": "bonetorch:soul_bonetorch", "required": false},
+    {"id": "tfc:torch", "required": false}
   ]
 }

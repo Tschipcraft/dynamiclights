@@ -9,13 +9,13 @@
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
-> Server-side dynamic lighting for Minecraft 1.17-1.21x, available as a data pack or mod
+> Server-side dynamic lighting for Minecraft 1.17-1.21x
 
 ## Features
 
 This data pack/mod brings dynamic lighting to Minecraft without any client-side requirements. Supported entities and items (like torches, glowstone, or enchanted gear), held or worn by players, mobs, or placed in item frames, will emit light using the [light block](https://minecraft.wiki/w/Light_(block)) added in Snapshot 21w13a. Because of this, the dynamic lights are limited to the block grid. (see [#9](https://github.com/Tschipcraft/dynamiclights/issues/9) for more information)
 
-* [**47+ supported vanilla items**](https://github.com/Tschipcraft/dynamiclights/wiki/Supported-Items) out of the box
+* [**50+ supported vanilla items**](https://github.com/Tschipcraft/dynamiclights/wiki/Supported-Items) out of the box
 * **Multiple light levels**: 3, 6, 9, 12, and 15
 * **Water-sensitive behavior** for some items
 * **Enchanted items** glow by default (light level 6), with special cases for Fire Aspect, Riptide, Channeling (light level 9)

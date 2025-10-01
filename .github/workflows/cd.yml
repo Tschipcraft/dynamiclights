@@ -346,7 +346,6 @@ jobs:
           loaders: |
             fabric
             quilt
-            forge
             neoforge
           files: |
             ./${{ github.event.repository.name }}-v${{ github.event.inputs.tag }}-mc${{ env.MC_HUMAN_VERSION_RANGE }}-mod.jar

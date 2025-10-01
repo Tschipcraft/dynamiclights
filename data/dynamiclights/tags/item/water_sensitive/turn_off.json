@@ -3,6 +3,7 @@
   "replace": false,
   "values": [
     "minecraft:torch",
+    {"id": "minecraft:copper_torch", "required": false},
     "minecraft:campfire",
     "minecraft:lava_bucket",
     "minecraft:soul_torch",

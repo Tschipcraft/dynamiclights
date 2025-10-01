@@ -7,6 +7,8 @@
     {"id": "#c:dusts/glowstone", "required": false},
     {"id": "#c:rods/blaze", "required": false},
     {"id": "#c:obsidians/crying", "required": false},
+    {"id": "bonetorch:soul_bonetorch", "required": false},
+    {"id": "tfc:sea_pickle", "required": false},
     {"id": "wardrobe:soul_lantern_on_a_stick", "required": false}
   ]
 }

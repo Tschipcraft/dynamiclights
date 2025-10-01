@@ -17,6 +17,13 @@
   {
     "condition": "minecraft:inverted",
     "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:world/place_light/piston_deep_search/north/extend"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
       "condition": "minecraft:location_check",
       "offsetZ": -1,
       "offsetY": 1,

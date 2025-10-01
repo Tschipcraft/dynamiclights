@@ -4,6 +4,7 @@
   "values": [
     "minecraft:tnt",
     "minecraft:shulker_bullet",
-    {"id": "minecraft:allay", "required": false}
+    {"id": "minecraft:allay", "required": false},
+    {"id": "tfc:glow_arrow", "required": false}
   ]
 }

@@ -1,7 +1,7 @@
 ##by Tschipcraft
 
 # Reset scores from previous tick
-scoreboard players reset @s ts.dl.i.type
+scoreboard players set @s ts.dl.i.type 0
 scoreboard players reset @s ts.dl.i.is_ench
 scoreboard players reset @s ts.dl.i.is_ameth
 scoreboard players reset @s ts.dl.i.is_firea
