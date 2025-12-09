@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:desert",
+    "#minecraft:is_badlands",
+    "#minecraft:is_savanna",
+    "#minecraft:is_nether",
+    {"id": "#c:is_dry", "required": false},
+    {"id": "#minecraft:snow_golem_melts", "required": false}
+  ]
+}

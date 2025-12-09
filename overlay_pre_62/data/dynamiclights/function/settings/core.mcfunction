@@ -74,5 +74,4 @@ execute if score $global ts.dl.version matches 3337.. if score $water_sensitive 
 execute if score $global ts.dl.version matches 3337.. if score $water_sensitive ts.dl.settings matches 1..2 if score $rain_sensitive ts.dl.settings matches 2 run tellraw @s [{"text":" └[✔] Rain Check","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"This setting is getting controlled globally and can't be changed here."}]}}]
 execute if score $global ts.dl.version matches 3337.. if score $water_sensitive ts.dl.settings matches -1..0 run tellraw @s [{"text":" └[❌] Rain Check","bold":false,"color":"gray","hoverEvent":{"action":"show_text","contents":[{"text":"Please enable the water sensitivity check first."}]}}]
 
-function dynamiclights:settings/hide_feedback/main
 playsound minecraft:block.dispenser.dispense master @s ~ ~ ~ 0.2 2
