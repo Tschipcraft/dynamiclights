@@ -13,8 +13,8 @@ on:
       mc_lower:
         description: 'Lower bound of Minecraft version range (exact version), e.g. "1.17"'
         required: false
-      skip_check:
-        description: 'Set to true to skip command validation'
+      command_validation:
+        description: 'Set to true to perform command validation with mecha'
         required: false
         type: boolean
         default: false
@@ -31,7 +31,7 @@ jobs:
     name: Validate and build development version
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           show-progress: false
           fetch-depth: 25 # Fetch 25 commits to ensure we have enough history for git describe
@@ -191,7 +191,7 @@ jobs:
 
       # Optionally validate commands
       - name: Validate commands
-        if: ${{ github.event.inputs.skip_check != 'true' }}
+        if: ${{ github.event.inputs.command_validation == 'true' }}
         uses: mcbeet/check-commands@v1
         with:
           source: .
@@ -275,7 +275,7 @@ jobs:
       # Capture and upload artifacts
       - name: Upload artifacts
         id: upload
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: "${{ github.event.repository.name }} v${{ env.TAG }} Development Builds (Unzip Me)"
           path: |

@@ -26,7 +26,7 @@ jobs:
     name: Build and publish project
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           show-progress: false
 
@@ -221,7 +221,7 @@ jobs:
       # Upload artifacts for dry run testing
       - name: Upload artifacts
         id: upload
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: github.event.inputs.dry_run == 'true'
         with:
           name: "${{ github.event.repository.name }} v${{ github.event.inputs.tag }} Test Builds (Unzip Me)"
