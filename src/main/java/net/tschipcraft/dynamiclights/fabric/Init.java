@@ -31,7 +31,13 @@ public class Init implements ModInitializer {
 				if (FabricLoader.getInstance().isModLoaded("midnightlib")) {
 					// Use MidnightLib features
 					LOGGER.info("[Dynamic Lights] Sending global config to world ...");
-					sendConfig.sendConfig(server);
+					try {
+						// Check for obfuscated class name to determine if we're running a pre 26.1 version
+						Class.forName("net.minecraft.class_2168");
+						sendConfigObf.sendConfig(server);
+					} catch (ClassNotFoundException e) {
+						sendConfig.sendConfig(server);
+					}
 				}
 			});
 		}
