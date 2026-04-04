@@ -1,3 +1,3 @@
-- **Added support for Minecraft 26.1** 🐤
+- **Added support for Minecraft 26.1x** 🐤
   - Added router to handle [unobfuscated code](https://www.minecraft.net/en-us/article/removing-obfuscation-in-java-edition)
   - Bumped pack format and protocol version
