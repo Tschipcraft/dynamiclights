@@ -2,7 +2,7 @@
 
 scoreboard objectives add ts.dl.version dummy
 execute store result score $global ts.dl.version run data get entity @r DataVersion
-execute unless score $global tvc_ignore matches 1 if score $global ts.dl.version matches 4700.. run tellraw @a [{"text":"[Dynamic Lights] ","color":"gray"},{"text":"?","bold":true,"color":"gold"},{"text":" Future unknown Minecraft version above 1.21.11 detected! This data pack/mod may not work correctly anymore! Please make sure to check for updates in the menu! (","color":"gold"},{"text":"/trigger tschipcraft.menu","underlined":true,"color":"gold","click_event":{"action":"run_command","command":"trigger tschipcraft.menu"},"hover_event":{"action":"show_text","value":"Click here","text":"Click here"}},{"text":")","color":"gold"}]
+execute unless score $global tvc_ignore matches 1 if score $global ts.dl.version matches 4800.. run tellraw @a [{"text":"[Dynamic Lights] ","color":"gray"},{"text":"?","bold":true,"color":"gold"},{"text":" Future unknown Minecraft version above 26.1 detected! This data pack/mod may not work correctly anymore! Please make sure to check for updates in the menu! (","color":"gold"},{"text":"/trigger tschipcraft.menu","underlined":true,"color":"gold","click_event":{"action":"run_command","command":"trigger tschipcraft.menu"},"hover_event":{"action":"show_text","value":"Click here","text":"Click here"}},{"text":")","color":"gold"}]
 # Note: 1.17x-1.20x uses the old folder names (function -> functions)
 
 # Announce escape sequence handling changes

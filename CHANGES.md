@@ -1,5 +1,3 @@
-- **Added support for Minecraft 1.21.11** 🐎
-  - Updated rain detection to use our own `#is_dry` biome tag combo instead of the now removed `#snow_golem_melts` tag
-  - Removed broken hide feedback code for 1.21+
+- **Added support for Minecraft 26.1x** 🐤
+  - Added router to handle [unobfuscated code](https://www.minecraft.net/en-us/article/removing-obfuscation-in-java-edition)
   - Bumped pack format and protocol version
-- Reduced non-player entity cap from 1000 to 750 ([#91](https://github.com/Tschipcraft/dynamiclights/issues/91))
