@@ -8,27 +8,27 @@
     }
   },
   {
-    "//comment": "Don't block off flowing water above",
+    "//comment": "Don't block off water above (#106)",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:location_check",
       "offsetY": 1,
       "predicate": {
         "fluid": {
-          "fluid": "minecraft:flowing_water"
+          "tag": "minecraft:water"
         }
       }
     }
   },
   {
-    "//comment": "Don't block off flowing lava above",
+    "//comment": "Don't block off lava above",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:location_check",
       "offsetY": 1,
       "predicate": {
         "fluid": {
-          "fluid": "minecraft:flowing_lava"
+          "tag": "minecraft:lava"
         }
       }
     }

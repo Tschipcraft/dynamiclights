@@ -1,3 +1,2 @@
-- **Added support for Minecraft 26.1x** 🐤
-  - Added router to handle [unobfuscated code](https://www.minecraft.net/en-us/article/removing-obfuscation-in-java-edition)
-  - Bumped pack format and protocol version
+- Fixed broken bubble column creation when holding a light source (closes [#105](https://github.com/Tschipcraft/dynamiclights/issues/105))
+- Fixed possibility to create a suspended water block when holding a light source (closes [#106](https://github.com/Tschipcraft/dynamiclights/issues/106))
