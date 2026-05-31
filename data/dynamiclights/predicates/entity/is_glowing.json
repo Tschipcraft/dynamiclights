@@ -16,16 +16,10 @@
     }
   },
   {
-    "condition": "minecraft:entity_properties",
-    "entity": "this",
-    "predicate": {
-      "effects": {
-        "minecraft:glowing": {
-          "duration": {
-            "min": 1
-          }
-        }
-      }
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/additional_effect_tests/glowing"
     }
   }
 ]
