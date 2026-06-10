@@ -1,3 +1,5 @@
+- **Added support for Minecraft 26.2.x** ♨️
+  - Bumped pack format and protocol version
 - Fixed broken bubble column creation when holding a light source (closes [#105](https://github.com/Tschipcraft/dynamiclights/issues/105))
 - Fixed possibility to create a suspended water block when holding a light source (closes [#106](https://github.com/Tschipcraft/dynamiclights/issues/106))
 - Fixed glowing potion effect with infinite duration not getting recognized (closes [#98](https://github.com/Tschipcraft/dynamiclights/issues/98))

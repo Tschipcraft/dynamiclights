@@ -9,7 +9,7 @@
   <a href="https://github.com/Tschipcraft/dynamiclights/releases/latest"><img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/Tschipcraft/dynamiclights/total?logo=github&colorA=0c0906&colorB=fbc703&style=for-the-badge"></a>
 </p>
 
-> Server-side dynamic lighting for Minecraft 1.17-1.21x
+> Server-side dynamic lighting for Minecraft 1.17.x-26.2.x
 
 ## Features
 
