@@ -1,38 +1,31 @@
 [
   {
-    "//comment": "This predicate returns false if the entity should emit light level 15",
+    "//comment": "This predicate returns false if the entity should emit light level 3",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/light_level/15/mainhand"
+      "name": "dynamiclights:entity/light_level/3/mainhand"
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/light_level/15/offhand"
+      "name": "dynamiclights:entity/light_level/3/offhand"
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/light_level/15/head"
+      "name": "dynamiclights:entity/light_level/3/head"
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/light_level/15/contents"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/is_on_fire"
+      "name": "dynamiclights:entity/light_level/3/contents"
     }
   },
   {
@@ -41,7 +34,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "entity_type": "#dynamiclights:light_level/15"
+        "type": "#dynamiclights:light_level/3"
       }
     }
   },
@@ -51,7 +44,7 @@
       "condition": "minecraft:entity_scores",
       "entity": "this",
       "scores": {
-        "ts.dl.i.type": 5
+        "ts.dl.i.type": 1
       }
     }
   },
@@ -59,14 +52,14 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/water_check/scores/15_turn_off"
+      "name": "dynamiclights:entity/water_check/scores/3_turn_off"
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "dynamiclights:entity/water_check/scores/15_turn_on"
+      "name": "dynamiclights:entity/water_check/scores/3_turn_on"
     }
   }
 ]

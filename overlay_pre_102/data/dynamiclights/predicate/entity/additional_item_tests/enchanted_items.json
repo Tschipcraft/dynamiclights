@@ -1,6 +1,6 @@
 [
   {
-    "//comment": "This predicate returns false, if the tested entity is holding a with riptide enchanted trident",
+    "//comment": "This predicate returns false, if the tested entity is holding or wearing any enchanted items",
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:entity_properties",
@@ -8,16 +8,12 @@
       "predicate": {
         "slots": {
           "weapon.*": {
-            "items": [
-              "minecraft:trident"
-            ],
             "count": {
               "min": 1
             },
             "predicates": {
               "minecraft:enchantments": [
                 {
-                  "enchantments": "minecraft:riptide",
                   "levels": {
                     "min": 1
                   }
@@ -37,16 +33,12 @@
       "predicate": {
         "slots": {
           "armor.*": {
-            "items": [
-              "minecraft:trident"
-            ],
             "count": {
               "min": 1
             },
             "predicates": {
               "minecraft:enchantments": [
                 {
-                  "enchantments": "minecraft:riptide",
                   "levels": {
                     "min": 1
                   }
@@ -64,19 +56,15 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "entity_type": "#dynamiclights:single_slot_entities",
+        "type": "#dynamiclights:single_slot_entities",
         "slots": {
           "contents": {
-            "items": [
-              "minecraft:trident"
-            ],
             "count": {
               "min": 1
             },
             "predicates": {
               "minecraft:enchantments": [
                 {
-                  "enchantments": "minecraft:riptide",
                   "levels": {
                     "min": 1
                   }
@@ -94,7 +82,7 @@
       "condition": "minecraft:entity_scores",
       "entity": "this",
       "scores": {
-        "ts.dl.i.is_ript": 1
+        "ts.dl.i.is_ench": 1
       }
     }
   }

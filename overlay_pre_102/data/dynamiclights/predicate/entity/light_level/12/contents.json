@@ -4,10 +4,10 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "entity_type": "#dynamiclights:single_slot_entities",
+      "type": "#dynamiclights:single_slot_entities",
       "slots": {
         "contents": {
-          "items": "#dynamiclights:light_level/9",
+          "items": "#dynamiclights:light_level/12",
           "count": {
             "min": 1
           }

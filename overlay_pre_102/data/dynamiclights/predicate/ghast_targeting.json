@@ -19,7 +19,7 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "entity_type": "minecraft:ghast",
+      "type": "minecraft:ghast",
       "targeted_entity": {}
     }
   }

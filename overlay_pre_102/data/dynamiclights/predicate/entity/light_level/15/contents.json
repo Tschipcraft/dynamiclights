@@ -4,10 +4,10 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "entity_type": "#dynamiclights:single_slot_entities",
+      "type": "#dynamiclights:single_slot_entities",
       "slots": {
         "contents": {
-          "items": "#dynamiclights:light_level/9",
+          "items": "#dynamiclights:light_level/15",
           "count": {
             "min": 1
           }
@@ -27,6 +27,29 @@
     "term": {
       "condition": "minecraft:reference",
       "name": "dynamiclights:entity/water_check/contents/water_immersion_illuminate"
+    }
+  },
+  {
+    "//comment": "This part ensures that the campfire item is lit. (Compatibility for The Creeper's Code)",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "contents": {
+            "items": [
+              "minecraft:campfire",
+              "minecraft:soul_campfire"
+            ],
+            "components": {
+              "minecraft:block_state": {
+                "lit": "fase"
+              }
+            }
+          }
+        }
+      }
     }
   }
 ]

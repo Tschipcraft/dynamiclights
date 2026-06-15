@@ -1,4 +1,5 @@
 - **Added support for Minecraft 26.2.x** ♨️
+  - Replaced deprecated `type` key with `entity_type` in predicates
   - Bumped pack format and protocol version
 - Fixed broken bubble column creation when holding a light source (closes [#105](https://github.com/Tschipcraft/dynamiclights/issues/105))
 - Fixed possibility to create a suspended water block when holding a light source (closes [#106](https://github.com/Tschipcraft/dynamiclights/issues/106))
