@@ -1,0 +1,68 @@
+[
+  {
+    "//comment": "This predicate returns false if the tested entity is holding or wearing an item that should extinguish inside water (specified in tags/items/water_sensitive/turn_off)",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "weapon.*": {
+            "items": "#dynamiclights:water_sensitive/turn_off",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "armor.*": {
+            "items": "#dynamiclights:water_sensitive/turn_off",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dynamiclights:single_slot_entities",
+        "slots": {
+          "contents": {
+            "items": "#dynamiclights:water_sensitive/turn_off",
+            "count": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.type": {
+          "min": 6,
+          "max": 10
+        }
+      }
+    }
+  }
+]

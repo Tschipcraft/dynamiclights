@@ -1,0 +1,72 @@
+[
+  {
+    "//comment": "This predicate returns false if the entity should emit light level 15",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/15/mainhand"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/15/offhand"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/15/head"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/15/contents"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/is_on_fire"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dynamiclights:light_level/15"
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.type": 5
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/15_turn_off"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/15_turn_on"
+    }
+  }
+]

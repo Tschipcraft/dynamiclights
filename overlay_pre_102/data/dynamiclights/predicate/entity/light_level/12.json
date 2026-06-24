@@ -1,0 +1,65 @@
+[
+  {
+    "//comment": "This predicate returns false if the entity should emit light level 12",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/12/mainhand"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/12/offhand"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/12/head"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/12/contents"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dynamiclights:light_level/12"
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.type": 4
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/12_turn_off"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/12_turn_on"
+    }
+  }
+]

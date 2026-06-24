@@ -1,6 +1,6 @@
 {
   "env": {
-    "gameVersion": "1.21.11"
+    "gameVersion": "26.2"
   },
   "lint": {
     "idOmitDefaultNamespace": ["warning", false],

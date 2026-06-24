@@ -8,7 +8,7 @@ on:
         required: true
         default: '1.0'
       mc_upper:
-        description: 'Upper bound of Minecraft version range (exact version), e.g. "1.21.5". Leave empty to use the latest version from pack.mcmeta.'
+        description: 'Upper bound of Minecraft version range (exact version), e.g. "26.2". Leave empty to use the latest version from pack.mcmeta.'
         required: false
       mc_lower:
         description: 'Lower bound of Minecraft version range (exact version), e.g. "1.17"'
@@ -259,7 +259,7 @@ jobs:
       - name: Upload Forge mod version to Modrinth # Forge mod version is uploaded separately atm due to it not being compatible with Minecraft 1.21.6 or above
         id: upload_forge_modrinth_mod
         uses: Kir-Antipov/mc-publish@v3.3
-        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false'  && github.event.inputs.separate_forge == 'true'
+        if: steps.check_mod_folder.outputs.files_exists == 'true' && github.event.inputs.dry_run == 'false' && github.event.inputs.separate_forge == 'true'
         with:
           modrinth-id: 7YjclEGc
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}

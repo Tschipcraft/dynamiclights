@@ -8,7 +8,7 @@ on:
         description: 'Version tag to build (if omitted, latest --describe tag from git is used)'
         required: false
       mc_upper:
-        description: 'Upper bound of Minecraft version range (exact version), e.g. "1.21.5"'
+        description: 'Upper bound of Minecraft version range (exact version), e.g. "26.2"'
         required: false
       mc_lower:
         description: 'Lower bound of Minecraft version range (exact version), e.g. "1.17"'
@@ -23,7 +23,7 @@ env:
   # Fallback Lower: when Spyglass API is unreachable
   FALLBACK_MC_LOWER: "1.17"
   # Fallback Upper: when Spyglass API and Mojang API are unreachable
-  FALLBACK_MC_UPPER: "1.21.5"
+  FALLBACK_MC_UPPER: "26.2"
 
 jobs:
   deploy:

@@ -1,3 +1,6 @@
-- **Added support for Minecraft 26.1x** 🐤
-  - Added router to handle [unobfuscated code](https://www.minecraft.net/en-us/article/removing-obfuscation-in-java-edition)
+- **Added support for Minecraft 26.2.x** ♨️
+  - Replaced deprecated `type` key with `entity_type` in predicates
   - Bumped pack format and protocol version
+- Fixed broken bubble column creation when holding a light source (closes [#105](https://github.com/Tschipcraft/dynamiclights/issues/105))
+- Fixed possibility to create a suspended water block when holding a light source (closes [#106](https://github.com/Tschipcraft/dynamiclights/issues/106))
+- Fixed glowing potion effect with infinite duration not getting recognized (closes [#98](https://github.com/Tschipcraft/dynamiclights/issues/98))

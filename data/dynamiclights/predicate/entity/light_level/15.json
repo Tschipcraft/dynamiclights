@@ -41,7 +41,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "#dynamiclights:light_level/15"
+        "entity_type": "#dynamiclights:light_level/15"
       }
     }
   },

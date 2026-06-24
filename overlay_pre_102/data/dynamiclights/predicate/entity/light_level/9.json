@@ -1,0 +1,93 @@
+[
+  {
+    "//comment": "This predicate returns false if the entity should emit light level 9",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/9/mainhand"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/9/offhand"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/9/head"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/light_level/9/contents"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/is_glowing"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/has_fire_aspect_items"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/has_riptide_trident"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/has_channeling_trident"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "#dynamiclights:light_level/9"
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ts.dl.i.type": 3
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/9_turn_off"
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "dynamiclights:entity/water_check/scores/9_turn_on"
+    }
+  }
+]

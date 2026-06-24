@@ -1,5 +1,5 @@
 ##by Tschipcraft
-# Commands run by tnt per tick
+# Commands run by TNT entities every tick
 
 # Set up score for fuse
 execute as @s[tag=!ts.dl.tnt.setup] run function dynamiclights:internal/explosion_detection/setup/tnt

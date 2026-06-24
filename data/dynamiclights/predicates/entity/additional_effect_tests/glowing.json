@@ -1,0 +1,33 @@
+[
+  {
+    "//comment": "This predicate returns false, if the tested entity has the glowing effect",
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "effects": {
+          "minecraft:glowing": {
+            "duration": {
+              "min": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "effects": {
+          "minecraft:glowing": {
+            "duration": -1
+          }
+        }
+      }
+    }
+  }
+]

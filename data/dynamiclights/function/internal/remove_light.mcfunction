@@ -1,8 +1,8 @@
 ##by Tschipcraft
 # @overlay overlay_pre_62
 
-# Set back water
-fill ~ ~ ~ ~ ~ ~ minecraft:water replace minecraft:light[waterlogged=true] strict
+# Set back water (no strict due to #105)
+fill ~ ~ ~ ~ ~ ~ minecraft:water replace minecraft:light[waterlogged=true]
 # Set back cave_air
 execute if entity @s[tag=ts.dl.cave_air] run fill ~ ~ ~ ~ ~ ~ minecraft:cave_air replace minecraft:light strict
 # Set back air
