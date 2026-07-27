@@ -22,6 +22,7 @@ This mod is completely server-side!
 Execute the command §o/function §odynamiclights:settings§r for a world-specific settings menu and/or install MidnightLib for global settings across all worlds.
 '''
 authors="Tschipcraft"
+credits="Texaliuz, itsrec0very"
 displayURL="https://modrinth.com/mod/7YjclEGc"
 issueTrackerURL="https://github.com/Tschipcraft/dynamiclights/issues"
 updateJSONURL="https://api.modrinth.com/updates/7YjclEGc/forge_updates.json?neoforge=only"
