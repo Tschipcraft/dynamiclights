@@ -1,1 +1,2 @@
 - Added Russian language support (Thanks @itsrec0very, [#111](https://github.com/Tschipcraft/dynamiclights/pull/111))
+- Fixed the `#dynamiclights:is_dry` biome tag failing to load in Minecraft 1.18.2

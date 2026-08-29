@@ -3,7 +3,10 @@
   "values": [
     "minecraft:desert",
     "#minecraft:is_badlands",
-    "#minecraft:is_savanna",
+    "minecraft:savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:windswept_savanna",
+    {"id": "#minecraft:is_savanna", "required": false},
     "#minecraft:is_nether",
     {"id": "#c:is_dry", "required": false},
     {"id": "#minecraft:snow_golem_melts", "required": false}
