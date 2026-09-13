@@ -29,7 +29,7 @@
             ],
             "components": {
               "minecraft:block_state": {
-                "lit": "fase"
+                "lit": "false"
               }
             }
           }
