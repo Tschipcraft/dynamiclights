@@ -1,8 +1,12 @@
-modLoader = "javafml"
+modLoader="javafml"
 loaderVersion="[3,)"
 license="Custom"
+licenseURL="https://github.com/Tschipcraft/dynamiclights/blob/master/LICENSE"
 logoFile="pack.png"
+bannerFile="pack.png"
+iconFile="pack.png"
 logoBlur=false
+iconBlur=false
 showAsDataPack=true
 
 [[mods]]
