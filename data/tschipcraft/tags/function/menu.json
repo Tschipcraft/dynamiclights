@@ -2,6 +2,6 @@
   "replace": false,
   "values": [
     "tschipcraft:menu_header",
-    "dynamiclights:internal/messages/welcome"
+    {"id": "dynamiclights:internal/messages/welcome", "required": false}
   ]
 }

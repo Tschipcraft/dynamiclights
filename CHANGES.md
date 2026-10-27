@@ -1,3 +1,4 @@
-- Added Russian language support (Thanks @itsrec0very, [#111](https://github.com/Tschipcraft/dynamiclights/pull/111))
-- Fixed the `#dynamiclights:is_dry` biome tag failing to load in Minecraft 1.18.2
 - Fixed unlit campfire items emitting light level 15
+- Fixed the `#dynamiclights:is_dry` biome tag failing to load in Minecraft 1.18.2
+- Fixed the menu opening when its advancement is granted by other means, such as `/advancement grant @s everything`
+- Added Russian language support (Thanks @itsrec0very, [#111](https://github.com/Tschipcraft/dynamiclights/pull/111))
